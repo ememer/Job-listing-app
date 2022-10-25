@@ -29,7 +29,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd expenses_chart
+  cd job-listing-app
 ```
 
 Install dependencies
