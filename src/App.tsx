@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import "./App.css";
+import JobCard from "./components/JobCard";
+import jobs from "./utils/data.json";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header></header>
+      <main className="container">
+        {jobs?.map((job) => (
+          <JobCard
+            key={job.company}
+            id={job.id}
+            company={job.company}
+            logo={job.logo}
+            newest={job.new}
+            featured={job.featured}
+            position={job.position}
+            role={job.role}
+            level={job.level}
+            postedAt={job.postedAt}
+            contract={job.contract}
+            location={job.location}
+            languages={job.languages}
+            tools={job.tools}
+          />
+        ))}
+      </main>
     </div>
   );
 }
