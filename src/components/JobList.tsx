@@ -2,7 +2,25 @@ import React from "react";
 import JobCard from "./JobCard";
 import { Link } from "react-router-dom";
 
-const JobTest = ({ jobs }) => {
+type Props = {
+  jobs: {
+    id: number;
+    company: string;
+    logo: string;
+    new: true | false;
+    featured?: true | false;
+    position: string;
+    role?: string;
+    level?: string;
+    postedAt: string;
+    contract: string;
+    location: string;
+    languages?: string[];
+    tools: string[];
+  }[];
+};
+
+const JobList = ({ jobs }: Props) => {
   return (
     <>
       {jobs?.map((job) => (
@@ -28,4 +46,4 @@ const JobTest = ({ jobs }) => {
   );
 };
 
-export default JobTest;
+export default JobList;

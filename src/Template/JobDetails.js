@@ -19,7 +19,6 @@ const JobDetails = () => {
     tools,
     description,
   } = fakeApiResponse[0];
-  console.log(description);
   return (
     <div>
       <div className="details-header">
@@ -52,11 +51,22 @@ const JobDetails = () => {
             ))}
           </ul>
         )}
-        {description.image && (
-          <div className="details-img">
-            <img alt="poster" src={description?.image} />
-          </div>
-        )}
+      </div>
+      <div className="details-content">
+        <div>
+          {description?.image && (
+            <div className="details-img">
+              <div style={{ backgroundImage: `url("${description.image}")` }} />
+            </div>
+          )}
+          <h2>{description?.title}</h2>
+          <p>{description?.text}</p>
+          <h2>{description?.subtitle}</h2>
+          <p>{description?.subtext}</p>
+        </div>
+        <div>
+          <span>test</span>
+        </div>
       </div>
     </div>
   );
