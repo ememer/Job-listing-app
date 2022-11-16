@@ -5,8 +5,10 @@
   --graphite-dark: hsl(180, 14%, 20%);
   --main-accents: hsl(180, 29%, 50%);
   --bg-accents:  	hsl(170, 54%, 87%);
+  --bg-light: hsl(0, 0%, 97%);
   --background: hsl(180, 52%, 96%);
   --bg-dark: hsl(180, 8%, 52%);
+  --light-gray: 		hsl(227, 19%, 34%);
 }
 
 body {
