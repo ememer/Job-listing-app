@@ -5,8 +5,9 @@ import jobs from "../utils/data.json";
 import "./JobDetails.css";
 
 const JobDetails = () => {
-  const { id } = useParams();
-  const fakeApiResponse = jobs.filter((job) => job.id === +id);
+  const { id }: { id?: string | undefined } = useParams();
+  const pageId = id ?? 0;
+  const fakeApiResponse = jobs.filter((job) => job.id === +pageId);
   const {
     company,
     contract,
