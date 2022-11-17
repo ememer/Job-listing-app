@@ -7,8 +7,8 @@
   --bg-accents:  	hsl(170, 54%, 87%);
   --bg-light: hsl(0, 0%, 97%);
   --background: hsl(180, 52%, 96%);
-  --bg-dark: hsl(180, 8%, 52%);
-  --light-gray: 		hsl(227, 19%, 34%);
+  --bg-dark: hsl(180, 8%, 62%);
+  --light-gray: 		hsla(228, 6%, 65%, 0.432);
 }
 
 body {
@@ -17,4 +17,28 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
 
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg-accents);
+} 
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--light-gray);
+  border-radius: 10px; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
