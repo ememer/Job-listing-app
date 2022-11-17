@@ -2,7 +2,15 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import jobs from "../utils/data.json";
 
+import {
+  faLocationPin,
+  faStopwatch,
+  faFlask,
+  faBusinessTime,
+} from "@fortawesome/free-solid-svg-icons";
+
 import "./JobDetails.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const JobDetails = () => {
   const { id }: { id?: string | undefined } = useParams();
@@ -18,11 +26,15 @@ const JobDetails = () => {
     position,
     postedAt,
     tools,
+    image,
     description,
   } = fakeApiResponse[0];
   return (
     <div>
-      <div className="details-header">
+      <div
+        className="details-header"
+        style={{ backgroundImage: `url("${image}")` }}
+      >
         <div>
           <img alt={`${company} logo`} src={logo}></img>
         </div>
@@ -32,22 +44,31 @@ const JobDetails = () => {
         </div>
       </div>
       <ul className="details-job">
-        <li>{location}</li>
-        <li>{contract}</li>
-        <li>{level}</li>
-        <li>{postedAt}</li>
+        <li>
+          <FontAwesomeIcon className="details-icons" icon={faLocationPin} />
+          {location}
+        </li>
+        <li>
+          <FontAwesomeIcon className="details-icons" icon={faStopwatch} />
+          {contract}
+        </li>
+        <li>
+          <FontAwesomeIcon className="details-icons" icon={faFlask} />
+          {level}
+        </li>
+        <li>
+          <FontAwesomeIcon className="details-icons" icon={faBusinessTime} />
+          {postedAt}
+        </li>
       </ul>
       <div>
-        {languages && (
+        <h2>Technologie</h2>
+        {(languages || tools) && (
           <ul className="details-tech">
-            {languages.map((lang, idx) => (
+            {languages?.map((lang, idx) => (
               <li key={`${lang}${idx}`}>{lang}</li>
             ))}
-          </ul>
-        )}
-        {tools && (
-          <ul className="details-tech">
-            {tools.map((tool, idx) => (
+            {tools?.map((tool, idx) => (
               <li key={`${tool}${idx}`}>{tool}</li>
             ))}
           </ul>
@@ -55,11 +76,12 @@ const JobDetails = () => {
       </div>
       <div className="details-content">
         <div>
-          {description?.image && (
+          {image && (
             <div className="details-img">
-              <div style={{ backgroundImage: `url("${description.image}")` }} />
+              <div style={{ backgroundImage: `url("${image}")` }} />
             </div>
           )}
+          <h2>Opis</h2>
           <h2>{description?.title}</h2>
           <p>{description?.text}</p>
           <h2>{description?.subtitle}</h2>

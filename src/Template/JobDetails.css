@@ -1,9 +1,28 @@
 .details-header {
+  position: relative;
   display: grid;
   grid-template-columns: 2fr 3fr;
+  align-items: center;
   gap: 20px;
-  margin: 20px 0px;
+  margin: 5% 0 0 0;
+  padding: 2% 0 5%;
+  box-shadow: 0px 22px 39px -41px rgba(66, 68, 90, 1);
   text-align: center;
+  border-radius: 10px 10px 0px 0px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  color: white;
+}
+
+.details-header::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(88, 91, 106, 0.7);
+  z-index: 1;
 }
 
 .details-header > div:first-child {
@@ -14,14 +33,18 @@
 }
 
 .details-header > div:last-child > h1 {
-  font-size: 1.4rem;
+  font-size: 3.5rem;
   font-weight: 700;
   margin: 10px 0px;
 }
 .details-header > div:last-child > span {
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 2.5rem;
+  font-weight: 200;
   margin: 10px 0px;
+}
+
+.details-header > div {
+  z-index: 2;
 }
 
 .details-tech,
@@ -57,20 +80,58 @@
   min-height: 8vh;
 }
 .details-job > li {
+  position: relative;
   min-height: 10vh;
+  margin-top: 20px;
+}
+
+.details-icons {
+  position: absolute;
+  top: calc(1.8rem - 60%);
+  color: white;
+  background-color: var(--main-accents);
+  padding: 3%;
+  font-size: 1.4rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
 }
 
 .details-content {
   display: grid;
   grid-template-columns: 1fr;
+  margin-top: 5%;
 }
 
-.details-img{
-    height: 20vh;
-    width: 100%;
+.details-content > div > h2,
+.details-content > div > p {
+  line-height: 160%;
+  font-weight: 200;
+  font-size: 1.2rem;
+  padding: 10px;
 }
 
-.details-img>div{
+.details-content > div > h2:first-of-type {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 15px 0px;
+  width: 100%;
+  border-bottom: 1px solid var(--graphite-dark);
+}
+.details-content > div > h2 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.details-img {
+  height: 20vh;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.details-img > div {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -83,7 +144,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 5px;
   }
-  .details-tech{
+  .details-tech {
     display: flex;
     justify-content: center;
     align-items: center;
