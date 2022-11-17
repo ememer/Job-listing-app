@@ -140,8 +140,8 @@
 }
 
 .details-content {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   margin: 5% 0;
 }
 

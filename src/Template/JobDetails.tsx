@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import jobs from "../utils/data.json";
+import "mapbox-gl/dist/mapbox-gl.css";
+import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
 
 import {
   faLocationPin,
@@ -32,6 +34,26 @@ const JobDetails = () => {
     image,
     description,
   } = fakeApiResponse[0];
+
+  //MAP BOX INIT
+
+  // mapboxgl.accessToken =
+  //   "pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3BldGxucjdzcHgifQ.A213Odf8YgfWddgNjfEdrw";
+  // const map = new mapboxgl.Map({
+  //   container: "map", // container ID
+  //   style: "mapbox://styles/mapbox/streets-v11", // style URL
+  //   center: [-74.5, 40], // starting position [lng, lat]
+  //   zoom: 9, // starting zoom
+  //   projection: {name: "globe"}, // display the map as a 3D globe
+  // });
+  // map.on("style.load", () => {
+  //   map.setFog({}); // Set the default atmosphere style
+  // });
+
+  const Map = ReactMapboxGl({
+    accessToken:
+      "pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3BldGxucjdzcHgifQ.A213Odf8YgfWddgNjfEdrw",
+  });
 
   const copyClipboard = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -119,9 +141,22 @@ const JobDetails = () => {
             <p>{description?.subtext}</p>
           </div>
         </div>
-        <div>
-          <span>test</span>
-        </div>
+        <Map
+          style="mapbox://styles/mapbox/streets-v9"
+          containerStyle={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "10px"
+          }}
+        >
+          <Layer
+            type="symbol"
+            id="marker"
+            layout={{ "icon-image": "marker-15" }}
+          >
+            <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
+          </Layer>
+        </Map>
       </div>
     </section>
   );
