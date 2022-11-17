@@ -16,6 +16,8 @@ import {
 import "./JobDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const MAPBOX_TOKEN = "pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3BldGxucjdzcHgifQ.A213Odf8YgfWddgNjfEdrw"
+
 const JobDetails = () => {
   const [isClipboard, setIsClipboard] = useState(false);
   const { id }: { id?: string | undefined } = useParams();
@@ -35,24 +37,10 @@ const JobDetails = () => {
     description,
   } = fakeApiResponse[0];
 
-  //MAP BOX INIT
-
-  // mapboxgl.accessToken =
-  //   "pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3BldGxucjdzcHgifQ.A213Odf8YgfWddgNjfEdrw";
-  // const map = new mapboxgl.Map({
-  //   container: "map", // container ID
-  //   style: "mapbox://styles/mapbox/streets-v11", // style URL
-  //   center: [-74.5, 40], // starting position [lng, lat]
-  //   zoom: 9, // starting zoom
-  //   projection: {name: "globe"}, // display the map as a 3D globe
-  // });
-  // map.on("style.load", () => {
-  //   map.setFog({}); // Set the default atmosphere style
-  // });
-
+  
   const Map = ReactMapboxGl({
     accessToken:
-      "pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3BldGxucjdzcHgifQ.A213Odf8YgfWddgNjfEdrw",
+      MAPBOX_TOKEN,
   });
 
   const copyClipboard = () => {
