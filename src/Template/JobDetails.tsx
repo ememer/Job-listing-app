@@ -16,13 +16,41 @@ import {
 import "./JobDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const MAPBOX_TOKEN = "pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3BldGxucjdzcHgifQ.A213Odf8YgfWddgNjfEdrw"
+const MAPBOX_TOKEN: string =
+  "pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3BldGxucjdzcHgifQ.A213Odf8YgfWddgNjfEdrw";
+
+type JobDescription = {
+  title: string;
+  text: string;
+  subtitle: string;
+  subtext: string;
+};
+
+interface JobList {
+  company: string;
+  contract: string;
+  languages: string[];
+  logo: string;
+  level: string;
+  location: string;
+  position: string;
+  postedAt: string;
+  tools: string[];
+  image: string;
+  description: JobDescription;
+}
 
 const JobDetails = () => {
   const [isClipboard, setIsClipboard] = useState(false);
-  const { id }: { id?: string | undefined } = useParams();
-  const pageId = id ?? 0;
-  const fakeApiResponse = jobs.filter((job) => job.id === +pageId);
+  const { id } = useParams()
+
+  let pageId: number;
+  if (id) {
+    pageId = +id;
+  } else {
+    pageId = 0;
+  }
+  const fakeApiResponse = jobs.filter((job) => job.id === pageId);
   const {
     company,
     contract,
@@ -35,12 +63,10 @@ const JobDetails = () => {
     tools,
     image,
     description,
-  } = fakeApiResponse[0];
+  }: JobList = fakeApiResponse[0];
 
-  
   const Map = ReactMapboxGl({
-    accessToken:
-      MAPBOX_TOKEN,
+    accessToken: MAPBOX_TOKEN,
   });
 
   const copyClipboard = () => {
@@ -48,7 +74,7 @@ const JobDetails = () => {
     setIsClipboard(!isClipboard);
   };
 
-  useEffect(() => {
+  useEffect((): void => {
     if (isClipboard) {
       setTimeout(() => {
         setIsClipboard(!isClipboard);
@@ -123,10 +149,10 @@ const JobDetails = () => {
           )}
           <div>
             <h2>Opis</h2>
-            <h2>{description?.title}</h2>
-            <p>{description?.text}</p>
-            <h2>{description?.subtitle}</h2>
-            <p>{description?.subtext}</p>
+            <h2>{description.title}</h2>
+            <p>{description.text}</p>
+            <h2>{description.subtitle}</h2>
+            <p>{description.subtext}</p>
           </div>
         </div>
         <Map
@@ -134,7 +160,7 @@ const JobDetails = () => {
           containerStyle={{
             width: "100%",
             height: "100%",
-            borderRadius: "10px"
+            borderRadius: "10px",
           }}
         >
           <Layer
