@@ -42,7 +42,8 @@ interface JobList {
 
 const JobDetails = () => {
   const [isClipboard, setIsClipboard] = useState(false);
-  const { id } = useParams()
+  const [isMobileMap, setIsMobileMap] = useState(false);
+  const { id } = useParams();
 
   let pageId: number;
   if (id) {
@@ -74,6 +75,14 @@ const JobDetails = () => {
     setIsClipboard(!isClipboard);
   };
 
+  const getWindowSize = (windowWidth: number): void => {
+    if (windowWidth <= 1024) {
+      setIsMobileMap(true);
+    } else {
+      setIsMobileMap(false);
+    }
+  };
+
   useEffect((): void => {
     if (isClipboard) {
       setTimeout(() => {
@@ -81,6 +90,14 @@ const JobDetails = () => {
       }, 1500);
     }
   }, [isClipboard]);
+
+  useEffect((): void => {
+    window.addEventListener("resize", () => getWindowSize(window.innerWidth));
+    return window.removeEventListener("resize", () => getWindowSize(window.innerWidth));
+  }, []);
+
+  console.log(isMobileMap);
+  
 
   return (
     <section className="details-section">
