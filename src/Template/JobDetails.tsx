@@ -42,8 +42,7 @@ interface JobList {
 
 const JobDetails = () => {
   const [isClipboard, setIsClipboard] = useState(false);
-  const [isMobileMap, setIsMobileMap] = useState(false);
-  const { id } = useParams();
+   const { id } = useParams();
 
   let pageId: number;
   if (id) {
@@ -73,14 +72,6 @@ const JobDetails = () => {
   const copyClipboard = () => {
     navigator.clipboard.writeText(window.location.href);
     setIsClipboard(!isClipboard);
-  };
-
-  const getWindowSize = (windowWidth: number): void => {
-    if (windowWidth <= 1024) {
-      setIsMobileMap(true);
-    } else {
-      setIsMobileMap(false);
-    }
   };
 
   useEffect((): void => {
