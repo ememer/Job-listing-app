@@ -2,19 +2,14 @@ import React from "react";
 import "./App.css";
 import JobList from "./components/JobList";
 import jobs from "./utils/data.json";
-import {Route,Routes} from "react-router-dom"
-import JobDetails from "./Template/JobDetails";
+import { Layout } from "./components/Layout";
 
 function App() {
   return (
     <div className="App">
-      <header></header>
-      <main className="container">
-        <Routes>
-          <Route path="/" element={<JobList jobs={jobs}/>}/>
-          <Route path="/job/:id" element={<JobDetails/>}/>
-        </Routes>
-      </main>
+      <Layout>
+        <JobList jobs={jobs} />
+      </Layout>
     </div>
   );
 }
