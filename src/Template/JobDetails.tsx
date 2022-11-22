@@ -16,7 +16,7 @@ import {
 import "./JobDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const MAPBOX_TOKEN: string =
+const  MAPBOX_TOKEN: string =
   "pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3BldGxucjdzcHgifQ.A213Odf8YgfWddgNjfEdrw";
 
 type JobDescription = {
@@ -90,14 +90,6 @@ const JobDetails = () => {
       }, 1500);
     }
   }, [isClipboard]);
-
-  useEffect((): void => {
-    window.addEventListener("resize", () => getWindowSize(window.innerWidth));
-    return window.removeEventListener("resize", () => getWindowSize(window.innerWidth));
-  }, []);
-
-  console.log(isMobileMap);
-  
 
   return (
     <section className="details-section">
@@ -176,9 +168,9 @@ const JobDetails = () => {
           style="mapbox://styles/mapbox/streets-v9"
           containerStyle={{
             width: "100%",
-            height: "100%",
             borderRadius: "10px",
           }}
+          className="map-layer"
         >
           <Layer
             type="symbol"
