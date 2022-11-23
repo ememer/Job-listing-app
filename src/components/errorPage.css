@@ -1,0 +1,50 @@
+.error-content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5EDDC;
+}
+
+.error-icon {
+  font-size: 15rem;
+  color: #E0144C;
+}
+
+.error-message {
+  text-align: center;
+}
+.error-message > h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.error-message > span {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: #EB1D36;
+}
+
+.error-back {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 10px 15px;
+    color: #E0144C;
+    font-weight: 200;
+    border: 1px solid #E0144C;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.error-back>.icon{
+    margin: 0rem .5rem 0 0;
+    font-size: 1.4rem;
+}
+
+.error-back:hover{
+    color: #F5EDDC;
+    background-color: #E0144C;
+    transition-duration: 0.8s;
+}

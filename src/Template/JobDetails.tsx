@@ -15,7 +15,6 @@ import {
 
 import "./JobDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Layout } from "../components/Layout";
 
 const MAPBOX_TOKEN: string =
   "pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3BldGxucjdzcHgifQ.A213Odf8YgfWddgNjfEdrw";
@@ -84,98 +83,96 @@ const JobDetails = () => {
   }, [isClipboard]);
 
   return (
-    <Layout>
-      <section className="details-section">
-        {isClipboard && (
-          <span className="clipboard-popup">
-            Link został skopiowany do schowka
-          </span>
-        )}
-        <div className="details-nav">
-          <Link className="back-button" to={"/#"}>
-            <FontAwesomeIcon icon={faArrowLeft} />
-          </Link>
-          <button onClick={copyClipboard} className="share-button">
-            <FontAwesomeIcon icon={faShareNodes} />
-          </button>
-        </div>
-        <div
-          className="details-header"
-          style={{ backgroundImage: `url("${image}")` }}
-        >
-          <div>
-            <img alt={`${company} logo`} src={logo}></img>
-          </div>
-          <div>
-            <h1>{company}</h1>
-            <span>{position}</span>
-          </div>
-        </div>
-        <ul className="details-job">
-          <li title="Lokalizacja">
-            <FontAwesomeIcon className="details-icons" icon={faLocationPin} />
-            {location}
-          </li>
-          <li title="Typ kontraktu">
-            <FontAwesomeIcon className="details-icons" icon={faStopwatch} />
-            {contract}
-          </li>
-          <li title="Poziom zaawansowania">
-            <FontAwesomeIcon className="details-icons" icon={faFlask} />
-            {level}
-          </li>
-          <li title="Kiedy opublikowano">
-            <FontAwesomeIcon className="details-icons" icon={faBusinessTime} />
-            {postedAt}
-          </li>
-        </ul>
+    <section className="details-section">
+      {isClipboard && (
+        <span className="clipboard-popup">
+          Link został skopiowany do schowka
+        </span>
+      )}
+      <div className="details-nav">
+        <Link className="back-button" to={"/#"}>
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </Link>
+        <button onClick={copyClipboard} className="share-button">
+          <FontAwesomeIcon icon={faShareNodes} />
+        </button>
+      </div>
+      <div
+        className="details-header"
+        style={{ backgroundImage: `url("${image}")` }}
+      >
         <div>
-          <h2 className="details-tech-title">Technologie</h2>
-          {(languages || tools) && (
-            <ul className="details-tech">
-              {languages?.map((lang, idx) => (
-                <li key={`${lang}${idx}`}>{lang}</li>
-              ))}
-              {tools?.map((tool, idx) => (
-                <li key={`${tool}${idx}`}>{tool}</li>
-              ))}
-            </ul>
-          )}
+          <img alt={`${company} logo`} src={logo}></img>
         </div>
-        <div className="details-content">
-          <div>
-            {image && (
-              <div className="details-img">
-                <div style={{ backgroundImage: `url("${image}")` }} />
-              </div>
-            )}
-            <div>
-              <h2>Opis</h2>
-              <h2>{description.title}</h2>
-              <p>{description.text}</p>
-              <h2>{description.subtitle}</h2>
-              <p>{description.subtext}</p>
+        <div>
+          <h1>{company}</h1>
+          <span>{position}</span>
+        </div>
+      </div>
+      <ul className="details-job">
+        <li title="Lokalizacja">
+          <FontAwesomeIcon className="details-icons" icon={faLocationPin} />
+          {location}
+        </li>
+        <li title="Typ kontraktu">
+          <FontAwesomeIcon className="details-icons" icon={faStopwatch} />
+          {contract}
+        </li>
+        <li title="Poziom zaawansowania">
+          <FontAwesomeIcon className="details-icons" icon={faFlask} />
+          {level}
+        </li>
+        <li title="Kiedy opublikowano">
+          <FontAwesomeIcon className="details-icons" icon={faBusinessTime} />
+          {postedAt}
+        </li>
+      </ul>
+      <div>
+        <h2 className="details-tech-title">Technologie</h2>
+        {(languages || tools) && (
+          <ul className="details-tech">
+            {languages?.map((lang, idx) => (
+              <li key={`${lang}${idx}`}>{lang}</li>
+            ))}
+            {tools?.map((tool, idx) => (
+              <li key={`${tool}${idx}`}>{tool}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <div className="details-content">
+        <div>
+          {image && (
+            <div className="details-img">
+              <div style={{ backgroundImage: `url("${image}")` }} />
             </div>
+          )}
+          <div>
+            <h2>Opis</h2>
+            <h2>{description.title}</h2>
+            <p>{description.text}</p>
+            <h2>{description.subtitle}</h2>
+            <p>{description.subtext}</p>
           </div>
-          <Map
-            style="mapbox://styles/mapbox/streets-v9"
-            containerStyle={{
-              width: "100%",
-              borderRadius: "10px",
-            }}
-            className="map-layer"
-          >
-            <Layer
-              type="symbol"
-              id="marker"
-              layout={{ "icon-image": "marker-15" }}
-            >
-              <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
-            </Layer>
-          </Map>
         </div>
-      </section>
-    </Layout>
+        <Map
+          style="mapbox://styles/mapbox/streets-v9"
+          containerStyle={{
+            width: "100%",
+            borderRadius: "10px",
+          }}
+          className="map-layer"
+        >
+          <Layer
+            type="symbol"
+            id="marker"
+            layout={{ "icon-image": "marker-15" }}
+          >
+            <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
+          </Layer>
+        </Map>
+      </div>
+    </section>
   );
 };
 

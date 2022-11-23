@@ -2,7 +2,8 @@ import React from "react";
 import "./Layout.css"
 
 type Layout = { children: JSX.Element };
-export const Layout = ({ children }: Layout) => {
+
+const Layout = ({ children }: Layout) => {
   return (
     <>
       <header></header>
@@ -10,3 +11,5 @@ export const Layout = ({ children }: Layout) => {
     </>
   );
 };
+
+export default Layout
