@@ -1,0 +1,15 @@
+header {
+  background-color: var(--main-accents);
+  height: 15vh;
+}
+
+.container {
+  padding: 0 1rem;
+  margin: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 80%;
+  }
+}
