@@ -1,14 +1,14 @@
 import React from "react";
 import "./App.css";
-import { Outlet} from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import Layout from "./components/Layout";
-
 
 function App() {
   return (
     <div className="App">
+      <ScrollRestoration />
       <Layout>
-        <Outlet/>
+        <Outlet />
       </Layout>
     </div>
   );
