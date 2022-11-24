@@ -1,9 +1,9 @@
 import React from "react";
 import "./Layout.css"
 
-type Layout = { children: JSX.Element };
+type LayoutProps = { children: JSX.Element };
 
-const Layout = ({ children }: Layout) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <header></header>

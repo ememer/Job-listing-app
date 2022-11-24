@@ -26,6 +26,14 @@ type JobDescription = {
   subtext: string;
 };
 
+type AddressObject = {
+  postcode: string;
+  city: string;
+  country: string;
+  street: string;
+  number: number
+}
+
 interface JobList {
   company: string;
   contract: string;
@@ -38,6 +46,7 @@ interface JobList {
   tools: string[];
   image: string;
   description: JobDescription;
+  address?: AddressObject;
 }
 
 const JobDetails = () => {
@@ -63,6 +72,7 @@ const JobDetails = () => {
     tools,
     image,
     description,
+    address,
   }: JobList = fakeApiResponse[0];
 
   const Map = ReactMapboxGl({
@@ -82,6 +92,13 @@ const JobDetails = () => {
     }
   }, [isClipboard]);
 
+  useEffect(():void =>{
+    let stringURL: string = `${address?.street} ${address?.number} ${address?.postcode} ${address?.city} ${address?.country}`
+    let encodeURL: string = encodeURIComponent(stringURL)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+
+  
   return (
     <section className="details-section">
       {isClipboard && (
@@ -156,6 +173,7 @@ const JobDetails = () => {
           </div>
         </div>
         <Map
+          // eslint-disable-next-line react/style-prop-object
           style="mapbox://styles/mapbox/streets-v9"
           containerStyle={{
             width: "100%",
