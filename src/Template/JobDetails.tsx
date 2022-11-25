@@ -80,7 +80,7 @@ const JobDetails = () => {
     accessToken: MAPBOX_TOKEN,
   });
 
-  const copyClipboard = () => {
+  const copyClipboard = (): void => {
     navigator.clipboard.writeText(window.location.href);
     setIsClipboard(!isClipboard);
   };
@@ -102,7 +102,7 @@ const JobDetails = () => {
     let encodeURL: string = encodeURIComponent(stringURL);
 
     const geoCodeAddress = async (apiURL: string) => {
-      let endpoint: string = "mapbox.places";
+      const endpoint: string = "mapbox.places";
       const mapBoxResponse: Response = await fetch(
         `https://api.mapbox.com/geocoding/v5/${endpoint}/${apiURL}.json?proximity=ip&types=place%2Cpostcode%2Caddress&access_token=${MAPBOX_TOKEN}&limit=1`
       );
@@ -113,8 +113,13 @@ const JobDetails = () => {
     if (encodeURL) {
       geoCodeAddress(encodeURL);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [
+    address?.street,
+    address?.number,
+    address?.postcode,
+    address?.city,
+    address?.country,
+  ]);
 
   return (
     <section className="details-section">
