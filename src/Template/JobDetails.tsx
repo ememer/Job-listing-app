@@ -31,8 +31,8 @@ type AddressObject = {
   city: string;
   country: string;
   street: string;
-  number: number
-}
+  number: number;
+};
 
 interface JobList {
   company: string;
@@ -51,6 +51,7 @@ interface JobList {
 
 const JobDetails = () => {
   const [isClipboard, setIsClipboard] = useState(false);
+  const [coordinatesArray, setCoordinatesArray] = useState([0, 0]);
   const { id } = useParams();
 
   let pageId: number;
@@ -92,13 +93,29 @@ const JobDetails = () => {
     }
   }, [isClipboard]);
 
-  useEffect(():void =>{
-    let stringURL: string = `${address?.street} ${address?.number} ${address?.postcode} ${address?.city} ${address?.country}`
-    let encodeURL: string = encodeURIComponent(stringURL)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+  type ResponseApi = {
+    features: [{ center: [number, number] }];
+  };
 
-  
+  useEffect((): void => {
+    let stringURL: string = `${address?.street} ${address?.number} ${address?.postcode} ${address?.city} ${address?.country}`;
+    let encodeURL: string = encodeURIComponent(stringURL);
+
+    const geoCodeAddress = async (apiURL: string) => {
+      let endpoint: string = "mapbox.places";
+      const mapBoxResponse: Response = await fetch(
+        `https://api.mapbox.com/geocoding/v5/${endpoint}/${apiURL}.json?proximity=ip&types=place%2Cpostcode%2Caddress&access_token=${MAPBOX_TOKEN}&limit=1`
+      );
+      let response: ResponseApi = await mapBoxResponse.json();
+      let coordinatesArray = response?.features[0].center;
+      setCoordinatesArray(coordinatesArray);
+    };
+    if (encodeURL) {
+      geoCodeAddress(encodeURL);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <section className="details-section">
       {isClipboard && (
@@ -180,6 +197,7 @@ const JobDetails = () => {
             borderRadius: "10px",
           }}
           className="map-layer"
+          center={[coordinatesArray[0], coordinatesArray[1]]}
         >
           <Layer
             type="symbol"
