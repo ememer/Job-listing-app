@@ -204,11 +204,7 @@ const JobDetails = () => {
           className="map-layer"
           center={[coordinatesArray[0], coordinatesArray[1]]}
         >
-          <Layer
-            type="symbol"
-            id="marker"
-            layout={{ "icon-image": "marker-15" }}
-          >
+          <Layer>
             <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
           </Layer>
         </Map>

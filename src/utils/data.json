@@ -20,12 +20,12 @@
       "subtitle": "Cupcake ipsum dolor sit amet",
       "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
     },
-    "address":{
-      "postcode": "41-407",
-      "city": "Imielin",
-      "country": "Poland",
-      "street": "Brata Alberta",
-      "number": 2
+    "address": {
+      "postcode": "NY 10022",
+      "city": "New York",
+      "country": "United States",
+      "street": "Park Ave",
+      "number": 301
     }
   },
   {
@@ -48,6 +48,13 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "subtitle": "Cupcake ipsum dolor sit amet",
       "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    },
+    "address": {
+      "postcode": "159-161 Sussex Gardens",
+      "city": " London W2 2RY",
+      "country": "England",
+      "street": "Tyburnia",
+      "number": 54
     }
   },
   {
@@ -61,7 +68,7 @@
     "level": "Junior",
     "postedAt": "2d ago",
     "contract": "Part Time",
-    "location": "USA Only",
+    "location": "Paris",
     "languages": ["JavaScript"],
     "tools": ["React", "Sass"],
     "image": "https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -70,6 +77,13 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "subtitle": "Cupcake ipsum dolor sit amet",
       "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    },
+    "address": {
+      "postcode": "75001",
+      "city": " Paris",
+      "country": "France",
+      "street": "Pl. Vendôme",
+      "number": 15
     }
   },
   {
@@ -83,7 +97,7 @@
     "level": "Junior",
     "postedAt": "5d ago",
     "contract": "Contract",
-    "location": "USA Only",
+    "location": "Asia",
     "languages": ["CSS", "JavaScript"],
     "tools": [],
     "image": "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -92,6 +106,13 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "subtitle": "Cupcake ipsum dolor sit amet",
       "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    },
+    "address": {
+      "postcode": "189673",
+      "city": "Singapore",
+      "country": "Asia",
+      "street": "Beach Rd",
+      "number": 1
     }
   },
   {
@@ -114,6 +135,13 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "subtitle": "Cupcake ipsum dolor sit amet",
       "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    },
+    "address": {
+      "postcode": "Maharashtra",
+      "city": "Mumbai",
+      "country": "India",
+      "street": "Apollo Bandar",
+      "number": 400001
     }
   },
   {
@@ -127,7 +155,7 @@
     "level": "Junior",
     "postedAt": "2w ago",
     "contract": "Full Time",
-    "location": "UK Only",
+    "location": "Remote",
     "languages": ["Ruby"],
     "tools": ["RoR"],
     "image": "https://images.unsplash.com/photo-1580894896813-652ff5aa8146?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -136,6 +164,13 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "subtitle": "Cupcake ipsum dolor sit amet",
       "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    },
+    "address": {
+      "postcode": "40-121",
+      "city": " Katowice",
+      "country": "Polska",
+      "street": "Korfantego",
+      "number": 13
     }
   },
   {
@@ -158,6 +193,13 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "subtitle": "Cupcake ipsum dolor sit amet",
       "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    },
+    "address": {
+      "postcode": "01-202",
+      "city": " Warszawa",
+      "country": "Polska",
+      "street": "Jaktorowska",
+      "number": 5
     }
   },
   {
@@ -180,6 +222,13 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "subtitle": "Cupcake ipsum dolor sit amet",
       "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    },
+    "address": {
+      "postcode": "CA 90210",
+      "city": " Beverly Hills",
+      "country": "Unaited States",
+      "street": "Sunset Blvd",
+      "number": 9641
     }
   },
   {
@@ -202,6 +251,13 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "subtitle": "Cupcake ipsum dolor sit amet",
       "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    },
+    "address": {
+      "postcode": "53-332",
+      "city": "Wrocław",
+      "country": "Poland",
+      "street": "Powstańców Śląskich",
+      "number": 95
     }
   },
   {
@@ -224,6 +280,13 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "subtitle": "Cupcake ipsum dolor sit amet",
       "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    },
+    "address": {
+      "postcode": "31-123",
+      "city": "Kraków",
+      "country": "England",
+      "street": "Józefa Szujskiego",
+      "number": 5
     }
   }
 ]
