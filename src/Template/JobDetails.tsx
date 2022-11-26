@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import jobs from "../utils/data.json";
 import "mapbox-gl/dist/mapbox-gl.css";
-import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
+import { Map, Marker } from "react-map-gl";
 
 import {
   faLocationPin,
@@ -76,10 +76,6 @@ const JobDetails = () => {
     address,
   }: JobList = fakeApiResponse[0];
 
-  const Map = ReactMapboxGl({
-    accessToken: MAPBOX_TOKEN,
-  });
-
   const copyClipboard = (): void => {
     navigator.clipboard.writeText(window.location.href);
     setIsClipboard(!isClipboard);
@@ -108,6 +104,7 @@ const JobDetails = () => {
       );
       let response: ResponseApi = await mapBoxResponse.json();
       let coordinatesArray = response?.features[0].center;
+
       setCoordinatesArray(coordinatesArray);
     };
     if (encodeURL) {
@@ -194,20 +191,29 @@ const JobDetails = () => {
             <p>{description.subtext}</p>
           </div>
         </div>
-        <Map
-          // eslint-disable-next-line react/style-prop-object
-          style="mapbox://styles/mapbox/streets-v9"
-          containerStyle={{
-            width: "100%",
-            borderRadius: "10px",
-          }}
-          className="map-layer"
-          center={[coordinatesArray[0], coordinatesArray[1]]}
-        >
-          <Layer>
-            <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
-          </Layer>
-        </Map>
+        {coordinatesArray[0] !== 0 && coordinatesArray[1] !== 0 && (
+          <span className="map-layer">
+          <Map
+            mapStyle="mapbox://styles/mapbox/streets-v9"
+            style={{
+              width: "100%",
+              borderRadius: "10px",
+            }}
+            initialViewState={{
+              longitude: coordinatesArray[0],
+              latitude: coordinatesArray[1],
+              zoom: 12,
+            }}
+            mapboxAccessToken={MAPBOX_TOKEN}
+          >
+            <Marker
+              longitude={coordinatesArray[0]}
+              latitude={coordinatesArray[1]}
+              anchor="bottom"
+            ></Marker>
+          </Map>
+            </span>
+        )}
       </div>
     </section>
   );
