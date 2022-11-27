@@ -1,17 +1,16 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import "./App.css";
-import { Outlet, ScrollRestoration } from "react-router-dom";
 import Layout from "./components/Layout";
 
-function App() {
+function Root() {
   return (
     <div className="App">
-      <ScrollRestoration />
       <Layout>
-        <Outlet />
+        <Outlet/>
       </Layout>
     </div>
   );
 }
 
-export default App;
+export default Root;

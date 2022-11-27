@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import jobs from "../utils/data.json";
 import "mapbox-gl/dist/mapbox-gl.css";
-import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
+import { Map, Marker } from "react-map-gl";
 
 import {
   faLocationPin,
@@ -26,6 +26,14 @@ type JobDescription = {
   subtext: string;
 };
 
+type AddressObject = {
+  postcode: string;
+  city: string;
+  country: string;
+  street: string;
+  number: number;
+};
+
 interface JobList {
   company: string;
   contract: string;
@@ -38,10 +46,12 @@ interface JobList {
   tools: string[];
   image: string;
   description: JobDescription;
+  address?: AddressObject;
 }
 
 const JobDetails = () => {
   const [isClipboard, setIsClipboard] = useState(false);
+  const [coordinatesArray, setCoordinatesArray] = useState([0, 0]);
   const { id } = useParams();
 
   let pageId: number;
@@ -63,13 +73,10 @@ const JobDetails = () => {
     tools,
     image,
     description,
+    address,
   }: JobList = fakeApiResponse[0];
 
-  const Map = ReactMapboxGl({
-    accessToken: MAPBOX_TOKEN,
-  });
-
-  const copyClipboard = () => {
+  const copyClipboard = (): void => {
     navigator.clipboard.writeText(window.location.href);
     setIsClipboard(!isClipboard);
   };
@@ -81,6 +88,35 @@ const JobDetails = () => {
       }, 1500);
     }
   }, [isClipboard]);
+
+  type ResponseApi = {
+    features: [{ center: [number, number] }];
+  };
+
+  useEffect((): void => {
+    let stringURL: string = `${address?.street} ${address?.number} ${address?.postcode} ${address?.city} ${address?.country}`;
+    let encodeURL: string = encodeURIComponent(stringURL);
+
+    const geoCodeAddress = async (apiURL: string) => {
+      const endpoint: string = "mapbox.places";
+      const mapBoxResponse: Response = await fetch(
+        `https://api.mapbox.com/geocoding/v5/${endpoint}/${apiURL}.json?proximity=ip&types=place%2Cpostcode%2Caddress&access_token=${MAPBOX_TOKEN}&limit=1`
+      );
+      let response: ResponseApi = await mapBoxResponse.json();
+      let coordinatesArray = response?.features[0].center;
+
+      setCoordinatesArray(coordinatesArray);
+    };
+    if (encodeURL) {
+      geoCodeAddress(encodeURL);
+    }
+  }, [
+    address?.street,
+    address?.number,
+    address?.postcode,
+    address?.city,
+    address?.country,
+  ]);
 
   return (
     <section className="details-section">
@@ -155,22 +191,29 @@ const JobDetails = () => {
             <p>{description.subtext}</p>
           </div>
         </div>
-        <Map
-          style="mapbox://styles/mapbox/streets-v9"
-          containerStyle={{
-            width: "100%",
-            borderRadius: "10px",
-          }}
-          className="map-layer"
-        >
-          <Layer
-            type="symbol"
-            id="marker"
-            layout={{ "icon-image": "marker-15" }}
+        {coordinatesArray[0] !== 0 && coordinatesArray[1] !== 0 && (
+          <span className="map-layer">
+          <Map
+            mapStyle="mapbox://styles/mapbox/streets-v9"
+            style={{
+              width: "100%",
+              borderRadius: "10px",
+            }}
+            initialViewState={{
+              longitude: coordinatesArray[0],
+              latitude: coordinatesArray[1],
+              zoom: 12,
+            }}
+            mapboxAccessToken={MAPBOX_TOKEN}
           >
-            <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
-          </Layer>
-        </Map>
+            <Marker
+              longitude={coordinatesArray[0]}
+              latitude={coordinatesArray[1]}
+              anchor="bottom"
+            ></Marker>
+          </Map>
+            </span>
+        )}
       </div>
     </section>
   );
