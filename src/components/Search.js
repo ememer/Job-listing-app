@@ -10,29 +10,30 @@ const SearchCompnent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <div
-        id="search-section"
+    id="search-section"
+    className={clsx(isSearchOpen && " enabled", "search-section")}
       onClick={(e) => {
-        if (e.target.id !== "search") {
+        if (e.target.id === "search-section") {
           setIsSearchOpen(false);
         }
       }}
-      className={clsx(isSearchOpen && "search-section")}
     >
-      <div className="search-component"></div>
       <div
-        id="search"
+
         onClick={() => setIsSearchOpen(true)}
-        className="search-items"
+        className="search-component"
       >
-        <ul>
-          <li>
-            <span>TEST</span>
-            <button>
-              <FontAwesomeIcon icon={faXmark} />
-            </button>
-          </li>
-        </ul>
-        <button>Wyczyść</button>
+        <div className="search-items">
+          <ul >
+            <li >
+              <span >TEST</span>
+              <button>
+                <FontAwesomeIcon icon={faXmark} />
+              </button>
+            </li>
+          </ul>
+          <button>Wyczyść</button>
+        </div>
       </div>
     </div>
   );
