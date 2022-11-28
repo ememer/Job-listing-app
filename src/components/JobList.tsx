@@ -1,6 +1,7 @@
 import React from "react";
 import JobCard from "./JobCard";
 import { Link } from "react-router-dom";
+import SearchCompnent from "./Search";
 
 type Props = {
   jobs: {
@@ -23,6 +24,7 @@ type Props = {
 const JobList = ({ jobs }: Props) => {
   return (
     <>
+    <SearchCompnent/>
       {jobs?.map((job) => (
         <Link key={job.id} to={`/job/${job.id}`}>
           <JobCard
