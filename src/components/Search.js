@@ -6,7 +6,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "./Search.css";
 import clsx from "clsx";
 
-const SearchCompnent = () => {
+const SearchComponent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <div
@@ -19,7 +19,6 @@ const SearchCompnent = () => {
       }}
     >
       <div
-
         onClick={() => setIsSearchOpen(true)}
         className="search-component"
       >
@@ -39,4 +38,4 @@ const SearchCompnent = () => {
   );
 };
 
-export default SearchCompnent;
+export default SearchComponent;
