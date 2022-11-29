@@ -7,21 +7,11 @@ import "./Search.css";
 import clsx from "clsx";
 
 import data from "./../utils/data.json";
+import SearchItemList from "./SearchItemList";
 
 const SearchComponent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [filtersArray, setFiltersArray] = useState([]);
-
-  console.log(filtersArray);
-
-  const getUniqueElements = (data, key) => {
-    let arrayOfEachElements = [];
-    data.map((elements) =>
-      elements?.[key].forEach((element) => arrayOfEachElements.push(element))
-    );
-
-    return [...new Set(arrayOfEachElements)];
-  };
 
   const addFilters = (e) => {
     if (filtersArray.includes(e.target.id)) {
@@ -67,8 +57,7 @@ const SearchComponent = () => {
                 <span>{element}</span>
                 <button
                   onClick={(e) => {
-                    console.log("click", e.target.id, e.target);
-                    setFiltersArray(
+                      setFiltersArray(
                       filtersArray.filter((filters) => filters !== e.target.id)
                     );
                   }}
@@ -91,40 +80,20 @@ const SearchComponent = () => {
       </div>
       {isSearchOpen && (
         <div className="search-filters">
-          <div>
-            <h2>Technologies</h2>
-            <ul>
-              {getUniqueElements(data, "tools").map((tool) => (
-                <li
-                  className={clsx(
-                    filtersArray.includes(tool) ? "selected" : "unselected"
-                  )}
-                  key={tool}
-                >
-                  <button onClick={(e) => addFilters(e)} id={tool}>
-                    {tool}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2>Languages</h2>
-            <ul>
-              {getUniqueElements(data, "languages").map((language) => (
-                <li
-                  className={clsx(
-                    filtersArray.includes(language) ? "selected" : "unselected"
-                  )}
-                  key={language}
-                >
-                  <button onClick={(e) => addFilters(e)} id={language}>
-                    {language}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <SearchItemList
+            title="Technologies"
+            data={data}
+            targetKey="tools"
+            filtersArray={filtersArray}
+            onClick={addFilters}
+          />
+          <SearchItemList
+            title="Languages"
+            data={data}
+            targetKey="languages"
+            filtersArray={filtersArray}
+            onClick={addFilters}
+          />
         </div>
       )}
     </div>
