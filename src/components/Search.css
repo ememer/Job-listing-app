@@ -51,24 +51,28 @@
 }
 
 .search-items > ul > li {
-  display: grid;
-  grid-template-columns: 2.5fr 1fr;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   margin: 1% 1%;
   background-color: var(--bg-accents);
   border-radius: 5px;
   padding: 0px 0px 0px 2px;
 }
+
 .search-items > ul > li > span {
-  display: inline-block;
-  margin: auto;
+  margin: 0 10px;
 }
 
 .search-items > ul > li button {
+  display: flex;
+  justify-items: center;
+  align-items: center;
   color: var(--main-accents);
   background-color: var(--light-gray);
   border-radius: 0 5px 5px 0;
-  padding: 2px 5px;
+  padding: 5px;
   cursor: pointer;
 }
 
@@ -89,3 +93,8 @@
   padding: 10px;
   box-shadow: 1px 4px 22px -11px rgba(0, 0, 0, 0.7);
 }
+
+.search-filters > div > ul > li {
+    display: inline-block;
+  }
+  

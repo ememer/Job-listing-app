@@ -10,6 +10,7 @@ import data from "./../utils/data.json";
 
 const SearchComponent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [filtersArray, setFiltersArray] = useState([]);
 
   const getUniqueElements = (data, key) => {
     let arrayOfEachElements = [];
@@ -18,6 +19,14 @@ const SearchComponent = () => {
     );
 
     return [...new Set(arrayOfEachElements)];
+  };
+
+  const addFilters = (e) => {
+    if (filtersArray.includes(e.target.value)) {
+      return;
+    } else {
+      setFiltersArray((prevState) => [...prevState, e.target.value]);
+    }
   };
 
   const onClose = (e) => {
@@ -45,20 +54,34 @@ const SearchComponent = () => {
         id="search_content"
       >
         <div
+          id="search_content"
           className={clsx(
             isSearchOpen ? "enabled-search-items" : "disabled-search-items",
             "search-items"
           )}
         >
-          <ul id="search_content">
-            <li>
-              <span>TEST</span>
-              <button>
-                <FontAwesomeIcon icon={faXmark} />
-              </button>
-            </li>
+          <ul>
+            {filtersArray.map((element) => (
+              <li key={element}>
+                <span>{element}</span>
+                <button
+                  onClick={(e) =>
+                    setFiltersArray(
+                      filtersArray.filter(
+                        (filters) => filters !== e.target.value
+                      )
+                    )
+                  }
+                  value={element}
+                >
+                  <FontAwesomeIcon icon={faXmark} />
+                </button>
+              </li>
+            ))}
           </ul>
-          <button id="clear_button">Wyczyść</button>
+          <button onClick={() => setFiltersArray([])} id="clear_button">
+            Wyczyść
+          </button>
           {isSearchOpen && (
             <button onClick={() => setIsSearchOpen(false)}>
               <FontAwesomeIcon icon={faXmark} />
@@ -69,16 +92,26 @@ const SearchComponent = () => {
       {isSearchOpen && (
         <div className="search-filters">
           <div>
+            <h2>Technologies</h2>
             <ul>
               {getUniqueElements(data, "tools").map((tool) => (
-                <li key={tool}>{tool}</li>
+                <li key={tool}>
+                  <button onClick={(e) => addFilters(e)} value={tool}>
+                    {tool}
+                  </button>
+                </li>
               ))}
             </ul>
           </div>
           <div>
+            <h2>Languages</h2>
             <ul>
               {getUniqueElements(data, "languages").map((language) => (
-                <li key={language}>{language}</li>
+                <li key={language}>
+                  <button onClick={(e) => addFilters(e)} value={language}>
+                    {language}
+                  </button>
+                </li>
               ))}
             </ul>
           </div>
