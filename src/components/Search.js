@@ -22,10 +22,10 @@ const SearchComponent = () => {
   };
 
   const addFilters = (e) => {
-    if (filtersArray.includes(e.target.value)) {
+    if (filtersArray.includes(e.target.id)) {
       return;
     } else {
-      setFiltersArray((prevState) => [...prevState, e.target.value]);
+      setFiltersArray((prevState) => [...prevState, e.target.id]);
     }
   };
 
@@ -54,27 +54,28 @@ const SearchComponent = () => {
         id="search_content"
       >
         <div
-          id="search_content"
           className={clsx(
             isSearchOpen ? "enabled-search-items" : "disabled-search-items",
             "search-items"
           )}
+          id="search_content"
         >
           <ul>
             {filtersArray.map((element) => (
               <li key={element}>
                 <span>{element}</span>
                 <button
-                  onClick={(e) =>
+                  onClick={(e) => {
+                    console.log("click", e.target.id, e.target);
                     setFiltersArray(
                       filtersArray.filter(
-                        (filters) => filters !== e.target.value
+                        (filters) => filters !== e.target.id
                       )
-                    )
-                  }
-                  value={element}
+                    );
+                  }}
+                  id={element}
                 >
-                  <FontAwesomeIcon icon={faXmark} />
+                  <FontAwesomeIcon id={element} icon={faXmark} />
                 </button>
               </li>
             ))}
@@ -96,7 +97,7 @@ const SearchComponent = () => {
             <ul>
               {getUniqueElements(data, "tools").map((tool) => (
                 <li key={tool}>
-                  <button onClick={(e) => addFilters(e)} value={tool}>
+                  <button onClick={(e) => addFilters(e)} id={tool}>
                     {tool}
                   </button>
                 </li>
@@ -108,7 +109,7 @@ const SearchComponent = () => {
             <ul>
               {getUniqueElements(data, "languages").map((language) => (
                 <li key={language}>
-                  <button onClick={(e) => addFilters(e)} value={language}>
+                  <button onClick={(e) => addFilters(e)} id={language}>
                     {language}
                   </button>
                 </li>
