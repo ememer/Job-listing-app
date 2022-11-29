@@ -95,9 +95,17 @@
   box-shadow: 1px 4px 22px -11px rgba(0, 0, 0, 0.7);
 }
 
+.unselected {
+    background-color: var(--bg-accents);
+}
+
+.selected  {
+    background-color: var(--selected);
+}
+
 .search-filters > div > ul > li {
   display: inline-block;
-  background-color: var(--bg-accents);
+ 
   border-radius: 5px;
   padding: 5px 10px;
   margin: 0px 10px;
@@ -124,3 +132,4 @@
 button {
     cursor: pointer;
 }
+

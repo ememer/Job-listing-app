@@ -12,6 +12,8 @@ const SearchComponent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [filtersArray, setFiltersArray] = useState([]);
 
+  console.log(filtersArray);
+
   const getUniqueElements = (data, key) => {
     let arrayOfEachElements = [];
     data.map((elements) =>
@@ -34,7 +36,6 @@ const SearchComponent = () => {
       setIsSearchOpen(false);
     }
   };
-
   return (
     <div
       id="search-section"
@@ -60,7 +61,7 @@ const SearchComponent = () => {
           )}
           id="search_content"
         >
-          <ul>
+          <ul id="search_content">
             {filtersArray.map((element) => (
               <li key={element}>
                 <span>{element}</span>
@@ -68,14 +69,12 @@ const SearchComponent = () => {
                   onClick={(e) => {
                     console.log("click", e.target.id, e.target);
                     setFiltersArray(
-                      filtersArray.filter(
-                        (filters) => filters !== e.target.id
-                      )
+                      filtersArray.filter((filters) => filters !== e.target.id)
                     );
                   }}
                   id={element}
                 >
-                  <FontAwesomeIcon id={element} icon={faXmark} />
+                  x
                 </button>
               </li>
             ))}
@@ -96,7 +95,12 @@ const SearchComponent = () => {
             <h2>Technologies</h2>
             <ul>
               {getUniqueElements(data, "tools").map((tool) => (
-                <li key={tool}>
+                <li
+                  className={clsx(
+                    filtersArray.includes(tool) ? "selected" : "unselected"
+                  )}
+                  key={tool}
+                >
                   <button onClick={(e) => addFilters(e)} id={tool}>
                     {tool}
                   </button>
@@ -108,7 +112,12 @@ const SearchComponent = () => {
             <h2>Languages</h2>
             <ul>
               {getUniqueElements(data, "languages").map((language) => (
-                <li key={language}>
+                <li
+                  className={clsx(
+                    filtersArray.includes(language) ? "selected" : "unselected"
+                  )}
+                  key={language}
+                >
                   <button onClick={(e) => addFilters(e)} id={language}>
                     {language}
                   </button>
