@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
 import "./Search.css";
 import clsx from "clsx";
 
@@ -12,7 +11,7 @@ import SearchItemList from "./SearchItemList";
 const SearchComponent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [filtersArray, setFiltersArray] = useState<string[]>([]);
-
+  
   const addFilters = (e: React.MouseEvent) => {
     if (filtersArray.includes((e.target as HTMLButtonElement).id)) {
       return;
