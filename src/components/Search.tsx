@@ -6,22 +6,25 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "./Search.css";
 import clsx from "clsx";
 
-import data from "./../utils/data.json";
+import data from "../utils/data.json";
 import SearchItemList from "./SearchItemList";
 
 const SearchComponent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [filtersArray, setFiltersArray] = useState([]);
+  const [filtersArray, setFiltersArray] = useState<string[]>([]);
 
-  const addFilters = (e) => {
-    if (filtersArray.includes(e.target.id)) {
+  const addFilters = (e: Event) => {
+    if (filtersArray.includes((e.target as HTMLButtonElement).id)) {
       return;
     } else {
-      setFiltersArray((prevState) => [...prevState, e.target.id]);
+      setFiltersArray((prevState) => [
+        ...prevState,
+        (e.target as HTMLButtonElement).id,
+      ]);
     }
   };
 
-  const onClose = (e) => {
+  const onClose = (e: any) => {
     if (e.target.id === "search-section") {
       setIsSearchOpen(false);
     }
@@ -30,10 +33,10 @@ const SearchComponent = () => {
     <div
       id="search-section"
       className={clsx(isSearchOpen && " enabled", "search-section")}
-      onClick={(e) => onClose(e)}
+      onClick={(e: React.MouseEvent<HTMLDivElement>) => onClose(e)}
     >
       <div
-        onClick={(e) => {
+        onClick={(e: any) => {
           if (
             e.target.id !== "remove_button" &&
             e.target.id === "search_content"
@@ -56,9 +59,12 @@ const SearchComponent = () => {
               <li key={element}>
                 <span>{element}</span>
                 <button
-                  onClick={(e) => {
-                      setFiltersArray(
-                      filtersArray.filter((filters) => filters !== e.target.id)
+                  onClick={(e: React.MouseEvent) => {
+                    setFiltersArray(
+                      filtersArray.filter(
+                        (filters) =>
+                          filters !== (e.target as HTMLButtonElement).id
+                      )
                     );
                   }}
                   id={element}
