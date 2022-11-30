@@ -1,9 +1,7 @@
-
 type DataObject = {
-    tools: string[];
-    languages: string[]
-}
-
+  tools: string[];
+  languages: string[];
+};
 
 export const getUniqueElements = (
   data: Array<DataObject>,
@@ -16,5 +14,3 @@ export const getUniqueElements = (
 
   return [...new Set(arrayOfEachElements)];
 };
-
-

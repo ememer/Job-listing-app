@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import "./Search.css";
 import clsx from "clsx";
 
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import data from "../utils/data.json";
 import SearchItemList from "./SearchItemList";
 
@@ -55,7 +55,7 @@ const SearchComponent = () => {
           id="search_content"
         >
           <ul id="search_content">
-            {filtersArray.map((element) => (
+            {filtersArray.map((element: string) => (
               <li key={element}>
                 <span>{element}</span>
                 <button

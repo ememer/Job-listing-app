@@ -7,7 +7,7 @@ function Root() {
   return (
     <div className="App">
       <Layout>
-        <Outlet/>
+        <Outlet />
       </Layout>
     </div>
   );
