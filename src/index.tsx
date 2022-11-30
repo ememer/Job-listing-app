@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "the-new-css-reset/css/reset.css";
-import jobs from "./utils/data.json";
 import App from "./App";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import JobDetails from "./Template/JobDetails";
@@ -15,7 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErorrPage />,
     children: [
-      { index: true, element: <JobList jobs={jobs} /> },
+      { index: true, element: <JobList/> },
       {
         path: "job/:id",
         element: <JobDetails />,

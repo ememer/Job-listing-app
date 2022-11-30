@@ -2,14 +2,17 @@ import React from "react";
 import "./App.css";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import Layout from "./components/Layout";
+import JobListProvider from "./Context/JobsListProvider";
 
 function App() {
   return (
     <div className="App">
       <ScrollRestoration />
-      <Layout>
-        <Outlet />
-      </Layout>
+      <JobListProvider>
+        <Layout>
+          <Outlet />
+        </Layout>
+      </JobListProvider>
     </div>
   );
 }

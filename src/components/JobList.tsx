@@ -1,27 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import JobCard from "./JobCard";
 import { Link } from "react-router-dom";
 import SearchCompnent from "./Search";
+import { JobListContext } from "../Context/JobsListContext";
 
-type Props = {
-  jobs: {
-    id: number;
-    company: string;
-    logo: string;
-    new: true | false;
-    featured?: true | false;
-    position: string;
-    role?: string;
-    level?: string;
-    postedAt: string;
-    contract: string;
-    location: string;
-    languages?: string[];
-    tools: string[];
-  }[];
-};
 
-const JobList = ({ jobs }: Props) => {
+const JobList = () => {
+  const jobs = useContext(JobListContext)
+ 
   return (
     <>
     <SearchCompnent/>

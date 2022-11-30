@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./Search.css";
 import clsx from "clsx";
 
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import data from "../utils/data.json";
 import SearchItemList from "./SearchItemList";
+import { JobListContext } from "../Context/JobsListContext";
 
 const SearchComponent = () => {
+  const data = useContext(JobListContext)
+
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [filtersArray, setFiltersArray] = useState<string[]>([]);
   
