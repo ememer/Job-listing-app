@@ -9,6 +9,7 @@
   --background: hsl(180, 52%, 96%);
   --bg-dark: hsl(180, 8%, 62%);
   --light-gray: 		hsla(228, 6%, 65%, 0.432);
+  --selected: hsl(180, 57%, 72%);
 }
 
 body {
