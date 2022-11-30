@@ -112,8 +112,6 @@
   font-weight: 800;
   color: var(--main-accents);
 }
-.search-filters > div > ul > li > button {
-}
 
 .search-filters > div {
   margin: 50px 0px;

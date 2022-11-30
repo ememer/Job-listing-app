@@ -13,7 +13,7 @@ const SearchComponent = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [filtersArray, setFiltersArray] = useState<string[]>([]);
 
-  const addFilters = (e: Event) => {
+  const addFilters = (e: React.MouseEvent) => {
     if (filtersArray.includes((e.target as HTMLButtonElement).id)) {
       return;
     } else {
@@ -24,8 +24,8 @@ const SearchComponent = () => {
     }
   };
 
-  const onClose = (e: any) => {
-    if (e.target.id === "search-section") {
+  const onClose = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).id === "search-section") {
       setIsSearchOpen(false);
     }
   };
@@ -36,10 +36,10 @@ const SearchComponent = () => {
       onClick={(e: React.MouseEvent<HTMLDivElement>) => onClose(e)}
     >
       <div
-        onClick={(e: any) => {
+        onClick={(e: React.MouseEvent<HTMLDivElement>) => {
           if (
-            e.target.id !== "remove_button" &&
-            e.target.id === "search_content"
+            (e.target as HTMLElement).id !== "remove_button" &&
+            (e.target as HTMLElement).id === "search_content"
           ) {
             setIsSearchOpen(true);
           }
@@ -59,7 +59,7 @@ const SearchComponent = () => {
               <li key={element}>
                 <span>{element}</span>
                 <button
-                  onClick={(e: React.MouseEvent) => {
+                  onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                     setFiltersArray(
                       filtersArray.filter(
                         (filters) =>
