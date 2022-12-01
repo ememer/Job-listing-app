@@ -9,16 +9,14 @@ import SearchItemList from "./SearchItemList";
 import { JobListContext } from "../Context/JobsListContext";
 
 const SearchComponent = () => {
-  const data = useContext(JobListContext)
-
+  const {jobLists, filtersArray, setFiltersArray} = useContext(JobListContext)
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [filtersArray, setFiltersArray] = useState<string[]>([]);
   
   const addFilters = (e: React.MouseEvent) => {
     if (filtersArray.includes((e.target as HTMLButtonElement).id)) {
       return;
     } else {
-      setFiltersArray((prevState) => [
+      setFiltersArray((prevState: any) => [
         ...prevState,
         (e.target as HTMLButtonElement).id,
       ]);
@@ -62,7 +60,7 @@ const SearchComponent = () => {
                 <button
                   onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                     setFiltersArray(
-                      filtersArray.filter(
+                      (filtersArray as string[]).filter(
                         (filters) =>
                           filters !== (e.target as HTMLButtonElement).id
                       )
@@ -89,14 +87,14 @@ const SearchComponent = () => {
         <div className="search-filters">
           <SearchItemList
             title="Technologies"
-            data={data}
+            data={jobLists}
             targetKey="tools"
             filtersArray={filtersArray}
             onClick={addFilters}
           />
           <SearchItemList
             title="Languages"
-            data={data}
+            data={jobLists}
             targetKey="languages"
             filtersArray={filtersArray}
             onClick={addFilters}

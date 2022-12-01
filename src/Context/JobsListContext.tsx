@@ -1,5 +1,4 @@
-import { createContext } from "react"
+import React, { createContext } from "react"
 
-import data from "./../utils/data.json"
 
-export const JobListContext = createContext(data)
+export const JobListContext = createContext<[] | any >([])

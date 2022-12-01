@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
 import JobCard from "./JobCard";
 import { Link } from "react-router-dom";
-import SearchCompnent from "./Search";
+import SearchComponent from "./Search";
 import { JobListContext } from "../Context/JobsListContext";
 
-
 const JobList = () => {
-  const jobs = useContext(JobListContext)
+  const { displayFilteredJobs} = useContext(JobListContext)
  
   return (
     <>
-    <SearchCompnent/>
-      {jobs?.map((job) => (
+    <SearchComponent/>
+      {displayFilteredJobs()?.map((job: any ) => (
         <Link key={job.id} to={`/job/${job.id}`}>
           <JobCard
             id={job.id}
