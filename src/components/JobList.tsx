@@ -3,9 +3,10 @@ import JobCard from "./JobCard";
 import { Link } from "react-router-dom";
 import SearchComponent from "./Search";
 import { JobListContext } from "../Context/JobsListContext";
+import { ContextType } from "../@types/JobListTypes";
 
 const JobList = () => {
-  const { displayFilteredJobs} = useContext(JobListContext)
+  const { displayFilteredJobs } = useContext(JobListContext) as ContextType
  
   return (
     <>

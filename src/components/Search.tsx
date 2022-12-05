@@ -7,9 +7,10 @@ import clsx from "clsx";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import SearchItemList from "./SearchItemList";
 import { JobListContext } from "../Context/JobsListContext";
+import { ContextType } from "../@types/JobListTypes";
 
 const SearchComponent = () => {
-  const {jobLists, filtersArray, setFiltersArray} = useContext(JobListContext)
+  const {jobLists, filtersArray, setFiltersArray} = useContext(JobListContext) as ContextType
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   
   const addFilters = (e: React.MouseEvent) => {
