@@ -1,0 +1,85 @@
+.employer__form {
+    margin: 5rem auto;
+    border-radius: 15px;
+    padding: 2rem;
+    /* height: 60vh; */
+    width: 100%;
+    background-color: var(--background);
+    box-shadow: 1px 4px 22px -11px rgba(0, 0, 0, 0.7);
+}
+
+.employer__fields {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 60%;
+    min-height: 70%;
+    margin: auto;
+}
+
+.employer__fields > div {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.employer__fields > div > label {
+    font-weight: 200;
+    font-size: 1.2rem;
+    color: var(--main-accents);
+    margin: 0px 0px 10px 15px;
+}
+
+.employer__fields > div > input,
+.employer__fields > div > textarea,
+.employer__fields > div > select  {  
+    resize: vertical;  
+    border-radius: 10px 10px 0 0;
+    box-shadow: 1px 4px 22px -11px rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    align-items: center;
+}
+
+.fields__photo {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.form__progressbar {
+    width: 60%;
+    margin: 1.3rem auto ;
+    padding: 20px;
+    
+}
+
+.progressbar__btn {
+    width: 60%;
+    margin: 1.3rem auto ;
+}
+
+
+.progressbar__btn > button{
+    width: 100%;
+    padding: 20px;
+    background-color: var(--main-accents);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.fields__progressbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    height: 1vh;
+}
+
+.fields__progressbar > span {
+    display: inline-block;
+    width: 100%;
+    background-color: var(--main-accents);
+}

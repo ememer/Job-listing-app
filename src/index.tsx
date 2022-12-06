@@ -4,20 +4,25 @@ import "./index.css";
 import "the-new-css-reset/css/reset.css";
 import App from "./App";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import JobDetails from "./Template/JobDetails";
+import JobDetails from "./Routes/JobDetails";
 import JobList from "./components/JobList";
-import ErorrPage from "./components/Error";
+import ErrorPage from "./components/Error";
+import EmployerPanel from "./Routes/EmployerPanel";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErorrPage />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <JobList/> },
       {
         path: "job/:id",
         element: <JobDetails />,
+      },
+      {
+        path: "employer-panel",
+        element: <EmployerPanel />,
       },
     ],
   },

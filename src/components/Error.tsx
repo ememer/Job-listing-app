@@ -5,7 +5,7 @@ import "./errorPage.css";
 import { faUserAstronaut, faShuttleSpace } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const ErorrPage = () => {
+const ErrorPage = () => {
   return (
     <div className="error-content">
       <div className="error-icon">
@@ -20,4 +20,4 @@ const ErorrPage = () => {
   );
 };
 
-export default ErorrPage;
+export default ErrorPage;
