@@ -2,18 +2,30 @@
     margin: 5rem auto;
     border-radius: 15px;
     padding: 2rem;
-    /* height: 60vh; */
     width: 100%;
     background-color: var(--background);
     box-shadow: 1px 4px 22px -11px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    animation-name: extend;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+}
+
+@keyframes extend {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 100;
+    }
 }
 
 .employer__fields {
+    transition-duration: 2s;
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
     width: 60%;
-    min-height: 70%;
     margin: auto;
 }
 
@@ -39,6 +51,10 @@
     align-items: center;
 }
 
+.employer__fields > div > select {
+    cursor: pointer;
+}
+
 .fields__photo {
     background-position: center;
     background-size: cover;
@@ -57,12 +73,24 @@
 }
 
 .progressbar__btn {
+    display: grid;
+    gap: 1rem;
     width: 60%;
     margin: 1.3rem auto ;
 }
 
+.sglbtn {
+    grid-template-columns: 1fr;
+}
+.dblbtn {
+    grid-template-columns: 1fr 1fr;
+}
 
-.progressbar__btn > button{
+
+
+
+.btn {
+    display: inline-block;
     width: 100%;
     padding: 20px;
     background-color: var(--main-accents);
@@ -73,13 +101,18 @@
 
 .fields__progressbar {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 10px;
     height: 1vh;
 }
 
-.fields__progressbar > span {
+.active__step {
+    background-color: var(--main-accents);
+    transition-duration: 2s;
+}
+
+.fields__step {
     display: inline-block;
     width: 100%;
-    background-color: var(--main-accents);
+    background-color: var(--bg-accents);
 }
