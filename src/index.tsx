@@ -29,11 +29,12 @@ const router = createBrowserRouter([
                 path: 'employer-panel',
                 element: <EmployerPanel />,
                 children: [
-                    { path: '/employer-panel/step=1', element: <EmployerFirstStepForm /> },
-                    { path: '/employer-panel/step=2', element: <EmployerSecondStepForm /> },
-                    { path: '/employer-panel/step=3', element: <EmployerThirdStepForm /> },
-                    { path: '/employer-panel/step=4', element: <EmployerFourthStepForm /> },
-                    { path: '/employer-panel/step=5', element: <EmployerFifthStepForm /> },
+
+                    { path: 'step=1', element: <EmployerFirstStepForm /> },
+                    { path: 'step=2', element: <EmployerSecondStepForm /> },
+                    { path: 'step=3', element: <EmployerThirdStepForm /> },
+                    { path: 'step=4', element: <EmployerFourthStepForm /> },
+                    {  path: 'step=5', element: <EmployerFifthStepForm /> },
                 ],
             },
         ],

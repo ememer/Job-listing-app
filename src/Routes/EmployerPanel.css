@@ -8,7 +8,7 @@
     overflow: hidden;
     animation-name: extend;
     animation-timing-function: ease-in;
-    animation-duration: 1s;
+    animation-duration: 2s;
 }
 
 @keyframes extend {
