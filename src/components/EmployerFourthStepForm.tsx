@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FormContextProvider } from '../@types/FormContext';
+import { FormContext } from '../Context/FormContext';
 
 const EmployerFourthStepForm = () => {
+    const { employerAnnouncement, setEmployerAnnouncement } = useContext(FormContext) as FormContextProvider;
+
     return (
         <div className="employer__fields">
             <div>
