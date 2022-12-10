@@ -17,20 +17,22 @@ const EmployerSecondStepForm = () => {
         return text.replaceAll(re, ' ');
     };
 
-    const removeInputElements = (e: React.MouseEvent, key: "languages" | "tools") => {
-        setUserInputLangs((prevStateText) => {
+    const removeInputElements = (e: React.MouseEvent, key: 'languages' | 'tools') => {
+        let inputTarget = key === 'tools' ? setUserInputTools : setUserInputLangs;
+
+        inputTarget((prevStateText) => {
             if (prevStateText.includes(`${(e.target as HTMLLIElement).id}, `)) {
                 return prevStateText.replace(`${(e.target as HTMLLIElement).id}, `, '');
             }
             return prevStateText.replace(`${(e.target as HTMLLIElement).id}`, '');
         });
+
         setEmployerAnnouncement((pS: JobListObject) => ({
             ...pS,
             [key]: pS[key].filter((elem) => elem !== (e.target as HTMLLIElement).id),
         }));
     };
 
-  
     useEffect(() => {
         let key = focusedFiled === 'TOOLS' ? 'tools' : 'languages';
         let target = focusedFiled === 'TOOLS' ? userInputTools : userInputLangs;
@@ -64,8 +66,8 @@ const EmployerSecondStepForm = () => {
                 <label>Technical languages</label>
                 <input
                     id="LANGS"
-                    onFocus={(e) => setFocusedField(e.target.id)}
                     value={userInputLangs}
+                    onFocus={(e) => setFocusedField(e.target.id)}
                     onChange={(e) => {
                         setUserInputLangs(protectWhiteSpaces(e.target.value));
                     }}
@@ -78,7 +80,11 @@ const EmployerSecondStepForm = () => {
                         <span>Click on each of element to remove</span>
                         <ul>
                             {employerAnnouncement.languages.map((lang, idx) => (
-                                <li onClick={(e) => removeInputElements(e, "languages")} id={lang} key={`${idx}#${lang}`}>
+                                <li
+                                    onClick={(e) => removeInputElements(e, 'languages')}
+                                    id={lang}
+                                    key={`${idx}#${lang}`}
+                                >
                                     {lang}
                                 </li>
                             ))}
@@ -105,7 +111,7 @@ const EmployerSecondStepForm = () => {
                         <span>Click on each of element to remove</span>
                         <ul>
                             {employerAnnouncement.tools.map((tool, idx) => (
-                                <li onClick={(e) => removeInputElements(e, "tools")} id={tool} key={`${idx}#${tool}`}>
+                                <li onClick={(e) => removeInputElements(e, 'tools')} id={tool} key={`${idx}#${tool}`}>
                                     {tool}
                                 </li>
                             ))}
