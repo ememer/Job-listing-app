@@ -51,6 +51,12 @@
     align-items: center;
 }
 
+.employer__fields > div > input::placeholder {
+    color: var(--main-accents);
+    font-size: 1rem;
+    font-weight: 200;
+}
+
 .employer__fields > div > select {
     cursor: pointer;
 }
