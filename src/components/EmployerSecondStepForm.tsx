@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FormContextProvider } from '../@types/FormContext';
 import { JobListObject } from '../@types/JobListTypes';
-import { FormContext } from './../Context/FormContext';
+import { FormContext } from '../Context/FormContext';
 
 const EmployerSecondStepForm = () => {
-    const [userInputLangs, setUserInputLangs] = useState('');
-    const [userInputTools, setUserInputTools] = useState('');
-    const [FocusedFiled, setFocusedField] = useState('');
+    const [userInputLangs, setUserInputLangs] = useState<string>('');
+    const [userInputTools, setUserInputTools] = useState<string>('');
+    const [focusedFiled, setFocusedField] = useState('');
 
     const { employerAnnouncement, setEmployerAnnouncement, setAnnouncementField } = useContext(
         FormContext,
@@ -17,46 +17,28 @@ const EmployerSecondStepForm = () => {
         return text.replaceAll(re, ' ');
     };
 
-    const convertStringToArray = (text: string): string[] => {
-        let commaIndexes: number[] = [];
-        let index = 0;
-        for (const character of text) {
-            if (character === ',') {
-                commaIndexes.push(index);
+    const removeInputElements = (e: React.MouseEvent) => {
+        setUserInputLangs((prevStateText) => {
+            if (prevStateText.includes(`${(e.target as HTMLLIElement).id}, `)) {
+                return prevStateText.replace(`${(e.target as HTMLLIElement).id}, `, '');
             }
-            index++;
-        }
-
-        let arrOfWords: string[] = [];
-        let arrayIndex: number = 1;
-
-        arrOfWords.push(text.slice(0, commaIndexes[0]));
-        commaIndexes.forEach((num) => {
-            arrOfWords.push(text.slice(num + 2, commaIndexes[arrayIndex]));
-            arrayIndex++;
+            return prevStateText.replace(`${(e.target as HTMLLIElement).id}`, '');
         });
-
-        if (!arrOfWords.includes('')) {
-            return arrOfWords;
-        }
-
-        return arrOfWords.filter((elem) => elem !== '');
+        setEmployerAnnouncement((pS: JobListObject) => ({
+            ...pS,
+            languages: pS.languages.filter((elem) => elem !== (e.target as HTMLLIElement).id),
+        }));
     };
 
-    const removeChosenElementFromAnnouncement = (e: React.MouseEvent, key: 'tools' | 'languages') =>
-        setEmployerAnnouncement((pS: JobListObject) => ({
-            ...pS,
-            [key]: pS[key].filter((elem) => elem !== (e.target as HTMLLIElement).id),
-        }));
-
+  
     useEffect(() => {
-        let key = FocusedFiled === 'TOOLS' ? 'tools' : 'languages';
-        let target = FocusedFiled === 'TOOLS' ? userInputTools : userInputLangs;
+        let key = focusedFiled === 'TOOLS' ? 'tools' : 'languages';
+        let target = focusedFiled === 'TOOLS' ? userInputTools : userInputLangs;
         setEmployerAnnouncement((pS: JobListObject) => ({
             ...pS,
-            [key]: convertStringToArray(target),
+            [key]: target.split(', ').filter((elem) => elem !== ''),
         }));
-    }, [setEmployerAnnouncement, userInputTools, userInputLangs, FocusedFiled]);
+    }, [userInputTools, userInputLangs]);
 
     return (
         <div className="employer__fields">
@@ -96,11 +78,7 @@ const EmployerSecondStepForm = () => {
                         <span>Click on each of element to remove</span>
                         <ul>
                             {employerAnnouncement.languages.map((lang, idx) => (
-                                <li
-                                    onClick={(e) => removeChosenElementFromAnnouncement(e, 'languages')}
-                                    id={lang}
-                                    key={`${idx}#${lang}`}
-                                >
+                                <li onClick={(e) => removeInputElements(e)} id={lang} key={`${idx}#${lang}`}>
                                     {lang}
                                 </li>
                             ))}
@@ -127,11 +105,7 @@ const EmployerSecondStepForm = () => {
                         <span>Click on each of element to remove</span>
                         <ul>
                             {employerAnnouncement.tools.map((tool, idx) => (
-                                <li
-                                    onClick={(e) => removeChosenElementFromAnnouncement(e, 'tools')}
-                                    id={tool}
-                                    key={`${idx}#${tool}`}
-                                >
+                                <li onClick={(e) => removeInputElements(e)} id={tool} key={`${idx}#${tool}`}>
                                     {tool}
                                 </li>
                             ))}
