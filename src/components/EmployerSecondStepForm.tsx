@@ -6,6 +6,7 @@ import { FormContext } from './../Context/FormContext';
 const EmployerSecondStepForm = () => {
     const [userInputLangs, setUserInputLangs] = useState('');
     const [userInputTools, setUserInputTools] = useState('');
+    const [FocusedFiled, setFocusedField] = useState('');
 
     const { employerAnnouncement, setEmployerAnnouncement, setAnnouncementField } = useContext(
         FormContext,
@@ -42,17 +43,20 @@ const EmployerSecondStepForm = () => {
         return arrOfWords.filter((elem) => elem !== '');
     };
 
-    useEffect(() => {
+    const removeChosenElementFromAnnouncement = (e: React.MouseEvent, key: 'tools' | 'languages') =>
         setEmployerAnnouncement((pS: JobListObject) => ({
             ...pS,
-            tools: convertStringToArray(userInputTools),
+            [key]: pS[key].filter((elem) => elem !== (e.target as HTMLLIElement).id),
         }));
 
+    useEffect(() => {
+        let key = FocusedFiled === 'TOOLS' ? 'tools' : 'languages';
+        let target = FocusedFiled === 'TOOLS' ? userInputTools : userInputLangs;
         setEmployerAnnouncement((pS: JobListObject) => ({
             ...pS,
-            languages: convertStringToArray(userInputLangs),
+            [key]: convertStringToArray(target),
         }));
-    }, [setEmployerAnnouncement, userInputTools, userInputLangs]);
+    }, [setEmployerAnnouncement, userInputTools, userInputLangs, FocusedFiled]);
 
     return (
         <div className="employer__fields">
@@ -78,6 +82,7 @@ const EmployerSecondStepForm = () => {
                 <label>Technical languages</label>
                 <input
                     id="LANGS"
+                    onFocus={(e) => setFocusedField(e.target.id)}
                     value={userInputLangs}
                     onChange={(e) => {
                         setUserInputLangs(protectWhiteSpaces(e.target.value));
@@ -91,7 +96,13 @@ const EmployerSecondStepForm = () => {
                         <span>Click on each of element to remove</span>
                         <ul>
                             {employerAnnouncement.languages.map((lang, idx) => (
-                                <li key={`${idx}#${lang}`}>{lang}</li>
+                                <li
+                                    onClick={(e) => removeChosenElementFromAnnouncement(e, 'languages')}
+                                    id={lang}
+                                    key={`${idx}#${lang}`}
+                                >
+                                    {lang}
+                                </li>
                             ))}
                         </ul>
                     </div>
@@ -102,6 +113,7 @@ const EmployerSecondStepForm = () => {
                 <input
                     id="TOOLS"
                     value={userInputTools}
+                    onFocus={(e) => setFocusedField(e.target.id)}
                     onChange={(e) => {
                         setUserInputTools(protectWhiteSpaces(e.target.value));
                     }}
@@ -114,8 +126,14 @@ const EmployerSecondStepForm = () => {
                     <div>
                         <span>Click on each of element to remove</span>
                         <ul>
-                            {employerAnnouncement.tools.map((lang, idx) => (
-                                <li key={`${idx}#${lang}`}>{lang}</li>
+                            {employerAnnouncement.tools.map((tool, idx) => (
+                                <li
+                                    onClick={(e) => removeChosenElementFromAnnouncement(e, 'tools')}
+                                    id={tool}
+                                    key={`${idx}#${tool}`}
+                                >
+                                    {tool}
+                                </li>
                             ))}
                         </ul>
                     </div>

@@ -18,8 +18,8 @@ const DEFAULT_STATE_VALUE: JobListObject = {
     postedAt: '',
     contract: '',
     location: '',
-    languages: [''],
-    tools: [''],
+    languages: [],
+    tools: [],
     image: '',
     description: {
         title: '',
