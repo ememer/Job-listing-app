@@ -40,7 +40,7 @@ const EmployerSecondStepForm = () => {
             ...pS,
             [key]: target.split(', ').filter((elem) => elem !== ''),
         }));
-    }, [userInputTools, userInputLangs]);
+    }, [setEmployerAnnouncement, userInputTools, userInputLangs, focusedFiled]);
 
     return (
         <div className="employer__fields">
@@ -76,7 +76,7 @@ const EmployerSecondStepForm = () => {
                     title="Insert technical languages"
                 ></input>
                 {employerAnnouncement.languages.length > 0 && (
-                    <div>
+                    <div className="employer__skills__items">
                         <span>Click on each of element to remove</span>
                         <ul>
                             {employerAnnouncement.languages.map((lang, idx) => (
@@ -84,6 +84,7 @@ const EmployerSecondStepForm = () => {
                                     onClick={(e) => removeInputElements(e, 'languages')}
                                     id={lang}
                                     key={`${idx}#${lang}`}
+                                    
                                 >
                                     {lang}
                                 </li>
@@ -107,7 +108,7 @@ const EmployerSecondStepForm = () => {
                 ></input>
 
                 {employerAnnouncement.tools.length > 0 && (
-                    <div>
+                    <div className="employer__skills__items">
                         <span>Click on each of element to remove</span>
                         <ul>
                             {employerAnnouncement.tools.map((tool, idx) => (
