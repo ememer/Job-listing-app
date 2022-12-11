@@ -1,12 +1,9 @@
-import React, { ChangeEvent, useContext } from 'react';
+import React, { useContext } from 'react';
 import { FormContextProvider } from '../@types/FormContext';
-import { JobListObject } from '../@types/JobListTypes';
 import { FormContext } from '../Context/FormContext';
 
 const EmployerFourthStepForm = () => {
-    const { employerAnnouncement, setEmployerAnnouncement } = useContext(FormContext) as FormContextProvider;
-
-    console.log(employerAnnouncement);
+    const { employerAnnouncement, setEmployerAnnouncementFiledGroup } = useContext(FormContext) as FormContextProvider;
 
     return (
         <div className="employer__fields">
@@ -14,15 +11,7 @@ const EmployerFourthStepForm = () => {
                 <label>Title</label>
                 <input
                     value={employerAnnouncement.description.title}
-                    onChange={(e: ChangeEvent) =>
-                        setEmployerAnnouncement((pS: JobListObject) => ({
-                            ...pS,
-                            description: {
-                                ...pS.description,
-                                title: (e.target as HTMLInputElement).value,
-                            },
-                        }))
-                    }
+                    onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'description', 'title')}
                     type="text"
                     title="Insert announcement title"
                 ></input>
@@ -31,15 +20,7 @@ const EmployerFourthStepForm = () => {
                 <label>Description</label>
                 <textarea
                     value={employerAnnouncement.description.text}
-                    onChange={(e: ChangeEvent) =>
-                        setEmployerAnnouncement((pS: JobListObject) => ({
-                            ...pS,
-                            description: {
-                                ...pS.description,
-                                text: (e.target as HTMLInputElement).value,
-                            },
-                        }))
-                    }
+                    onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'description', 'text')}
                     rows={10}
                     title="Insert announcement title"
                 />
@@ -48,15 +29,7 @@ const EmployerFourthStepForm = () => {
                 <label>Additional subtitle</label>
                 <input
                     value={employerAnnouncement.description.subtitle}
-                    onChange={(e: ChangeEvent) =>
-                        setEmployerAnnouncement((pS: JobListObject) => ({
-                            ...pS,
-                            description: {
-                                ...pS.description,
-                                subtitle: (e.target as HTMLInputElement).value,
-                            },
-                        }))
-                    }
+                    onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'description', 'subtitle')}
                     type="text"
                     title="Insert additional subtitle"
                 ></input>
@@ -65,15 +38,7 @@ const EmployerFourthStepForm = () => {
                 <label>Additional description</label>
                 <textarea
                     value={employerAnnouncement.description.subtext}
-                    onChange={(e: ChangeEvent) =>
-                        setEmployerAnnouncement((pS: JobListObject) => ({
-                            ...pS,
-                            description: {
-                                ...pS.description,
-                                subtext: (e.target as HTMLInputElement).value,
-                            },
-                        }))
-                    }
+                    onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'description', 'subtext')}
                     rows={5}
                     title="Insert
                          additional description"

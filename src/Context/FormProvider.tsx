@@ -38,6 +38,8 @@ const DEFAULT_STATE_VALUE: JobListObject = {
 
 const FormProvider = ({ children }: Props) => {
     const [employerAnnouncement, setEmployerAnnouncement] = useState(DEFAULT_STATE_VALUE);
+    const [specificToolsFiled, setSpecificToolsFiled] = useState<string>('');
+    const [specificLanguagesFiled, setSpecificLanguagesFiled] = useState<string>('');
 
     const setAnnouncementField = (e: ChangeEvent, key: string) =>
         setEmployerAnnouncement((pS) => ({
@@ -45,8 +47,28 @@ const FormProvider = ({ children }: Props) => {
             [key]: (e.target as HTMLInputElement).value,
         }));
 
+    const setEmployerAnnouncementFiledGroup = (e: ChangeEvent, groupKey: 'description' | 'address', key: string) =>
+        setEmployerAnnouncement((pS: JobListObject) => ({
+            ...pS,
+            [groupKey]: {
+                ...pS[groupKey],
+                [key]: (e.target as HTMLInputElement).value,
+            },
+        }));
+
     return (
-        <FormContext.Provider value={{ employerAnnouncement, setEmployerAnnouncement, setAnnouncementField }}>
+        <FormContext.Provider
+            value={{
+                employerAnnouncement,
+                setEmployerAnnouncement,
+                setAnnouncementField,
+                setEmployerAnnouncementFiledGroup,
+                specificToolsFiled,
+                setSpecificToolsFiled,
+                specificLanguagesFiled,
+                setSpecificLanguagesFiled,
+            }}
+        >
             {children}
         </FormContext.Provider>
     );

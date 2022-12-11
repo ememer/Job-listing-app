@@ -4,13 +4,17 @@ import { JobListObject } from '../@types/JobListTypes';
 import { FormContext } from '../Context/FormContext';
 
 const EmployerSecondStepForm = () => {
-    const [userInputLangs, setUserInputLangs] = useState<string>('');
-    const [userInputTools, setUserInputTools] = useState<string>('');
     const [focusedFiled, setFocusedField] = useState('');
 
-    const { employerAnnouncement, setEmployerAnnouncement, setAnnouncementField } = useContext(
-        FormContext,
-    ) as FormContextProvider;
+    const {
+        employerAnnouncement,
+        setEmployerAnnouncement,
+        setAnnouncementField,
+        specificLanguagesFiled,
+        setSpecificLanguagesFiled,
+        specificToolsFiled,
+        setSpecificToolsFiled,
+    } = useContext(FormContext) as FormContextProvider;
 
     const protectWhiteSpaces = (text: string): string => {
         let re = /  +/g;
@@ -18,7 +22,7 @@ const EmployerSecondStepForm = () => {
     };
 
     const removeInputElements = (e: React.MouseEvent, key: 'languages' | 'tools') => {
-        let inputTarget = key === 'tools' ? setUserInputTools : setUserInputLangs;
+        let inputTarget = key === 'tools' ? setSpecificToolsFiled : setSpecificLanguagesFiled;
 
         inputTarget((prevStateText) => {
             if (prevStateText.includes(`${(e.target as HTMLLIElement).id}, `)) {
@@ -35,12 +39,12 @@ const EmployerSecondStepForm = () => {
 
     useEffect(() => {
         let key = focusedFiled === 'TOOLS' ? 'tools' : 'languages';
-        let target = focusedFiled === 'TOOLS' ? userInputTools : userInputLangs;
+        let target = focusedFiled === 'TOOLS' ? specificToolsFiled : specificLanguagesFiled;
         setEmployerAnnouncement((pS: JobListObject) => ({
             ...pS,
             [key]: target.split(', ').filter((elem) => elem !== ''),
         }));
-    }, [setEmployerAnnouncement, userInputTools, userInputLangs, focusedFiled]);
+    }, [setEmployerAnnouncement, specificToolsFiled, specificLanguagesFiled, focusedFiled]);
 
     return (
         <div className="employer__fields">
@@ -66,10 +70,10 @@ const EmployerSecondStepForm = () => {
                 <label>Technical languages</label>
                 <input
                     id="LANGS"
-                    value={userInputLangs}
+                    value={specificLanguagesFiled}
                     onFocus={(e) => setFocusedField(e.target.id)}
                     onChange={(e) => {
-                        setUserInputLangs(protectWhiteSpaces(e.target.value));
+                        setSpecificLanguagesFiled(protectWhiteSpaces(e.target.value));
                     }}
                     placeholder="Separate words with a comma e.g. HTML, CSS,"
                     type="text"
@@ -84,7 +88,6 @@ const EmployerSecondStepForm = () => {
                                     onClick={(e) => removeInputElements(e, 'languages')}
                                     id={lang}
                                     key={`${idx}#${lang}`}
-                                    
                                 >
                                     {lang}
                                 </li>
@@ -97,10 +100,10 @@ const EmployerSecondStepForm = () => {
                 <label>Technical Tools</label>
                 <input
                     id="TOOLS"
-                    value={userInputTools}
+                    value={specificToolsFiled}
                     onFocus={(e) => setFocusedField(e.target.id)}
                     onChange={(e) => {
-                        setUserInputTools(protectWhiteSpaces(e.target.value));
+                        setSpecificToolsFiled(protectWhiteSpaces(e.target.value));
                     }}
                     placeholder="Separate words with a comma e.g React, Sass,"
                     type="text"
