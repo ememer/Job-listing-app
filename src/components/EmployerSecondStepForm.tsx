@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FormContextProvider } from '../@types/FormContext';
 import { JobListObject } from '../@types/JobListTypes';
 import { FormContext } from '../Context/FormContext';
+import { useEmployerForm } from '../hook/useEmployerForm';
+import { clsx } from 'clsx';
 
 const EmployerSecondStepForm = () => {
     const [focusedFiled, setFocusedField] = useState('');
-
+    const { validationError } = useEmployerForm();
     const {
         employerAnnouncement,
         setEmployerAnnouncement,
@@ -48,26 +50,31 @@ const EmployerSecondStepForm = () => {
 
     return (
         <div className="employer__fields">
+            <span className={clsx(validationError?._infoStepTwo ? 'info' : 'success')}>
+                {validationError?._infoStepTwo ?? "Looks fine let's go forward! 😊"}
+            </span>
             <div>
-                <label>Contract</label>
+                <label>Contract <span>*</span></label>
                 <input
                     value={employerAnnouncement.contract}
                     onChange={(e) => setAnnouncementField(e, 'contract')}
                     type="text"
                     title="Insert contract details"
-                ></input>
+                />
+                <span className="error">{validationError?.contract}</span>
             </div>
             <div>
-                <label>Location</label>
+                <label>Location <span>*</span></label>
                 <input
                     value={employerAnnouncement.location}
                     onChange={(e) => setAnnouncementField(e, 'location')}
                     type="text"
                     title="Insert company location"
-                ></input>
+                />
+                <span className="error">{validationError?.location}</span>
             </div>
             <div>
-                <label>Technical languages</label>
+                <label>Technical languages <span>*</span></label>
                 <input
                     id="LANGS"
                     value={specificLanguagesFiled}
@@ -78,7 +85,9 @@ const EmployerSecondStepForm = () => {
                     placeholder="Separate words with a comma e.g. HTML, CSS,"
                     type="text"
                     title="Insert technical languages"
-                ></input>
+                />
+
+                <span className="error">{validationError?.languages}</span>
                 {employerAnnouncement.languages.length > 0 && (
                     <div className="employer__skills__items">
                         <span>Click on each of element to remove</span>
@@ -108,8 +117,7 @@ const EmployerSecondStepForm = () => {
                     placeholder="Separate words with a comma e.g React, Sass,"
                     type="text"
                     title="Insert technical tools"
-                ></input>
-
+                />
                 {employerAnnouncement.tools.length > 0 && (
                     <div className="employer__skills__items">
                         <span>Click on each of element to remove</span>

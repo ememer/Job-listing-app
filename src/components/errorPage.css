@@ -10,7 +10,7 @@
 
 .error-icon {
   font-size: 15rem;
-  color: #E0144C;
+  color: var(--error);
 }
 
 .error-message {

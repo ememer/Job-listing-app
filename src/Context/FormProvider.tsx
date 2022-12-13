@@ -6,7 +6,7 @@ interface Props {
     children: React.ReactNode;
 }
 
-const DEFAULT_STATE_VALUE: JobListObject = {
+const DEFAULT_FORM_VALUE: JobListObject = {
     id: 0,
     company: '',
     logo: '',
@@ -37,7 +37,8 @@ const DEFAULT_STATE_VALUE: JobListObject = {
 };
 
 const FormProvider = ({ children }: Props) => {
-    const [employerAnnouncement, setEmployerAnnouncement] = useState(DEFAULT_STATE_VALUE);
+    const [employerAnnouncement, setEmployerAnnouncement] = useState(DEFAULT_FORM_VALUE);
+    const [stepNumber, setStepNumber] = useState(1);
     const [specificToolsFiled, setSpecificToolsFiled] = useState<string>('');
     const [specificLanguagesFiled, setSpecificLanguagesFiled] = useState<string>('');
 
@@ -59,8 +60,11 @@ const FormProvider = ({ children }: Props) => {
     return (
         <FormContext.Provider
             value={{
+                DEFAULT_FORM_VALUE,
                 employerAnnouncement,
                 setEmployerAnnouncement,
+                stepNumber,
+                setStepNumber,
                 setAnnouncementField,
                 setEmployerAnnouncementFiledGroup,
                 specificToolsFiled,

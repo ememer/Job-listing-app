@@ -1,44 +1,48 @@
+import clsx from 'clsx';
 import React, { useContext } from 'react';
 import { FormContextProvider } from '../@types/FormContext';
 import { FormContext } from '../Context/FormContext';
+import { useEmployerForm } from '../hook/useEmployerForm';
 
 const EmployerFirstStepForm = () => {
-    const { employerAnnouncement,setAnnouncementField } = useContext(
-        FormContext,
-    ) as FormContextProvider;
+    const { employerAnnouncement, setAnnouncementField } = useContext(FormContext) as FormContextProvider;
 
+    const { validationError } = useEmployerForm();
 
     return (
         <div className="employer__fields">
+            <span className={clsx(validationError?._infoStepOne ? 'info' : 'success')}>
+                {validationError?._infoStepOne ?? "Looks fine let's go forward! 😊"}
+            </span>
             <div>
-                <label>Company Name</label>
+                <label>Company Name <span>*</span></label>
                 <input
                     value={employerAnnouncement.company}
                     onChange={(e) => setAnnouncementField(e, 'company')}
                     type="text"
                     title="Insert company name"
-                ></input>
+                />
             </div>
             <div>
-                <label>Position</label>
+                <label>Position <span>*</span></label>
                 <input
                     value={employerAnnouncement.position}
                     onChange={(e) => setAnnouncementField(e, 'position')}
                     type="text"
                     title="Insert position name"
-                ></input>
+                />
             </div>
             <div>
-                <label>Role</label>
+                <label>Role <span>*</span></label>
                 <input
                     value={employerAnnouncement.role}
                     onChange={(e) => setAnnouncementField(e, 'role')}
                     type="text"
                     title="Insert role name"
-                ></input>
+                />
             </div>
             <div>
-                <label>Level</label>
+                <label>Level <span>*</span></label>
                 <select
                     defaultValue="Select"
                     onChange={(e) => setAnnouncementField(e, 'level')}

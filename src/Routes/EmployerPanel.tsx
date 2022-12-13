@@ -1,18 +1,20 @@
 import clsx from 'clsx';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { FormContextProvider } from '../@types/FormContext';
 import EmployerStepsButtons from '../components/EmployerStepsButtons';
+import { FormContext } from '../Context/FormContext';
 
 import './EmployerPanel.css';
 
 const EmployerPanel = () => {
     const location = useLocation().pathname;
-    const [stepNumber, setStepNumber] = useState(1);
+    const { stepNumber, setStepNumber } = useContext(FormContext) as FormContextProvider;
 
     useEffect(() => {
         // TO DO - TO USE LOCATION AND REACT ROUTER IN PROPER WAY HANDLING WITH URLs PARAMS
         setStepNumber(+location.slice(location.length - 1, location.length));
-    }, [location]);
+    }, [setStepNumber, location]);
 
     return (
         <form onSubmit={(e) => e.preventDefault()} className="employer__form">

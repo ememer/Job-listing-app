@@ -72,7 +72,7 @@
     overflow: hidden;
 }
 
-.fields__logo{
+.fields__logo {
     height: 20vh;
     aspect-ratio: 1 / 1;
     margin: 0 auto;
@@ -105,16 +105,24 @@
 }
 
 
-
-
 .btn {
     display: inline-block;
     width: 100%;
     padding: 20px;
-    background-color: var(--main-accents);
     color: white;
     font-size: 1.5rem;
     text-align: center;
+    transition-duration: .5s;
+}
+
+.active {
+    background-color: var(--main-accents);
+}
+
+
+.disable {
+    pointer-events: none;
+    background-color: var(--graphite-dark);
 }
 
 .fields__progressbar {
@@ -142,17 +150,19 @@
     margin: 10px auto;
     padding: 10px 20px;
 }
-.employer__skills__items > span {
+
+.employer__skills__items>span {
     text-align: center;
     font-weight: 200;
     color: var(--graphite-dark);
 }
 
-.employer__skills__items > ul {
+.employer__skills__items>ul {
     display: flex;
     cursor: pointer;
 }
-.employer__skills__items > ul > li {
+
+.employer__skills__items>ul>li {
     margin: 0 10px;
     font-weight: 200;
     font-size: 1.2rem;
@@ -160,4 +170,28 @@
     color: var(--main-accents);
     padding: 10px 20px;
 
+}
+
+
+.info,
+.success {
+    margin: auto;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.info {
+    color: var(--info);
+}
+
+.success {
+    color: var(--success);
+
+}
+
+.error {
+    color: var(--error);
+    font-size: 0.8rem;
+    margin-left: 10px;
+    padding: 5px 0px;
 }

@@ -8,7 +8,7 @@ const MAPBOX_TOKEN: string = 'pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3B
 const EmployerFifthStepForm = () => {
     const [isFocused, setIsFocused] = useState(false);
     const { employerAnnouncement, setEmployerAnnouncement, setEmployerAnnouncementFiledGroup } = useContext(
-        FormContext,
+        FormContext
     ) as FormContextProvider;
 
     useEffect(() => {

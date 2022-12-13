@@ -4,12 +4,15 @@
   font-size: 15px;
   --graphite-dark: hsl(180, 14%, 20%);
   --main-accents: hsl(180, 29%, 50%);
-  --bg-accents:  	hsl(170, 54%, 87%);
+  --bg-accents: hsl(170, 54%, 87%);
   --bg-light: hsl(0, 0%, 97%);
   --background: hsl(180, 52%, 96%);
   --bg-dark: hsl(180, 8%, 62%);
-  --light-gray: 		hsla(228, 6%, 65%, 0.432);
+  --light-gray: hsla(228, 6%, 65%, 0.432);
   --selected: hsl(180, 57%, 72%);
+  --error: #E0144C;
+  --success: #54B435;
+  --info: #82C3EC;
 }
 
 body {
@@ -31,12 +34,12 @@ body {
 /* Track */
 ::-webkit-scrollbar-track {
   background: var(--bg-accents);
-} 
+}
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--light-gray);
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 /* Handle on hover */
