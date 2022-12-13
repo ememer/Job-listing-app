@@ -17,19 +17,12 @@ const EmployerStepsButtons = ({ step }: Props) => {
         <div
             className={clsx(
                 (step === 1 || step === 5) && 'sglbtn',
-                step > 1 && step < 5 && 'dblbtn',
+                step > 1 && step <= 5 && 'dblbtn',
                 'progressbar__btn',
             )}
         >
             {step === 1 && (
-                <Link
-                    className={clsx(
-                        'btn',
-                        validationError?._infoStepOne && 'disable',
-                        !validationError?._infoStepOne && 'active',
-                    )}
-                    to={'step=2'}
-                >
+                <Link className={clsx('btn', validationError?._infoStepOne ? 'disable' : 'active')} to={'step=2'}>
                     Next step
                 </Link>
             )}
@@ -52,9 +45,17 @@ const EmployerStepsButtons = ({ step }: Props) => {
                 </>
             )}
             {step === 5 && (
-                <Link className="btn active" to={'step=4'}>
-                    Previous step
-                </Link>
+                <>
+                    <Link className="btn active" to={'step=4'}>
+                        Previous step
+                    </Link>
+                    <Link
+                        className={clsx('btn', validationError?._infoFifthStep ? 'disable' : 'active')}
+                        to={'step=summary'}
+                    >
+                        Take a summary look
+                    </Link>
+                </>
             )}
         </div>
     );

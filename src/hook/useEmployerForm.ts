@@ -147,6 +147,11 @@ const validateForm = ({
 
     // FIFTH STEP
 
+    if(!address.city || !address.country || !address.number || !address.postcode || !address.street){
+        return {
+            _infoFifthStep: MESSAGES.INFO_MESSAGE
+        }
+    }
 };
 
 export const useEmployerForm = () => {

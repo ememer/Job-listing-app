@@ -24,7 +24,7 @@ export interface JobListObject {
         city: string;
         country: string;
         street: string;
-        number: number;
+        number: number | string;
     }
 }
 

@@ -3,13 +3,18 @@ import { FormContextProvider } from '../@types/FormContext';
 import { JobListObject } from '../@types/JobListTypes';
 import { FormContext } from '../Context/FormContext';
 
+import clsx from 'clsx';
+import { useEmployerForm } from '../hook/useEmployerForm';
+
 const MAPBOX_TOKEN: string = 'pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3BldGxucjdzcHgifQ.A213Odf8YgfWddgNjfEdrw';
 
 const EmployerFifthStepForm = () => {
     const [isFocused, setIsFocused] = useState(false);
     const { employerAnnouncement, setEmployerAnnouncement, setEmployerAnnouncementFiledGroup } = useContext(
-        FormContext
+        FormContext,
     ) as FormContextProvider;
+
+    const { validationError } = useEmployerForm();
 
     useEffect(() => {
         const { city, street, postcode, country } = employerAnnouncement.address;
@@ -38,55 +43,69 @@ const EmployerFifthStepForm = () => {
             let encodedURL = encodeURIComponent(`${city} ${street}`);
             fetchAutoFill(encodedURL);
         }
+        // eslint-disable-next-line
     }, [employerAnnouncement.address, isFocused]);
 
     return (
         <div className="employer__fields">
+            <span className={clsx(validationError?._infoFifthStep ? 'info' : 'success')}>
+                {validationError?._infoFifthStep ?? "Looks fine let's go forward! 😊"}
+            </span>
             <div>
-                <label>City</label>
+                <label>
+                    City <span>*</span>
+                </label>
                 <input
                     value={employerAnnouncement.address.city}
                     onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'city')}
                     type="text"
                     title="Insert city"
-                ></input>
+                />
             </div>
             <div>
-                <label>Full street name</label>
+                <label>
+                    Full street name <span>*</span>
+                </label>
                 <input
                     value={employerAnnouncement.address.street}
                     onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'street')}
                     type="text"
                     title="Insert street"
-                ></input>
+                />
             </div>
             <div>
-                <label>Building number</label>
+                <label>
+                    Building number <span>*</span>
+                </label>
                 <input
                     onFocus={() => setIsFocused(!isFocused)}
                     value={employerAnnouncement.address.number}
                     onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'number')}
                     type="text"
                     title="Insert building number"
-                ></input>
+                />
             </div>
             <div>
-                <label>ZIP / Postcode</label>
+                <label>
+                    ZIP / Postcode <span>*</span>
+                </label>
                 <input
                     value={employerAnnouncement.address.postcode}
                     onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'postcode')}
                     type="text"
                     title="Insert postcode"
-                ></input>
+                />
             </div>
             <div>
-                <label>Country</label>
+                <label>
+                    Country <span>*</span>
+                </label>
                 <input
                     value={employerAnnouncement.address.country}
                     onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'country')}
                     type="text"
                     title="Insert country"
-                ></input>
+                />
             </div>
             <button onClick={() => console.log(employerAnnouncement)}>SPRAWDZAM</button>
         </div>

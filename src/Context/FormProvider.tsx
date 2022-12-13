@@ -32,7 +32,7 @@ const DEFAULT_FORM_VALUE: JobListObject = {
         city: '',
         country: '',
         street: '',
-        number: 0,
+        number: '',
     },
 };
 
