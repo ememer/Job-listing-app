@@ -13,6 +13,7 @@ import EmployerSecondStepForm from './components/EmployerSecondStepForm';
 import EmployerFourthStepForm from './components/EmployerFourthStepForm';
 import EmployerFifthStepForm from './components/EmployerFifthStepForm';
 import EmployerThirdStepForm from './components/EmployerThirdStepForm';
+import EmployerSummaryStep from './components/EmployerSummaryStep';
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
                     { path: 'step=3', element: <EmployerThirdStepForm /> },
                     { path: 'step=4', element: <EmployerFourthStepForm /> },
                     { path: 'step=5', element: <EmployerFifthStepForm /> },
+                    { path: 'step=6', element: <EmployerSummaryStep /> },
                 ],
             },
         ],

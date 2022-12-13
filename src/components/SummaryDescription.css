@@ -1,0 +1,21 @@
+.summary__description> div {
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.summary__description > div > h2{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.summary__description > div > span:first-of-type{
+    font-size: 1.1rem;
+    font-weight: 200;
+}
+
+.summary__description > div > p {
+    font-size: 1.1rem;
+    font-weight: 200;
+    line-height: 30px;
+}

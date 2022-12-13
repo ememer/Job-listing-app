@@ -5,6 +5,8 @@ import { FormContextProvider } from '../@types/FormContext';
 import { FormContext } from '../Context/FormContext';
 import { useEmployerForm } from '../hook/useEmployerForm';
 
+import "./FormButtons.css"
+
 type Props = {
     step: number;
 };
@@ -26,7 +28,7 @@ const EmployerStepsButtons = ({ step }: Props) => {
                     Next step
                 </Link>
             )}
-            {step > 1 && step < 5 && (
+            {step > 1 && step < 6 && (
                 <>
                     <Link className="btn active" to={`step=${step - 1}`}>
                         Previous step
@@ -37,23 +39,11 @@ const EmployerStepsButtons = ({ step }: Props) => {
                             [stepNumber === 2 && validationError?._infoStepTwo ? 'disable' : 'active'],
                             [stepNumber === 3 && validationError?._infoStepThree ? 'disable' : 'active'],
                             [stepNumber === 4 && validationError?._infoStepFour ? 'disable' : 'active'],
+                            [stepNumber === 5 && validationError?._infoFifthStep ? 'disable' : 'active'],
                         )}
                         to={`step=${step + 1}`}
                     >
-                        Next step
-                    </Link>
-                </>
-            )}
-            {step === 5 && (
-                <>
-                    <Link className="btn active" to={'step=4'}>
-                        Previous step
-                    </Link>
-                    <Link
-                        className={clsx('btn', validationError?._infoFifthStep ? 'disable' : 'active')}
-                        to={'step=summary'}
-                    >
-                        Take a summary look
+                        {stepNumber === 5 ? "Summary" : "Next step"}
                     </Link>
                 </>
             )}

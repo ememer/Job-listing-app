@@ -49,7 +49,7 @@ const EmployerFifthStepForm = () => {
     return (
         <div className="employer__fields">
             <span className={clsx(validationError?._infoFifthStep ? 'info' : 'success')}>
-                {validationError?._infoFifthStep ?? "Looks fine let's go forward! 😊"}
+                {validationError?._infoFifthStep ?? "All looks good. Take a look at summary!🎉"}
             </span>
             <div>
                 <label>
@@ -107,7 +107,6 @@ const EmployerFifthStepForm = () => {
                     title="Insert country"
                 />
             </div>
-            <button onClick={() => console.log(employerAnnouncement)}>SPRAWDZAM</button>
         </div>
     );
 };

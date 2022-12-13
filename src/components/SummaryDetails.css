@@ -1,0 +1,19 @@
+.summary__details{
+    margin: auto
+}
+
+.summary__details > div {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.summary__details > div > h2{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.summary__details > div > span:first-of-type{
+    font-size: 1.1rem;
+    font-weight: 200;
+}

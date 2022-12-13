@@ -59,8 +59,7 @@ const validateForm = ({
         return { _infoStepTwo: MESSAGES.INFO_MESSAGE_ASTERIX };
     }
 
-    if ((contract && location && languages.length < 1) || tools.length > 1) {
-
+    if (contract && location && languages.length < 1 && tools.length > 1) {
         return {
             _infoStepTwo: MESSAGES.INFO_MESSAGE_ASTERIX,
             languages: `Language ${MESSAGES.REQUIRED}`,

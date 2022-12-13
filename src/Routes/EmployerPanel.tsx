@@ -6,6 +6,7 @@ import EmployerStepsButtons from '../components/EmployerStepsButtons';
 import { FormContext } from '../Context/FormContext';
 
 import './EmployerPanel.css';
+import './FormMessages.css';
 
 const EmployerPanel = () => {
     const location = useLocation().pathname;
@@ -20,13 +21,25 @@ const EmployerPanel = () => {
         <form onSubmit={(e) => e.preventDefault()} className="employer__form">
             <Outlet />
             <div className="form__progressbar">
-                <div className="fields__progressbar">
-                    <span className={clsx(stepNumber === 1 || stepNumber > 1 ? 'active__step' : 'fields__step')}></span>
-                    <span className={clsx(stepNumber === 2 || stepNumber > 2 ? 'active__step' : 'fields__step')}></span>
-                    <span className={clsx(stepNumber === 3 || stepNumber > 3 ? 'active__step' : 'fields__step')}></span>
-                    <span className={clsx(stepNumber === 4 || stepNumber > 4 ? 'active__step' : 'fields__step')}></span>
-                    <span className={clsx(stepNumber === 5 || stepNumber > 5 ? 'active__step' : 'fields__step')}></span>
-                </div>
+                {stepNumber !== 6 && (
+                    <div className="fields__progressbar">
+                        <span
+                            className={clsx(stepNumber === 1 || stepNumber > 1 ? 'active__step' : 'fields__step')}
+                        ></span>
+                        <span
+                            className={clsx(stepNumber === 2 || stepNumber > 2 ? 'active__step' : 'fields__step')}
+                        ></span>
+                        <span
+                            className={clsx(stepNumber === 3 || stepNumber > 3 ? 'active__step' : 'fields__step')}
+                        ></span>
+                        <span
+                            className={clsx(stepNumber === 4 || stepNumber > 4 ? 'active__step' : 'fields__step')}
+                        ></span>
+                        <span
+                            className={clsx(stepNumber === 5 || stepNumber > 5 ? 'active__step' : 'fields__step')}
+                        ></span>
+                    </div>
+                )}
                 <EmployerStepsButtons step={stepNumber} />
             </div>
         </form>
