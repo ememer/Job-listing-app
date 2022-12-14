@@ -6,7 +6,7 @@ import { FormContext } from '../Context/FormContext';
 import clsx from 'clsx';
 import { useEmployerForm } from '../hook/useEmployerForm';
 
-const MAPBOX_TOKEN: string = 'pk.eyJ1IjoiZW1lbWVyIiwiYSI6ImNsYWxlYXM5YzA0b3Azb3BldGxucjdzcHgifQ.A213Odf8YgfWddgNjfEdrw';
+import { MAPBOX_TOKEN } from '../utils/MAP_BOX_TOKEN';
 
 const EmployerFifthStepForm = () => {
     const [isFocused, setIsFocused] = useState(false);

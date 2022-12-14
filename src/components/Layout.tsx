@@ -7,7 +7,7 @@ type LayoutProps = { children: React.ReactNode };
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <header><Link to={"/employer-panel/step=1"}>TEST</Link></header>
+      <header></header>
       <main className="container">{children}</main>
     </>
   );

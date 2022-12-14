@@ -5,7 +5,7 @@ import { FormContextProvider } from '../@types/FormContext';
 import { FormContext } from '../Context/FormContext';
 import { useEmployerForm } from '../hook/useEmployerForm';
 
-import "./FormButtons.css"
+import './FormButtons.css';
 
 type Props = {
     step: number;
@@ -43,8 +43,16 @@ const EmployerStepsButtons = ({ step }: Props) => {
                         )}
                         to={`step=${step + 1}`}
                     >
-                        {stepNumber === 5 ? "Summary" : "Next step"}
+                        {stepNumber === 5 ? 'Summary' : 'Next step'}
                     </Link>
+                </>
+            )}
+            {step === 6 && (
+                <>
+                    <Link className="btn active" to={`step=${step - 1}`}>
+                        Previous step
+                    </Link>
+                    <button className={clsx('btn', 'active')}>Create Job offer</button>
                 </>
             )}
         </div>

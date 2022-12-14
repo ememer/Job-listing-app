@@ -6,9 +6,12 @@ import SummaryDescription from './SummaryDescription';
 import SummaryDetails from './SummaryDetails';
 import SummaryItem from './SummaryItem';
 
+import MapComponent from './MapComponent';
+
 const EmployerSummaryStep = () => {
     const { employerAnnouncement } = useContext(FormContext) as FormContextProvider;
     const { languages, tools, image, description, address } = employerAnnouncement;
+
     return (
         <div className="summary__section">
             <div className="summary__content">
@@ -35,12 +38,13 @@ const EmployerSummaryStep = () => {
                 </SummaryItem>
             </div>
             <div className="summary__address">
-                <SummaryItem title='Street:' text={address.street} />
-                <SummaryItem title='Number:' text={address.number} />
-                <SummaryItem title='City:' text={address.city} />
-                <SummaryItem title='ZIP / Postcode:' text={address.postcode} />
-                <SummaryItem title='Country:' text={address.country} />
+                <SummaryItem title="Street:" text={address.street} />
+                <SummaryItem title="Number:" text={address.number} />
+                <SummaryItem title="City:" text={address.city} />
+                <SummaryItem title="ZIP / Postcode:" text={address.postcode} />
+                <SummaryItem title="Country:" text={address.country} />
             </div>
+            <MapComponent height="40vh" address={address} />
         </div>
     );
 };

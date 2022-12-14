@@ -142,21 +142,22 @@ const validateForm = ({
             descriptionTitle: `Title ${MESSAGES.REQUIRED}`,
             descriptionText: `Description ${MESSAGES.REQUIRED}`,
         };
+
     }
-
+    
     // FIFTH STEP
-
+    
     if(!address.city || !address.country || !address.number || !address.postcode || !address.street){
         return {
             _infoFifthStep: MESSAGES.INFO_MESSAGE
         }
     }
+    return {}
 };
 
 export const useEmployerForm = () => {
     const { employerAnnouncement } = useContext(FormContext) as FormContextProvider;
 
     const validationError = validateForm(employerAnnouncement);
-
     return { validationError };
 };

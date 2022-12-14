@@ -4,7 +4,7 @@
 }
 
 .summary__description > div {
-    margin: 10px;
+    margin: 20px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
