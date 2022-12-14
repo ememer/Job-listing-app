@@ -1,0 +1,29 @@
+.sglbtn {
+    grid-template-columns: 1fr;
+}
+
+.dblbtn {
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.btn {
+    display: block;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px ;
+    color: white;
+    font-size: 1rem;
+    transition-duration: .5s;
+}
+
+.active {
+    background-color: var(--main-accents);
+}
+
+
+.disable {
+    pointer-events: none;
+    background-color: var(--graphite-dark);
+}

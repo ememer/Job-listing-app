@@ -10,8 +10,8 @@ export interface JobListObject {
     postedAt: string;
     contract: string;
     location: string;
-    languages: string[]
-    tools: string[];
+    languages: string[] | [];
+    tools: string[] | [];
     image: string;
     description: {
         title: string;
@@ -24,7 +24,7 @@ export interface JobListObject {
         city: string;
         country: string;
         street: string;
-        number: number;
+        number: number | string;
     }
 }
 

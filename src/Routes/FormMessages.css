@@ -1,0 +1,23 @@
+
+.info,
+.success {
+    margin: auto;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.info {
+    color: var(--info);
+}
+
+.success {
+    color: var(--success);
+
+}
+
+.error {
+    color: var(--error);
+    font-size: 0.8rem;
+    margin-left: 10px;
+    padding: 5px 0px;
+}

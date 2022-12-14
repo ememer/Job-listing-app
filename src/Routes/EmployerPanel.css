@@ -1,0 +1,153 @@
+.employer__form {
+    margin: 5rem auto;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 100%;
+    background-color: var(--background);
+    box-shadow: 1px 4px 22px -11px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    animation-name: extend;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+}
+
+@keyframes extend {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100;
+    }
+}
+
+.employer__fields {
+    transition-duration: 2s;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    /* width: 60%; */
+    margin: auto;
+}
+
+.employer__fields>div {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.employer__fields>div>label {
+    font-weight: 200;
+    font-size: 1.2rem;
+    color: var(--main-accents);
+    margin: 0px 0px 10px 15px;
+}
+
+.employer__fields>div>input,
+.employer__fields>div>textarea,
+.employer__fields>div>select {
+    resize: vertical;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 1px 4px 22px -11px rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    align-items: center;
+}
+
+.employer__fields>div>input::placeholder {
+    color: var(--main-accents);
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.employer__fields>div>select {
+    cursor: pointer;
+}
+
+.form__progressbar {
+    margin: 1.3rem auto;
+}
+
+.progressbar__btn {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    margin: 1.3rem auto;
+}
+
+.fields__progressbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    height: 1vh;
+}
+
+.active__step {
+    background-color: var(--main-accents);
+    transition-duration: 2s;
+}
+
+.fields__step {
+    display: inline-block;
+    width: 100%;
+    background-color: var(--bg-accents);
+}
+
+.employer__skills__items {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px 20px;
+}
+
+.employer__skills__items>span {
+    text-align: center;
+    font-weight: 200;
+    color: var(--graphite-dark);
+}
+
+.employer__skills__items>ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    cursor: pointer;
+}
+
+.employer__skills__items>ul>li {
+    margin: 10px 20px;
+    font-weight: 200;
+    font-size: 1.2rem;
+    background-color: var(--bg-accents);
+    color: var(--main-accents);
+    padding: 10px 20px;
+    border-radius: 5px;
+
+}
+
+@media screen and (min-width: 600px) {
+
+    .form__progressbar {
+        width: 60%;
+    }
+
+
+    .employer__skills__items>ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 780px) {
+
+    .form__progressbar {
+        width: 60%;
+        margin: 1.3rem auto;
+        padding: 20px;
+
+    }
+
+
+    .employer__skills__items>ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
