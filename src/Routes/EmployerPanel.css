@@ -62,26 +62,6 @@
     cursor: pointer;
 }
 
-.fields__photo {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 20vh;
-    width: 100%;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.fields__logo {
-    height: 20vh;
-    aspect-ratio: 1 / 1;
-    margin: 0 auto;
-    border-radius: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 1px 4px 22px -11px rgba(0, 0, 0, 0.3);
-}
-
 .form__progressbar {
     margin: 1.3rem auto;
 }

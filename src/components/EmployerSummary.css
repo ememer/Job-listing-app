@@ -5,11 +5,6 @@
     text-align: center;
 }
 
-.summary__content {
-    display: grid;
-    gap: 20px;
-}
-
 .summary__skills {
     display: grid;
     gap: 20px;

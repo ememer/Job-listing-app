@@ -3,6 +3,7 @@ import { FormContextProvider } from '../@types/FormContext';
 import { FormContext } from '../Context/FormContext';
 import { useEmployerForm } from '../hook/useEmployerForm';
 import { clsx } from 'clsx';
+import CreateDivImage from './CreateDivImage';
 
 const EmployerThirdStepForm = () => {
     const { employerAnnouncement, setAnnouncementField } = useContext(FormContext) as FormContextProvider;
@@ -29,7 +30,7 @@ const EmployerThirdStepForm = () => {
             {employerAnnouncement.logo && !validationError?.logoURL && (
                 <div>
                     <label>Logo preview</label>
-                    <div className="fields__logo" style={{ backgroundImage: `url("${employerAnnouncement.logo}")` }} />
+                    <CreateDivImage shape='circle' path={employerAnnouncement.logo} height="20vh" margin='0 auto'/>
                 </div>
             )}
             <div>
@@ -45,10 +46,7 @@ const EmployerThirdStepForm = () => {
             {employerAnnouncement.image && !validationError?.imageURL && (
                 <div>
                     <label>Photo preview</label>
-                    <div
-                        className="fields__photo"
-                        style={{ backgroundImage: `url("${employerAnnouncement.image}")` }}
-                    />
+                    <CreateDivImage shape='square' path={employerAnnouncement.image} height="20vh" margin='0'/>
                 </div>
             )}
         </div>

@@ -1,16 +1,17 @@
+.square,
+.circle {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .circle {
     aspect-ratio: 1 / 1;
     border-radius: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
     box-shadow: 1px 4px 22px -11px rgba(0, 0, 0, 0.3);
 }
 
 .square {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 20vh;
     width: 100%;
     border-radius: 5px;
     overflow: hidden;

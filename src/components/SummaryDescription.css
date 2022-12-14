@@ -1,5 +1,10 @@
-.summary__description> div {
-    margin: 10px 0;
+.summary__description{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.summary__description > div {
+    margin: 10px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
@@ -18,4 +23,5 @@
     font-size: 1.1rem;
     font-weight: 200;
     line-height: 30px;
+    width: 90%;
 }

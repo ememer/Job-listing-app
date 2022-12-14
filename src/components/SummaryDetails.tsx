@@ -12,11 +12,10 @@ const SummaryDetails = () => {
 
     return (
         <div className="summary__details">
-            <SummaryItem title="Company name:" text={company} />
-
             <SummaryItem title="Company logo:">
-                <CreateDivImage path={logo} shape="circle" height='20vh' margin='10px auto' />
+                <CreateDivImage path={logo} shape="circle" height='20vh' margin='10px auto' />   
             </SummaryItem>
+            <SummaryItem title="Company name:" text={company} />
             <SummaryItem title="Employee position:" text={position} />
             <SummaryItem title="Employee role:" text={role} />
             <SummaryItem title="Employee level:" text={level} />
