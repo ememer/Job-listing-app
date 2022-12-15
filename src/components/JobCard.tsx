@@ -1,6 +1,6 @@
-import './JobCard.css';
-
 import React from 'react';
+
+import './JobCard.css';
 
 type Props = {
     id: number;

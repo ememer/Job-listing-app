@@ -1,13 +1,14 @@
-import './EmployerSummary.css';
-
 import React, { useContext } from 'react';
 
 import { FormContextProvider } from '../@types/FormContext';
 import { FormContext } from '../Context/FormContext';
+
 import MapComponent from './MapComponent';
 import SummaryDescription from './SummaryDescription';
 import SummaryDetails from './SummaryDetails';
 import SummaryItem from './SummaryItem';
+
+import './EmployerSummary.css';
 
 const EmployerSummaryStep = () => {
     const { employerAnnouncement } = useContext(FormContext) as FormContextProvider;

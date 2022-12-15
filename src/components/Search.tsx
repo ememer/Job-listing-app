@@ -1,13 +1,15 @@
-import './Search.css';
+import React, { useContext, useState } from 'react';
 
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
-import React, { useContext, useState } from 'react';
 
 import { ContextType, JobListObject } from '../@types/JobListTypes';
 import { JobListContext } from '../Context/JobsListContext';
+
 import SearchItemList from './SearchItemList';
+
+import './Search.css';
 
 const SearchComponent = () => {
     const { jobLists, filtersArray, setFiltersArray } = useContext(JobListContext) as ContextType;

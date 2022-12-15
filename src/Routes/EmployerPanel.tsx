@@ -1,13 +1,14 @@
-import './EmployerPanel.css';
-import './FormMessages.css';
+import React, { useContext, useEffect } from 'react';
 
 import clsx from 'clsx';
-import React, { useContext, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 
 import { FormContextProvider } from '../@types/FormContext';
 import EmployerStepsButtons from '../components/EmployerStepsButtons';
 import { FormContext } from '../Context/FormContext';
+
+import './EmployerPanel.css';
+import './FormMessages.css';
 
 const EmployerPanel = () => {
     const location = useLocation().pathname;

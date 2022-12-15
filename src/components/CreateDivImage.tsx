@@ -1,7 +1,8 @@
-import './DivImageCreator.css';
+import { createElement } from 'react';
 
 import clsx from 'clsx';
-import { createElement } from 'react';
+
+import './DivImageCreator.css';
 
 interface CreateDivImageProps {
     path: string;

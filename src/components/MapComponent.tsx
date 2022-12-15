@@ -1,9 +1,10 @@
-import 'mapbox-gl/dist/mapbox-gl.css';
-
 import React, { useEffect, useState } from 'react';
+
 import { Map, Marker } from 'react-map-gl';
 
 import { MAPBOX_TOKEN } from './../utils/MAP_BOX_TOKEN';
+
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 interface MapProps {
     height: string;

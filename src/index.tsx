@@ -1,7 +1,5 @@
-import './index.css';
-import 'the-new-css-reset/css/reset.css';
-
 import React from 'react';
+
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -16,6 +14,9 @@ import ErrorPage from './components/Error';
 import JobList from './components/JobList';
 import EmployerPanel from './Routes/EmployerPanel';
 import JobDetails from './Routes/JobDetails';
+
+import './index.css';
+import 'the-new-css-reset/css/reset.css';
 
 const router = createBrowserRouter([
     {

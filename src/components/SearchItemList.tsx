@@ -1,7 +1,9 @@
-import clsx from 'clsx';
 import React from 'react';
 
+import clsx from 'clsx';
+
 import { JobListObject } from '../@types/JobListTypes';
+
 import { getUniqueElements } from './../utils/getUniqueElements';
 
 interface Props {

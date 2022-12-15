@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
+
 import { Link } from 'react-router-dom';
 
 import { ContextType, JobListObject } from '../@types/JobListTypes';
 import { JobListContext } from '../Context/JobsListContext';
+
 import JobCard from './JobCard';
 import SearchComponent from './Search';
 

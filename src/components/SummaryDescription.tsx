@@ -1,9 +1,9 @@
-import './SummaryDescription.css';
-
 import React from 'react';
 
 import CreateDivImage from './CreateDivImage';
 import SummaryItem from './SummaryItem';
+
+import './SummaryDescription.css';
 
 interface DescriptionProps {
     image?: string;

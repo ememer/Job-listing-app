@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 
 import { JobListObject } from '../@types/JobListTypes';
+
 import { FormContext } from './FormContext';
 
 interface Props {

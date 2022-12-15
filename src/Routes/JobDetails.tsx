@@ -1,4 +1,4 @@
-import './JobDetails.css';
+import React, { useEffect, useState } from 'react';
 
 import {
     faArrowLeft,
@@ -9,11 +9,12 @@ import {
     faStopwatch,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import MapComponent from '../components/MapComponent';
 import jobs from '../utils/data.json';
+
+import './JobDetails.css';
 
 type JobDescription = {
     title: string;

@@ -1,5 +1,6 @@
-import { clsx } from 'clsx';
 import React, { useContext, useEffect, useState } from 'react';
+
+import { clsx } from 'clsx';
 
 import { FormContextProvider } from '../@types/FormContext';
 import { JobListObject } from '../@types/JobListTypes';
