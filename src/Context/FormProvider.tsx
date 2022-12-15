@@ -43,6 +43,7 @@ const FormProvider = ({ children }: Props) => {
     const [stepNumber, setStepNumber] = useState(1);
     const [specificToolsFiled, setSpecificToolsFiled] = useState<string>('');
     const [specificLanguagesFiled, setSpecificLanguagesFiled] = useState<string>('');
+    const [unlockedStepNumbers, setUnlockedStepNumbers] = useState<number[]>([]);
 
     const setAnnouncementField = (e: ChangeEvent, key: string) =>
         setEmployerAnnouncement((pS) => ({
@@ -59,6 +60,12 @@ const FormProvider = ({ children }: Props) => {
             },
         }));
 
+    const unlockSteps = (stepForward: number) => {
+        if (!unlockedStepNumbers.includes(stepForward)) {
+            setUnlockedStepNumbers((prevState) => [...prevState, stepForward]);
+        }
+    };
+
     return (
         <FormContext.Provider
             value={{
@@ -73,6 +80,8 @@ const FormProvider = ({ children }: Props) => {
                 setSpecificToolsFiled,
                 specificLanguagesFiled,
                 setSpecificLanguagesFiled,
+                unlockSteps,
+                unlockedStepNumbers,
             }}
         >
             {children}
