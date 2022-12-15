@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
+
+import { clsx } from 'clsx';
+
 import { FormContextProvider } from '../@types/FormContext';
 import { JobListObject } from '../@types/JobListTypes';
 import { FormContext } from '../Context/FormContext';
 import { useEmployerForm } from '../hook/useEmployerForm';
-import { clsx } from 'clsx';
 
 const EmployerSecondStepForm = () => {
     const [focusedFiled, setFocusedField] = useState('');
@@ -19,12 +21,12 @@ const EmployerSecondStepForm = () => {
     } = useContext(FormContext) as FormContextProvider;
 
     const protectWhiteSpaces = (text: string): string => {
-        let re = /  +/g;
+        const re = /  +/g;
         return text.replaceAll(re, ' ');
     };
 
     const removeInputElements = (e: React.MouseEvent, key: 'languages' | 'tools') => {
-        let inputTarget = key === 'tools' ? setSpecificToolsFiled : setSpecificLanguagesFiled;
+        const inputTarget = key === 'tools' ? setSpecificToolsFiled : setSpecificLanguagesFiled;
 
         inputTarget((prevStateText) => {
             if (prevStateText.includes(`${(e.target as HTMLLIElement).id}, `)) {
@@ -40,8 +42,8 @@ const EmployerSecondStepForm = () => {
     };
 
     useEffect(() => {
-        let key = focusedFiled === 'TOOLS' ? 'tools' : 'languages';
-        let target = focusedFiled === 'TOOLS' ? specificToolsFiled : specificLanguagesFiled;
+        const key = focusedFiled === 'TOOLS' ? 'tools' : 'languages';
+        const target = focusedFiled === 'TOOLS' ? specificToolsFiled : specificLanguagesFiled;
         setEmployerAnnouncement((pS: JobListObject) => ({
             ...pS,
             [key]: target.split(', ').filter((elem) => elem !== ''),
@@ -54,7 +56,9 @@ const EmployerSecondStepForm = () => {
                 {validationError?._infoStepTwo ?? "Looks fine let's go forward! 😊"}
             </span>
             <div>
-                <label>Contract <span>*</span></label>
+                <label>
+                    Contract <span>*</span>
+                </label>
                 <input
                     value={employerAnnouncement.contract}
                     onChange={(e) => setAnnouncementField(e, 'contract')}
@@ -64,7 +68,9 @@ const EmployerSecondStepForm = () => {
                 <span className="error">{validationError?.contract}</span>
             </div>
             <div>
-                <label>Location <span>*</span></label>
+                <label>
+                    Location <span>*</span>
+                </label>
                 <input
                     value={employerAnnouncement.location}
                     onChange={(e) => setAnnouncementField(e, 'location')}
@@ -74,7 +80,9 @@ const EmployerSecondStepForm = () => {
                 <span className="error">{validationError?.location}</span>
             </div>
             <div>
-                <label>Technical languages <span>*</span></label>
+                <label>
+                    Technical languages <span>*</span>
+                </label>
                 <input
                     id="LANGS"
                     value={specificLanguagesFiled}

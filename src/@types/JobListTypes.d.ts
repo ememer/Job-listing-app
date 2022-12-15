@@ -18,20 +18,19 @@ export interface JobListObject {
         text: string;
         subtitle: string;
         subtext: string;
-    }
-    address:{
+    };
+    address: {
         postcode: string;
         city: string;
         country: string;
         street: string;
         number: number | string;
-    }
+    };
 }
-
 
 export type ContextType = {
     jobLists: JobListObject[];
     filtersArray: string[];
     setFiltersArray: Dispatch<React.SetStateAction<string[]>>;
     displayFilteredJobs: () => JobListObject[];
-}
+};

@@ -1,6 +1,8 @@
-import clsx from 'clsx';
 import React, { useContext, useEffect } from 'react';
+
+import clsx from 'clsx';
 import { Outlet, useLocation } from 'react-router-dom';
+
 import { FormContextProvider } from '../@types/FormContext';
 import EmployerStepsButtons from '../components/EmployerStepsButtons';
 import { FormContext } from '../Context/FormContext';

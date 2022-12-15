@@ -1,19 +1,22 @@
 import React from 'react';
+
 import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import App from './App';
+import EmployerFifthStepForm from './components/EmployerFifthStepForm';
+import EmployerFirstStepForm from './components/EmployerFirstStepForm';
+import EmployerFourthStepForm from './components/EmployerFourthStepForm';
+import EmployerSecondStepForm from './components/EmployerSecondStepForm';
+import EmployerSummaryStep from './components/EmployerSummaryStep';
+import EmployerThirdStepForm from './components/EmployerThirdStepForm';
+import ErrorPage from './components/Error';
+import JobList from './components/JobList';
+import EmployerPanel from './Routes/EmployerPanel';
+import JobDetails from './Routes/JobDetails';
+
 import './index.css';
 import 'the-new-css-reset/css/reset.css';
-import App from './App';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import JobDetails from './Routes/JobDetails';
-import JobList from './components/JobList';
-import ErrorPage from './components/Error';
-import EmployerPanel from './Routes/EmployerPanel';
-import EmployerFirstStepForm from './components/EmployerFirstStepForm';
-import EmployerSecondStepForm from './components/EmployerSecondStepForm';
-import EmployerFourthStepForm from './components/EmployerFourthStepForm';
-import EmployerFifthStepForm from './components/EmployerFifthStepForm';
-import EmployerThirdStepForm from './components/EmployerThirdStepForm';
-import EmployerSummaryStep from './components/EmployerSummaryStep';
 
 const router = createBrowserRouter([
     {

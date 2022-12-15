@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useContext, useEffect, useState } from 'react';
+
+import clsx from 'clsx';
+
 import { FormContextProvider } from '../@types/FormContext';
 import { JobListObject } from '../@types/JobListTypes';
 import { FormContext } from '../Context/FormContext';
-
-import clsx from 'clsx';
 import { useEmployerForm } from '../hook/useEmployerForm';
-
 import { MAPBOX_TOKEN } from '../utils/MAP_BOX_TOKEN';
 
 const EmployerFifthStepForm = () => {
@@ -24,10 +25,10 @@ const EmployerFifthStepForm = () => {
             const mapBoxResponse: Response = await fetch(
                 `https://api.mapbox.com/geocoding/v5/${endpoint}/${encodedURL}.json?proximity=ip&types=place%2Cpostcode%2Caddress&access_token=${MAPBOX_TOKEN}&limit=1`,
             );
-            let response = await mapBoxResponse.json();
-            let responsePath = response?.features[0].context;
-            let country = responsePath.find((elem: any) => (elem?.id.includes('country') ? elem : ''));
-            let postcode = responsePath.find((elem: any) => (elem?.id.includes('postcode') ? elem : ''));
+            const response = await mapBoxResponse.json();
+            const responsePath = response?.features[0].context;
+            const country = responsePath.find((elem: any) => (elem?.id.includes('country') ? elem : ''));
+            const postcode = responsePath.find((elem: any) => (elem?.id.includes('postcode') ? elem : ''));
 
             setEmployerAnnouncement((pS: JobListObject) => ({
                 ...pS,
@@ -40,7 +41,7 @@ const EmployerFifthStepForm = () => {
         };
 
         if (city && street && isFocused && !postcode && !country) {
-            let encodedURL = encodeURIComponent(`${city} ${street}`);
+            const encodedURL = encodeURIComponent(`${city} ${street}`);
             fetchAutoFill(encodedURL);
         }
         // eslint-disable-next-line
@@ -49,7 +50,7 @@ const EmployerFifthStepForm = () => {
     return (
         <div className="employer__fields">
             <span className={clsx(validationError?._infoFifthStep ? 'info' : 'success')}>
-                {validationError?._infoFifthStep ?? "All looks good. Take a look at summary!🎉"}
+                {validationError?._infoFifthStep ?? 'All looks good. Take a look at summary!🎉'}
             </span>
             <div>
                 <label>

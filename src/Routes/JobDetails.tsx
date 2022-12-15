@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import jobs from '../utils/data.json';
 
 import {
-    faLocationPin,
-    faStopwatch,
-    faFlask,
-    faBusinessTime,
     faArrowLeft,
+    faBusinessTime,
+    faFlask,
+    faLocationPin,
     faShareNodes,
+    faStopwatch,
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link, useParams } from 'react-router-dom';
+
+import MapComponent from '../components/MapComponent';
+import jobs from '../utils/data.json';
 
 import './JobDetails.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import MapComponent from '../components/MapComponent';
-
 
 type JobDescription = {
     title: string;
@@ -50,7 +50,7 @@ const JobDetails = () => {
     const [isClipboard, setIsClipboard] = useState(false);
     const { id } = useParams();
 
-    let pageId = id ?? 0;
+    const pageId = id ?? 0;
 
     const fakeApiResponse = jobs.filter((job) => job.id === +pageId);
     const {

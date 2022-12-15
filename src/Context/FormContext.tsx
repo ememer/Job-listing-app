@@ -1,4 +1,5 @@
-import { createContext } from "react"
-import { FormContextProvider } from "../@types/FormContext"
+import { createContext } from 'react';
 
-export const FormContext = createContext<object | null | FormContextProvider>(null)
+import { FormContextProvider } from '../@types/FormContext';
+
+export const FormContext = createContext<object | null | FormContextProvider>(null);

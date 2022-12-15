@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { Map, Marker } from 'react-map-gl';
 
 import { MAPBOX_TOKEN } from './../utils/MAP_BOX_TOKEN';
+
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 interface MapProps {
     height: string;
@@ -24,16 +25,16 @@ const MapComponent = ({ height, address }: MapProps) => {
     };
 
     useEffect((): void => {
-        let stringURL: string = `${address?.street} ${address?.number} ${address?.postcode} ${address?.city} ${address?.country}`;
-        let encodeURL: string = encodeURIComponent(stringURL);
+        const stringURL = `${address?.street} ${address?.number} ${address?.postcode} ${address?.city} ${address?.country}`;
+        const encodeURL: string = encodeURIComponent(stringURL);
 
         const geoCodeAddress = async (apiURL: string) => {
-            const endpoint: string = 'mapbox.places';
+            const endpoint = 'mapbox.places';
             const mapBoxResponse: Response = await fetch(
                 `https://api.mapbox.com/geocoding/v5/${endpoint}/${apiURL}.json?proximity=ip&types=place%2Cpostcode%2Caddress&access_token=${MAPBOX_TOKEN}&limit=1`,
             );
-            let response: ResponseApi = await mapBoxResponse.json();
-            let coordinatesArray = response?.features[0].center;
+            const response: ResponseApi = await mapBoxResponse.json();
+            const coordinatesArray = response?.features[0].center;
 
             setCoordinatesArray(coordinatesArray);
         };
