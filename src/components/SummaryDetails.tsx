@@ -1,9 +1,10 @@
+import './SummaryDetails.css';
+
 import React, { useContext } from 'react';
+
 import { FormContextProvider } from '../@types/FormContext';
 import { FormContext } from '../Context/FormContext';
 import CreateDivImage from './CreateDivImage';
-
-import './SummaryDetails.css';
 import SummaryItem from './SummaryItem';
 
 const SummaryDetails = () => {
@@ -13,7 +14,7 @@ const SummaryDetails = () => {
     return (
         <div className="summary__details">
             <SummaryItem title="Company logo:">
-                <CreateDivImage path={logo} shape="circle" height='20vh' margin='10px auto' />   
+                <CreateDivImage path={logo} shape="circle" height="20vh" margin="10px auto" />
             </SummaryItem>
             <SummaryItem title="Company name:" text={company} />
             <SummaryItem title="Employee position:" text={position} />

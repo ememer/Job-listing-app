@@ -1,11 +1,12 @@
+import './FormButtons.css';
+
 import clsx from 'clsx';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
 import { FormContextProvider } from '../@types/FormContext';
 import { FormContext } from '../Context/FormContext';
 import { useEmployerForm } from '../hook/useEmployerForm';
-
-import './FormButtons.css';
 
 type Props = {
     step: number;

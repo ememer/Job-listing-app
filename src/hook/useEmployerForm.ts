@@ -1,7 +1,7 @@
 import { useContext } from 'react';
+
 import { FormContextProvider } from '../@types/FormContext';
 import { JobListObject } from '../@types/JobListTypes';
-
 import { FormContext } from '../Context/FormContext';
 
 const MESSAGES = {
@@ -41,14 +41,14 @@ const validateForm = ({
     }
 
     // SECOND STEP
-    
-    if (!contract && location && languages.length >= 1 && tools.length >= 1) {                
+
+    if (!contract && location && languages.length >= 1 && tools.length >= 1) {
         return {
             _infoStepTwo: MESSAGES.INFO_MESSAGE_ASTERIX,
             contract: `Contract ${MESSAGES.REQUIRED}`,
         };
     }
-    if (contract && !location && languages.length >= 1 && tools.length >= 1) {   
+    if (contract && !location && languages.length >= 1 && tools.length >= 1) {
         return {
             _infoStepTwo: MESSAGES.INFO_MESSAGE_ASTERIX,
             location: `Location ${MESSAGES.REQUIRED}`,
@@ -65,10 +65,9 @@ const validateForm = ({
             languages: `Language ${MESSAGES.REQUIRED}`,
         };
     }
-  
 
     if (!contract || !location || languages.length < 1) {
-        return { _infoStepTwo:  MESSAGES.INFO_MESSAGE_ASTERIX };
+        return { _infoStepTwo: MESSAGES.INFO_MESSAGE_ASTERIX };
     }
 
     // THIRD STEP
@@ -113,7 +112,6 @@ const validateForm = ({
         };
     }
 
-
     // FOURTH STEP
 
     if (!description.title || !description.text) {
@@ -142,17 +140,16 @@ const validateForm = ({
             descriptionTitle: `Title ${MESSAGES.REQUIRED}`,
             descriptionText: `Description ${MESSAGES.REQUIRED}`,
         };
+    }
 
-    }
-    
     // FIFTH STEP
-    
-    if(!address.city || !address.country || !address.number || !address.postcode || !address.street){
+
+    if (!address.city || !address.country || !address.number || !address.postcode || !address.street) {
         return {
-            _infoFifthStep: MESSAGES.INFO_MESSAGE
-        }
+            _infoFifthStep: MESSAGES.INFO_MESSAGE,
+        };
     }
-    return {}
+    return {};
 };
 
 export const useEmployerForm = () => {

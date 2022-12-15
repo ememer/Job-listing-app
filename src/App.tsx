@@ -1,9 +1,11 @@
-import React from 'react';
 import './App.css';
+
+import React from 'react';
 import { Outlet, ScrollRestoration } from 'react-router-dom';
+
 import Layout from './components/Layout';
-import JobListProvider from './Context/JobsListProvider';
 import FormProvider from './Context/FormProvider';
+import JobListProvider from './Context/JobsListProvider';
 
 function App() {
     return (

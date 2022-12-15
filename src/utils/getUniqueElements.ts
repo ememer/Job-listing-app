@@ -1,16 +1,8 @@
-type DataObject = {
-  tools: string[];
-  languages: string[];
-};
+import { JobListObject } from '../@types/JobListTypes';
 
-export const getUniqueElements = (
-  data: Array<DataObject>,
-  key: string
-): Array<string> => {
-  let arrayOfEachElements: string[] = [];
-  data.map((elements: any) =>
-    elements?.[key].forEach((element: any) => arrayOfEachElements.push(element))
-  );
+export const getUniqueElements = (data: JobListObject[], key: 'languages' | 'tools'): Array<string> => {
+    const arrayOfEachElements: string[] = [];
+    data.map((elements) => elements[key].forEach((element) => arrayOfEachElements.push(element)));
 
-  return [...new Set(arrayOfEachElements)];
+    return [...new Set(arrayOfEachElements)];
 };

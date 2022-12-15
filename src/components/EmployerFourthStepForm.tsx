@@ -1,8 +1,9 @@
+import clsx from 'clsx';
 import React, { useContext } from 'react';
+
 import { FormContextProvider } from '../@types/FormContext';
 import { FormContext } from '../Context/FormContext';
 import { useEmployerForm } from '../hook/useEmployerForm';
-import clsx from 'clsx';
 
 const EmployerFourthStepForm = () => {
     const { employerAnnouncement, setEmployerAnnouncementFiledGroup } = useContext(FormContext) as FormContextProvider;
@@ -11,11 +12,13 @@ const EmployerFourthStepForm = () => {
 
     return (
         <div className="employer__fields">
-             <span className={clsx(validationError?._infoStepFour ? 'info' : 'success')}>
+            <span className={clsx(validationError?._infoStepFour ? 'info' : 'success')}>
                 {validationError?._infoStepFour ?? "Looks fine let's go forward! 😊"}
             </span>
             <div>
-                <label>Title <span>*</span></label>
+                <label>
+                    Title <span>*</span>
+                </label>
                 <input
                     value={employerAnnouncement.description.title}
                     onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'description', 'title')}
@@ -25,7 +28,9 @@ const EmployerFourthStepForm = () => {
                 <span className="error">{validationError?.descriptionTitle}</span>
             </div>
             <div>
-                <label>Description <span>*</span></label>
+                <label>
+                    Description <span>*</span>
+                </label>
                 <textarea
                     value={employerAnnouncement.description.text}
                     onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'description', 'text')}

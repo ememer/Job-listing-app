@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { useContext } from 'react';
+
 import { FormContextProvider } from '../@types/FormContext';
 import { FormContext } from '../Context/FormContext';
 import { useEmployerForm } from '../hook/useEmployerForm';
@@ -15,7 +16,9 @@ const EmployerFirstStepForm = () => {
                 {validationError?._infoStepOne ?? "Looks fine let's go forward! 😊"}
             </span>
             <div>
-                <label>Company Name <span>*</span></label>
+                <label>
+                    Company Name <span>*</span>
+                </label>
                 <input
                     value={employerAnnouncement.company}
                     onChange={(e) => setAnnouncementField(e, 'company')}
@@ -24,7 +27,9 @@ const EmployerFirstStepForm = () => {
                 />
             </div>
             <div>
-                <label>Position <span>*</span></label>
+                <label>
+                    Position <span>*</span>
+                </label>
                 <input
                     value={employerAnnouncement.position}
                     onChange={(e) => setAnnouncementField(e, 'position')}
@@ -33,7 +38,9 @@ const EmployerFirstStepForm = () => {
                 />
             </div>
             <div>
-                <label>Role <span>*</span></label>
+                <label>
+                    Role <span>*</span>
+                </label>
                 <input
                     value={employerAnnouncement.role}
                     onChange={(e) => setAnnouncementField(e, 'role')}
@@ -42,7 +49,9 @@ const EmployerFirstStepForm = () => {
                 />
             </div>
             <div>
-                <label>Level <span>*</span></label>
+                <label>
+                    Level <span>*</span>
+                </label>
                 <select
                     defaultValue="Select"
                     onChange={(e) => setAnnouncementField(e, 'level')}
