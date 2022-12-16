@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import {
     faArrowLeft,
@@ -11,48 +11,20 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useParams } from 'react-router-dom';
 
+import { JobListContextProvider, JobListObject } from '../@types/JobListTypes';
 import MapComponent from '../components/MapComponent';
-import jobs from '../utils/data.json';
+import { JobListContext } from '../Context/JobsListContext';
 
 import './JobDetails.css';
 
-type JobDescription = {
-    title: string;
-    text: string;
-    subtitle: string;
-    subtext: string;
-};
-
-type AddressObject = {
-    postcode: string;
-    city: string;
-    country: string;
-    street: string;
-    number: number;
-};
-
-interface JobList {
-    company: string;
-    contract: string;
-    languages: string[];
-    logo: string;
-    level: string;
-    location: string;
-    position: string;
-    postedAt: string;
-    tools: string[];
-    image: string;
-    description: JobDescription;
-    address?: AddressObject;
-}
-
 const JobDetails = () => {
+    const { currentJobsLists } = useContext(JobListContext) as JobListContextProvider;
     const [isClipboard, setIsClipboard] = useState(false);
     const { id } = useParams();
 
     const pageId = id ?? 0;
 
-    const fakeApiResponse = jobs.filter((job) => job.id === +pageId);
+    const fakeApiResponse = currentJobsLists.filter((job) => job.id === +pageId);
     const {
         company,
         contract,
@@ -66,7 +38,7 @@ const JobDetails = () => {
         image,
         description,
         address,
-    }: JobList = fakeApiResponse[0];
+    }: JobListObject = fakeApiResponse[0];
 
     const copyClipboard = (): void => {
         navigator.clipboard.writeText(window.location.href);

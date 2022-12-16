@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { JobListObject } from '../@types/JobListTypes';
 
@@ -10,20 +10,28 @@ interface Props {
 }
 
 const JobListProvider = ({ children }: Props) => {
-    const [currentJobsLists, setCurrentJobsLists] = useState(jobLists as JobListObject[]);
     const [filtersArray, setFiltersArray] = useState([]);
+    const [currentJobsLists, setCurrentJobsLists] = useState<JobListObject[]>(
+        JSON.parse(localStorage.getItem('JobsList')!) ?? jobLists,
+    );
 
     const displayFilteredJobs = () => {
         const filteredData = currentJobsLists.filter((jobItem) =>
             filtersArray.find((filter) => jobItem.tools.includes(filter) || jobItem.languages.includes(filter)),
         );
-        return filteredData.length > 0 ? filteredData : currentJobsLists;
+        return filteredData.length > 0
+            ? filteredData.sort((a, b) => b.id - a.id)
+            : currentJobsLists.sort((a, b) => b.id - a.id);
     };
 
     const updateJobs = (newOffers: JobListObject) => {
         const length = currentJobsLists.length;
         setCurrentJobsLists((pS) => [...pS, { ...newOffers, id: length + 1, postedAt: new Date().toDateString() }]);
     };
+
+    useEffect(() => {
+        localStorage.setItem('JobsList', JSON.stringify(currentJobsLists));
+    }, [currentJobsLists]);
 
     return (
         <JobListContext.Provider
