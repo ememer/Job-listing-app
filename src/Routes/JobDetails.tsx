@@ -66,7 +66,7 @@ const JobDetails = () => {
             </div>
             <div className="details-header" style={{ backgroundImage: `url("${image}")` }}>
                 <div>
-                    <img alt={`${company} logo`} src={logo}></img>
+                    <img alt={`${company} logo`} src={logo} />
                 </div>
                 <div>
                     <h1>{company}</h1>

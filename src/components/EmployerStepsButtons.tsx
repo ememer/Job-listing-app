@@ -17,7 +17,8 @@ type Props = {
 
 const EmployerStepsButtons = ({ step }: Props) => {
     const { unlockedSteps } = useEmployerForm();
-    const { unlockSteps, employerAnnouncement } = useContext(FormContext) as FormContextProvider;
+    const { unlockSteps, employerAnnouncement, setEmployerAnnouncement, DEFAULT_FORM_VALUE, setIsOfferSucceed } =
+        useContext(FormContext) as FormContextProvider;
     const { updateJobs } = useContext(JobListContext) as JobListContextProvider;
 
     return (
@@ -61,7 +62,17 @@ const EmployerStepsButtons = ({ step }: Props) => {
                     <Link className="btn active" to={`step=${step - 1}`}>
                         Previous step
                     </Link>
-                    <button onClick={() => updateJobs(employerAnnouncement)} className={clsx('btn', 'active')}>
+                    <button
+                        onClick={() => {
+                            setIsOfferSucceed(true);
+                            setTimeout(() => {
+                                updateJobs(employerAnnouncement);
+                                setEmployerAnnouncement(DEFAULT_FORM_VALUE);
+                                setIsOfferSucceed(false);
+                            }, 2500);
+                        }}
+                        className={clsx('btn', 'active')}
+                    >
                         Create Job offer
                     </button>
                 </>

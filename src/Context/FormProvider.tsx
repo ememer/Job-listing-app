@@ -44,6 +44,7 @@ const FormProvider = ({ children }: Props) => {
     const [specificToolsFiled, setSpecificToolsFiled] = useState<string>('');
     const [specificLanguagesFiled, setSpecificLanguagesFiled] = useState<string>('');
     const [unlockedStepNumbers, setUnlockedStepNumbers] = useState<number[]>([]);
+    const [isOfferSucceed, setIsOfferSucceed] = useState<boolean>(false);
 
     const setAnnouncementField = (e: ChangeEvent, key: string) =>
         setEmployerAnnouncement((pS) => ({
@@ -82,6 +83,8 @@ const FormProvider = ({ children }: Props) => {
                 setSpecificLanguagesFiled,
                 unlockSteps,
                 unlockedStepNumbers,
+                isOfferSucceed,
+                setIsOfferSucceed,
             }}
         >
             {children}

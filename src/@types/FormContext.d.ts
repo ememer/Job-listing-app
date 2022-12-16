@@ -17,4 +17,6 @@ export interface FormContextProvider {
     setSpecificLanguagesFiled: Dispatch<React.SetStateAction<string>>;
     unlockSteps: (stepNumber: number) => void;
     unlockedStepNumbers: number[];
+    isOfferSucceed: boolean;
+    setIsOfferSucceed: Dispatch<React.SetStateAction<boolean>>;
 }

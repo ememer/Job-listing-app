@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CreateDivImage from './CreateDivImage';
+
 import './JobCard.css';
 
 type Props = {
@@ -35,7 +37,12 @@ const JobCard = ({
 }: Props) => {
     return (
         <div className="job-card" id={`${id}`}>
-            <img className="job-img" alt="logo" src={logo} />
+            {logo.includes('http') ? (
+                <CreateDivImage className="job-img" path={logo} shape="circle" margin="0" height="4.5rem" />
+            ) : (
+                <img className="job-img" alt="logo" src={logo} />
+            )}
+
             <div>
                 <div className="job-section">
                     <h1 className="job-company">{company}</h1>
