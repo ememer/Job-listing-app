@@ -4,7 +4,9 @@ import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
 import { FormContextProvider } from '../@types/FormContext';
+import { JobListContextProvider } from '../@types/JobListTypes';
 import { FormContext } from '../Context/FormContext';
+import { JobListContext } from '../Context/JobsListContext';
 import { useEmployerForm } from '../hook/useEmployerForm';
 
 import './FormButtons.css';
@@ -15,7 +17,8 @@ type Props = {
 
 const EmployerStepsButtons = ({ step }: Props) => {
     const { unlockedSteps } = useEmployerForm();
-    const { unlockSteps } = useContext(FormContext) as FormContextProvider;
+    const { unlockSteps, employerAnnouncement } = useContext(FormContext) as FormContextProvider;
+    const { updateJobs } = useContext(JobListContext) as JobListContextProvider;
 
     return (
         <div
@@ -58,7 +61,9 @@ const EmployerStepsButtons = ({ step }: Props) => {
                     <Link className="btn active" to={`step=${step - 1}`}>
                         Previous step
                     </Link>
-                    <button className={clsx('btn', 'active')}>Create Job offer</button>
+                    <button onClick={() => updateJobs(employerAnnouncement)} className={clsx('btn', 'active')}>
+                        Create Job offer
+                    </button>
                 </>
             )}
         </div>

@@ -4,7 +4,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 
-import { ContextType, JobListObject } from '../@types/JobListTypes';
+import { JobListContextProvider, JobListObject } from '../@types/JobListTypes';
 import { JobListContext } from '../Context/JobsListContext';
 
 import SearchItemList from './SearchItemList';
@@ -12,7 +12,7 @@ import SearchItemList from './SearchItemList';
 import './Search.css';
 
 const SearchComponent = () => {
-    const { jobLists, filtersArray, setFiltersArray } = useContext(JobListContext) as ContextType;
+    const { currentJobsLists, filtersArray, setFiltersArray } = useContext(JobListContext) as JobListContextProvider;
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     const addFilters = (e: React.MouseEvent) => {
@@ -83,14 +83,14 @@ const SearchComponent = () => {
                 <div className="search-filters">
                     <SearchItemList
                         title="Technologies"
-                        data={jobLists}
+                        data={currentJobsLists}
                         targetKey="tools"
                         filtersArray={filtersArray}
                         onClick={addFilters}
                     />
                     <SearchItemList
                         title="Languages"
-                        data={jobLists}
+                        data={currentJobsLists}
                         targetKey="languages"
                         filtersArray={filtersArray}
                         onClick={addFilters}
