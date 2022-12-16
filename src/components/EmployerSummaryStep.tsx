@@ -13,14 +13,16 @@ import SummaryItem from './SummaryItem';
 import './EmployerSummary.css';
 
 const EmployerSummaryStep = () => {
-    const { employerAnnouncement, unlockedStepNumbers } = useContext(FormContext) as FormContextProvider;
+    const { employerAnnouncement, unlockedStepNumbers, isOfferSucceed } = useContext(
+        FormContext,
+    ) as FormContextProvider;
     const { languages, tools, image, description, address } = employerAnnouncement;
 
     return (
         <>
             {unlockedStepNumbers.includes(6) ? (
                 <>
-                    {true && <SuccessMessage />}
+                    {isOfferSucceed && <SuccessMessage />}
                     <div className="summary__section">
                         <div className="summary__content">
                             <SummaryDetails />
