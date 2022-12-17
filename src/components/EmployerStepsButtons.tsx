@@ -65,8 +65,8 @@ const EmployerStepsButtons = ({ step }: Props) => {
                     <button
                         onClick={() => {
                             setIsOfferSucceed(true);
+                            updateJobs(employerAnnouncement);
                             setTimeout(() => {
-                                updateJobs(employerAnnouncement);
                                 setEmployerAnnouncement(DEFAULT_FORM_VALUE);
                                 setIsOfferSucceed(false);
                             }, 9000);

@@ -14,9 +14,10 @@ const SuccessMessage = () => {
     const { currentJobsLists } = useContext(JobListContext) as JobListContextProvider;
 
     const [seconds, setSeconds] = useState(8);
+
     useEffect(() => {
         if (seconds === 0) {
-            return redirect(`/job/${currentJobsLists.length - 1}`);
+            return redirect(`/job/${currentJobsLists.length}`);
         }
         const timer = setTimeout(() => {
             setSeconds((ps) => ps - 1);
