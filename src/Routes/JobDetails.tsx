@@ -119,7 +119,7 @@ const JobDetails = () => {
                         <p>{description.subtext}</p>
                     </div>
                 </div>
-                <MapComponent height="100%" address={address} />
+                <MapComponent className="map__layer" address={address} />
             </div>
         </section>
     );

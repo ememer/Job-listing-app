@@ -7,7 +7,8 @@ import { MAPBOX_TOKEN } from './../utils/MAP_BOX_TOKEN';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 interface MapProps {
-    height: string;
+    className?: string;
+    height?: string;
     address: {
         postcode: string;
         city: string;
@@ -17,7 +18,7 @@ interface MapProps {
     };
 }
 
-const MapComponent = ({ height, address }: MapProps) => {
+const MapComponent = ({ className, height, address }: MapProps) => {
     const [coordinatesArray, setCoordinatesArray] = useState([0, 0]);
 
     type ResponseApi = {
@@ -46,7 +47,7 @@ const MapComponent = ({ height, address }: MapProps) => {
     return (
         <>
             {coordinatesArray[0] !== 0 && coordinatesArray[1] !== 0 && (
-                <span style={{ height: `${height}` }}>
+                <span className={className} style={{ height: `${height}` }}>
                     <Map
                         mapStyle="mapbox://styles/mapbox/streets-v9"
                         style={{
