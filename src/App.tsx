@@ -6,8 +6,6 @@ import Layout from './components/Layout';
 import FormProvider from './Context/FormProvider';
 import JobListProvider from './Context/JobsListProvider';
 
-import './App.css';
-
 function App() {
     return (
         <div className="App">

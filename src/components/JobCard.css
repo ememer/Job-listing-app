@@ -2,22 +2,23 @@
   color: var(--graphite-dark);
   position: relative;
   cursor: pointer;
-  background-color: azure;
-  margin: 50px auto;
+  background-color: var(--secondary__background__color);
+  margin: 4rem auto;
   border-radius: 5px;
   border: none;
-  padding: 2.2rem 1.5rem;
+  padding: 3rem 1.5rem;
   box-shadow: 4px 10px 40px -32px rgba(66, 68, 90, 1);
 }
 
 .job__card:hover {
   transition-duration: 0.5s;
-  border-left: 10px solid var(--main-accents);
+  border-left: 10px solid var(--main__accents__color);
 }
 
 .job__section {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 
@@ -34,15 +35,20 @@
 }
 
 .job__company {
-  font-size: 1.4rem;
-  color: var(--main-accents);
+  font-size: 1.6rem;
+  width: 100%;
+  font-weight: 800;
+  color: var(--main__accents__color);
+  margin: 10px 0 20px 0;
 }
+
+
 
 .job__new,
 .job__featured {
   font-size: 0.8rem;
   color: white;
-  margin: 0px 10px;
+  margin: 0 1rem 0 1rem;
   padding: 5px 10px;
   border-radius: 25px;
   font-weight: bold;
@@ -50,7 +56,7 @@
 }
 
 .job__new{
-  background-color: var(--main-accents);
+  background-color: var(--main__accents__color);
 }
 .job__featured{
   background-color: var(--graphite-dark);
@@ -65,39 +71,47 @@
 
 .job__position {
   font-size: 1.2rem;
+  margin: 1rem 0;
   width: 100%;
 }
 
 .job__details{
   font-weight: 800;
   display: flex;
+  flex-wrap: wrap;
   margin-right: auto;
+  margin: 1rem 0;
   width: 100%;
   padding: 0;
   list-style-type: none;
+}
+
+.job__details> li:first-child{
+  padding: 0.6rem;
 }
 
 .job__contract,
 .job__location {
   list-style-type:disc;
   margin-left: 2rem;
+  padding: 0.6rem;
 }
 
 .job__requirements {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  padding: 0;
+  padding: 15px;
 }
 
 .job__requirements > li {
   margin: 0.5rem;
   font-size: 1.2rem;
-  background-color: var(--bg-accents);
-  color: var(--main-accents);
-  font-weight: bold;
-  padding: 0.3rem 0.5rem;
-  border-radius: 5px;
+  background-color: var(--main__accents__color);
+  color: var(--text__light);
+  font-weight: 200;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 }
 
 

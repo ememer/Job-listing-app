@@ -1,11 +1,68 @@
 header {
-  background-color: var(--main-accents);
+  position: relative;
+  background-color: var(--header__accent);
   height: 15vh;
+  overflow: hidden;
 }
 
 .container {
   padding: 0 1rem;
   margin: auto;
+}
+
+
+
+
+
+.header__accent__1 {
+  display: inline-block;
+  position: relative;
+  border-radius: 64% 36% 23% 77% / 46% 30% 70% 54%;
+  background-color: var(--main__accents__color);
+  height: 250px;
+  width: 450px;
+  top: -110px;
+}
+.header__accent__2 {
+  display: inline-block;
+  position: relative;
+  border-radius: 15% 85% 23% 77% / 77% 74% 26% 23% ;
+  background-color: var(--main__accents__color);
+  height: 250px;
+  width: 450px;
+  top: -110px;
+  left: calc(55% - 250px);
+}
+.header__accent__3 {
+  display: inline-block;
+  position: relative;
+  border-radius: 67% 33% 80% 20% / 39% 57% 43% 61%  ;
+  background-color: var(--main__accents__color);
+  height: 250px;
+  width: 450px;
+  top: -110px;
+  left: calc(-13% - 250px);
+}
+
+.header__title{
+  position: relative;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  color: var(--text__light);
+  font-weight: 800;
+  z-index: 5;
+}
+
+.header__title > span:first-child {
+  font-size: 2.2rem;
+}
+
+.header__title > span:last-child {
+  font-size: 1.2rem;
+  font-weight: 200;
+  width: auto;
+  margin:  0 0 0 30px;
 }
 
 @media screen and (min-width: 1024px) {
