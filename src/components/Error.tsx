@@ -14,15 +14,15 @@ interface Props {
 
 const ErrorPage = ({ className, path }: Props) => {
     return (
-        <div className={clsx('error-content', className)}>
-            <div className="error-icon">
+        <div className={clsx('error__content', className)}>
+            <div className="error__icon">
                 <FontAwesomeIcon icon={faUserAstronaut} />
             </div>
-            <div className="error-message">
+            <div className="error__message">
                 <h1>Out of galaxy</h1>
                 <span>Something went wrong...</span>
             </div>
-            <Link className="error-back" to={`${path}`}>
+            <Link className="error__back" to={`${path}`}>
                 <FontAwesomeIcon className="fa-rotate-180 icon" icon={faShuttleSpace} />
                 Turn back to earth
             </Link>

@@ -69,7 +69,7 @@ const EmployerStepsButtons = ({ step }: Props) => {
                                 updateJobs(employerAnnouncement);
                                 setEmployerAnnouncement(DEFAULT_FORM_VALUE);
                                 setIsOfferSucceed(false);
-                            }, 2500);
+                            }, 9000);
                         }}
                         className={clsx('btn', 'active')}
                     >

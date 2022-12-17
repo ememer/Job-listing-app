@@ -1,4 +1,4 @@
-.error-content {
+.error__content {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -8,25 +8,25 @@
   background-color: #F5EDDC;
 }
 
-.error-icon {
+.error__icon {
   font-size: 15rem;
   color: var(--error);
 }
 
-.error-message {
+.error__message {
   text-align: center;
 }
-.error-message > h1 {
+.error__message > h1 {
   font-size: 2rem;
   font-weight: 700;
 }
-.error-message > span {
+.error__message > span {
   font-size: 1.5rem;
   font-weight: 200;
   color: #EB1D36;
 }
 
-.error-back {
+.error__back {
     display: flex;
     align-items: center;
     margin: 1rem 0;
@@ -38,12 +38,12 @@
     text-align: center;
 }
 
-.error-back>.icon{
+.error__back>.icon{
     margin: 0rem .5rem 0 0;
     font-size: 1.4rem;
 }
 
-.error-back:hover{
+.error__back:hover{
     color: #F5EDDC;
     background-color: #E0144C;
     transition-duration: 0.8s;

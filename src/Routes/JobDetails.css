@@ -1,8 +1,8 @@
-.details-section {
+.details__section {
   position: relative;
 }
 
-.clipboard-popup {
+.clipboard__popup {
   position: fixed;
   bottom: 5vh;
   right: 5vw;
@@ -15,15 +15,15 @@
   box-shadow: 0px 13px 17px -17px rgba(0,0,0,0.9);
 }
 
-.details-nav {
+.details__nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--main-accents);
 }
 
-.back-button,
- .share-button {
+.back__button,
+ .share__button {
   display: inline-block;
   margin: 1rem 0.5rem;
   padding: 0.4rem 0.6rem;
@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 
-.details-header {
+.details__header {
   position: relative;
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -50,7 +50,7 @@
   color: white;
 }
 
-.details-header::after {
+.details__header::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -59,49 +59,58 @@
   z-index: 1;
 }
 
-.details-header > div:first-child {
+.details__header > div:first-child {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.details-header > div:last-child > h1 {
+.details__header > div:last-child > h1 {
   font-size: 3.5rem;
   font-weight: 700;
   margin: 10px 0px;
 }
 
-.details-header > div:last-child > span {
+.details__header > div:last-child > span {
   font-size: 2.5rem;
   font-weight: 200;
   margin: 10px 0px;
 }
 
-.details-header > div {
+.details__header > div {
   z-index: 2;
 }
 
-.details-tech,
-.details-job {
+.header__image {
+  border-radius: 100%;
+  aspect-ratio: 1 / 1;
+  height: 12vh;
+ background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.details__tech,
+.details__job {
   display: grid;
   width: 100%;
   margin: 20px 0;
 }
 
-.details-tech {
+.details__tech {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
   padding: 10px;
 }
 
-.details-job {
+.details__job {
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
 
-.details-tech > li,
-.details-job > li {
+.details__tech > li,
+.details__job > li {
   background-color: var(--bg-light);
   color: var(--main-accents);
   font-weight: 400;
@@ -113,23 +122,23 @@
   box-shadow: 5px 8px 29px -20px rgba(66, 68, 90, 1);
 }
 
-.details-tech > li {
+.details__tech > li {
   min-height: 8vh;
 }
 
-.details-tech-title {
+.details__tech-title {
   font-size: 1.5rem;
   font-weight: 700;
   border-bottom: 1px solid var(--graphite-dark);
 }
 
-.details-job > li {
+.details__job > li {
   position: relative;
   min-height: 10vh;
   margin-top: 20px;
 }
 
-.details-icons {
+.details__icons {
   position: absolute;
   top: calc(1.8rem - 60%);
   color: white;
@@ -140,21 +149,21 @@
   border-radius: 100%;
 }
 
-.details-content {
+.details__content {
   display: flex;
   flex-direction: column;
   margin: 5% 0;
 }
 
-.details-content > div > div > h2,
-.details-content > div > div > p {
+.details__content > div > div > h2,
+.details__content > div > div > p {
   line-height: 160%;
   font-weight: 200;
   font-size: 1.2rem;
   padding: 10px;
 }
 
-.details-content > div > div > h2:first-of-type {
+.details__content > div > div > h2:first-of-type {
   font-weight: 700;
   font-size: 1.3rem;
   margin: 15px 0px;
@@ -162,21 +171,21 @@
   border-bottom: 1px solid var(--graphite-dark);
 }
 
-.details-content > div > div > h2 {
+.details__content > div > div > h2 {
   font-weight: 400;
   font-size: 1.2rem;
   margin: 10px 0px;
   width: 100%;
 }
 
-.details-img {
+.details__img {
   height: 20vh;
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
 }
 
-.details-img > div {
+.details__img > div {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -184,17 +193,17 @@
   height: 100%;
 }
 
-.map-layer {
+.map__layer {
   height: 40vh;
 }
 
 @media screen and (min-width: 1024px) {
-  .details-job {
+  .details__job {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 5px;
   }
 
-  .details-tech {
+  .details__tech {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -202,17 +211,17 @@
     width: 100%;
   }
 
-  .details-tech > li {
+  .details__tech > li {
     min-width: 30%;
   }
 
-  .details-content {
+  .details__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 
-  .details-content > div > div:last-child {
+  .details__content > div > div:last-child {
     overflow-y: scroll;
     max-height: 40vh;
     margin-top: 10px;

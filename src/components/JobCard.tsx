@@ -36,29 +36,29 @@ const JobCard = ({
     tools,
 }: Props) => {
     return (
-        <div className="job-card" id={`${id}`}>
+        <div className="job__card" id={`${id}`}>
             {logo.includes('http') ? (
-                <CreateDivImage className="job-img" path={logo} shape="circle" margin="0" height="4.5rem" />
+                <CreateDivImage className="job__img" path={logo} shape="circle" margin="0" height="4.5rem" />
             ) : (
-                <img className="job-img" alt="logo" src={logo} />
+                <img className="job__img" alt="logo" src={logo} />
             )}
 
             <div>
-                <div className="job-section">
-                    <h1 className="job-company">{company}</h1>
-                    {newest && <span className="job-new">NEW!</span>}
-                    {featured && <span className="job-featured">FEATURED!</span>}
+                <div className="job__section">
+                    <h1 className="job__company">{company}</h1>
+                    {newest && <span className="job__new">NEW!</span>}
+                    {featured && <span className="job__featured">FEATURED!</span>}
                 </div>
-                <div className="job-context">
-                    <h2 className="job-position">{position}</h2>
-                    <ul className="job-details">
+                <div className="job__context">
+                    <h2 className="job__position">{position}</h2>
+                    <ul className="job__details">
                         <li>{postedAt}</li>
-                        <li className="job-contract">{contract}</li>
-                        <li className="job-location">{location}</li>
+                        <li className="job__contract">{contract}</li>
+                        <li className="job__location">{location}</li>
                     </ul>
                 </div>
             </div>
-            <ul className="job-requirements">
+            <ul className="job__requirements">
                 {role && <li>{role}</li>}
                 {level && <li>{level}</li>}
                 {languages && languages.map((lang: string, idx: number) => <li key={`${lang}${idx}`}>{lang}</li>)}

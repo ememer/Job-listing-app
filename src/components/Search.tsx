@@ -31,7 +31,7 @@ const SearchComponent = () => {
     return (
         <div
             id="search-section"
-            className={clsx(isSearchOpen && ' enabled', 'search-section')}
+            className={clsx(isSearchOpen && ' enabled', 'search__section')}
             onClick={(e: React.MouseEvent<HTMLDivElement>) => onClose(e)}
         >
             <div
@@ -43,11 +43,14 @@ const SearchComponent = () => {
                         setIsSearchOpen(true);
                     }
                 }}
-                className="search-component"
+                className="search__component"
                 id="search_content"
             >
                 <div
-                    className={clsx(isSearchOpen ? 'enabled-search-items' : 'disabled-search-items', 'search-items')}
+                    className={clsx(
+                        isSearchOpen ? 'enabled__search__items' : 'disabled__search__items',
+                        'search__items',
+                    )}
                     id="search_content"
                 >
                     <ul id="search_content">
@@ -80,7 +83,7 @@ const SearchComponent = () => {
                 </div>
             </div>
             {isSearchOpen && (
-                <div className="search-filters">
+                <div className="search__filters">
                     <SearchItemList
                         title="Technologies"
                         data={currentJobsLists}
