@@ -12,6 +12,7 @@ interface Props {
 const JobListProvider = ({ children }: Props) => {
     const [filtersArray, setFiltersArray] = useState([]);
     const [currentJobsLists, setCurrentJobsLists] = useState<JobListObject[]>(
+        //eslint-disable-next-line
         JSON.parse(localStorage.getItem('JobsList')!) ?? jobLists,
     );
 
