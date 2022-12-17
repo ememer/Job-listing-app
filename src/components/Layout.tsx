@@ -20,10 +20,12 @@ const Layout = ({ children }: LayoutProps) => {
             <header>
                 <div className="container">
                     <div className="header__nav">
-                        <div className="header__title">
-                            <span>Dź0b</span>
-                            <span>J0b</span>
-                        </div>
+                        <Link to="/">
+                            <div className="header__title">
+                                <span>Dź0b</span>
+                                <span>J0b</span>
+                            </div>
+                        </Link>
                         <nav>
                             <Link className="nav_link" to={path.path}>
                                 {path.text}
