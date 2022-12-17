@@ -79,7 +79,7 @@ const SearchComponent = () => {
                     </ul>
                     {filtersArray.length > 0 && (
                         <button onClick={() => setFiltersArray([])} id="clear_button">
-                            Clean
+                            Wipe
                         </button>
                     )}
                     {isSearchOpen && (

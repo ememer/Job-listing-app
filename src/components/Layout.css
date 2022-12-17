@@ -1,7 +1,9 @@
 header {
   position: relative;
-  height: 15vh;
+  min-height: 15vh;
   overflow: hidden;
+  margin-bottom: 30px;
+
 }
 
 .container {

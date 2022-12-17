@@ -70,7 +70,7 @@
     background-color: var(--main__accents__color);
     border-radius: 5px;
     padding: 0 0 0 8px;
-    height: 4vh;
+    height: 40px;
     cursor: default;
 }
 
@@ -124,9 +124,9 @@
 .search__filters > div > ul > li {
     display: inline-block;
     border-radius: 5px;
-    height: 4vh;
-    padding: 1vh 20px;
-    margin: 0px 10px;
+    height: 40px;
+    padding: 10px 20px;
+    margin: 1vh 10px;
     font-weight: 800;
     color: var(--text__light);
     cursor: pointer;
