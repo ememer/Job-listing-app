@@ -18,7 +18,7 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "simple-import-sort", "prettier"],
   rules: {
-    "no-unused-vars": "warning",
+    "no-unused-vars": "warn",
     "simple-import-sort/exports": "error",
     "prettier/prettier": "error",
     "simple-import-sort/imports": [
