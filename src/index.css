@@ -1,28 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,700&display=swap');
 
 :root {
-  font-size: 15px;
-  --graphite-dark: hsl(180, 14%, 20%);
-  --main-accents: hsl(180, 29%, 50%);
-  --bg-accents: hsl(170, 54%, 87%);
-  --bg-light: hsl(0, 0%, 97%);
-  --background: hsl(180, 52%, 96%);
-  --bg-dark: hsl(180, 8%, 62%);
-  --light-gray: hsla(228, 6%, 65%, 0.432);
-  --selected: hsl(180, 57%, 72%);
-  --error: #E0144C;
-  --success: #54B435;
-  --info: #82C3EC;
-
-
-  /* Nowa paleta */
-
+  font-size: 16px;  
   --main__background__color: #FFFFFF;
   --secondary__background__color: #f3f8fa;
   --main__accents__color: #8D9EFF;
+  --inactive: #acc9ff;
   --text__light: #FFF;
   --text__dark: #495464;
   --secondary__accent: #6d7fe4;
+  --info: #6d7fe4;
+  --success: #16C79A;
+  --error: #E0144C;
+  --graphite-dark: #2c3a3a;
 }
 
 body {

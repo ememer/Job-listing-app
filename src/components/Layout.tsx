@@ -1,18 +1,34 @@
 import React from 'react';
 
+import { Link, useLocation } from 'react-router-dom';
+
 // import { Link } from 'react-router-dom';
 import './Layout.css';
 
 type LayoutProps = { children: React.ReactNode };
 
 const Layout = ({ children }: LayoutProps) => {
+    const location = useLocation();
+
+    const path =
+        location.pathname === '/employer-panel/step=1'
+            ? { text: 'HOME', path: '/' }
+            : { text: 'CREATE OFFER', path: '/employer-panel/step=1' };
+
     return (
         <>
             <header>
                 <div className="container">
-                    <div className="header__title">
-                        <span>Dź0b</span>
-                        <span>J0b</span>
+                    <div className="header__nav">
+                        <div className="header__title">
+                            <span>Dź0b</span>
+                            <span>J0b</span>
+                        </div>
+                        <nav>
+                            <Link className="nav_link" to={path.path}>
+                                {path.text}
+                            </Link>
+                        </nav>
                     </div>
                 </div>
             </header>

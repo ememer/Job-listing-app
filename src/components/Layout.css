@@ -11,6 +11,25 @@ header {
   margin: auto;
 }
 
+.header__nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  margin-right: 20px;
+}
+
+.nav_link{
+  color: var(--text__light);
+  background-color: var(--main__accents__color);
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 15px;
+  border-radius: 25px;
+}
+
 .header__title{
   position: relative;
   padding: 20px 30px;

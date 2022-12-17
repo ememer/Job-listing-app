@@ -3,7 +3,7 @@
     border-radius: 15px;
     padding: 2rem;
     width: 100%;
-    background-color: var(--background);
+    background-color: var(--main__background__color);
     box-shadow: 1px 4px 22px -11px rgba(0, 0, 0, 0.7);
     overflow: hidden;
     animation-name: extend;
@@ -26,7 +26,6 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
-    /* width: 60%; */
     margin: auto;
 }
 
@@ -38,7 +37,7 @@
 .employer__fields>div>label {
     font-weight: 200;
     font-size: 1.2rem;
-    color: var(--main-accents);
+    color: var(--secondary__accent);
     margin: 0px 0px 10px 15px;
 }
 
@@ -52,11 +51,6 @@
     align-items: center;
 }
 
-.employer__fields>div>input::placeholder {
-    color: var(--main-accents);
-    font-size: 1rem;
-    font-weight: 200;
-}
 
 .employer__fields>div>select {
     cursor: pointer;
@@ -81,14 +75,16 @@
 }
 
 .active__step {
-    background-color: var(--main-accents);
+    background-color: var(--main__accents__color);
     transition-duration: 2s;
+    border-radius: 20px;
 }
 
 .fields__step {
+    border-radius: 20px;
     display: inline-block;
     width: 100%;
-    background-color: var(--bg-accents);
+    background-color: var(--inactive);
 }
 
 .employer__skills__items {
@@ -101,8 +97,8 @@
 
 .employer__skills__items>span {
     text-align: center;
-    font-weight: 200;
-    color: var(--graphite-dark);
+    font-size: 0.9rem;
+    color: var(--secondary__accent);
 }
 
 .employer__skills__items>ul {
@@ -114,10 +110,10 @@
 
 .employer__skills__items>ul>li {
     margin: 10px 20px;
-    font-weight: 200;
+    font-weight: 800;
     font-size: 1.2rem;
-    background-color: var(--bg-accents);
-    color: var(--main-accents);
+    background-color: var(--main__accents__color);
+    color: var(--text__light);
     padding: 10px 20px;
     border-radius: 5px;
 
