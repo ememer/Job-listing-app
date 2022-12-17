@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorPage path="/" />,
         children: [
             { index: true, element: <JobList /> },
             {

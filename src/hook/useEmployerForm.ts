@@ -153,8 +153,46 @@ const validateForm = ({
 };
 
 export const useEmployerForm = () => {
-    const { employerAnnouncement } = useContext(FormContext) as FormContextProvider;
+    const { employerAnnouncement, stepNumber } = useContext(FormContext) as FormContextProvider;
 
     const validationError = validateForm(employerAnnouncement);
-    return { validationError };
+
+    const protectStepSkipping = (stepNumber: number) => {
+        if (stepNumber === 1 && !validationError?._infoStepOne) {
+            return {
+                isDisable: false,
+                isActive: true,
+                enableStep: 2,
+            };
+        } else if (stepNumber === 2 && !validationError?._infoStepTwo) {
+            return {
+                isDisable: false,
+                isActive: true,
+                enableStep: 3,
+            };
+        } else if (stepNumber === 3 && !validationError?._infoStepThree) {
+            return {
+                isDisable: false,
+                isActive: true,
+                enableStep: 4,
+            };
+        } else if (stepNumber === 4 && !validationError?._infoStepFour) {
+            return {
+                isDisable: false,
+                isActive: true,
+                enableStep: 5,
+            };
+        } else if (stepNumber === 5 && !validationError?._infoFifthStep) {
+            return {
+                isDisable: false,
+                isActive: true,
+                enableStep: 6,
+            };
+        }
+        return {};
+    };
+
+    const unlockedSteps = protectStepSkipping(stepNumber);
+
+    return { validationError, unlockedSteps };
 };

@@ -20,6 +20,7 @@
 
 .active {
     background-color: var(--main-accents);
+    cursor: pointer;
 }
 
 

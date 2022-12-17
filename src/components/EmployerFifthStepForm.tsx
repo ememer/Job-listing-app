@@ -9,11 +9,12 @@ import { FormContext } from '../Context/FormContext';
 import { useEmployerForm } from '../hook/useEmployerForm';
 import { MAPBOX_TOKEN } from '../utils/MAP_BOX_TOKEN';
 
+import ErrorPage from './Error';
+
 const EmployerFifthStepForm = () => {
     const [isFocused, setIsFocused] = useState(false);
-    const { employerAnnouncement, setEmployerAnnouncement, setEmployerAnnouncementFiledGroup } = useContext(
-        FormContext,
-    ) as FormContextProvider;
+    const { employerAnnouncement, setEmployerAnnouncement, setEmployerAnnouncementFiledGroup, unlockedStepNumbers } =
+        useContext(FormContext) as FormContextProvider;
 
     const { validationError } = useEmployerForm();
 
@@ -48,67 +49,73 @@ const EmployerFifthStepForm = () => {
     }, [employerAnnouncement.address, isFocused]);
 
     return (
-        <div className="employer__fields">
-            <span className={clsx(validationError?._infoFifthStep ? 'info' : 'success')}>
-                {validationError?._infoFifthStep ?? 'All looks good. Take a look at summary!🎉'}
-            </span>
-            <div>
-                <label>
-                    City <span>*</span>
-                </label>
-                <input
-                    value={employerAnnouncement.address.city}
-                    onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'city')}
-                    type="text"
-                    title="Insert city"
-                />
-            </div>
-            <div>
-                <label>
-                    Full street name <span>*</span>
-                </label>
-                <input
-                    value={employerAnnouncement.address.street}
-                    onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'street')}
-                    type="text"
-                    title="Insert street"
-                />
-            </div>
-            <div>
-                <label>
-                    Building number <span>*</span>
-                </label>
-                <input
-                    onFocus={() => setIsFocused(!isFocused)}
-                    value={employerAnnouncement.address.number}
-                    onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'number')}
-                    type="text"
-                    title="Insert building number"
-                />
-            </div>
-            <div>
-                <label>
-                    ZIP / Postcode <span>*</span>
-                </label>
-                <input
-                    value={employerAnnouncement.address.postcode}
-                    onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'postcode')}
-                    type="text"
-                    title="Insert postcode"
-                />
-            </div>
-            <div>
-                <label>
-                    Country <span>*</span>
-                </label>
-                <input
-                    value={employerAnnouncement.address.country}
-                    onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'country')}
-                    type="text"
-                    title="Insert country"
-                />
-            </div>
-        </div>
+        <>
+            {unlockedStepNumbers.includes(5) ? (
+                <div className="employer__fields">
+                    <span className={clsx(validationError?._infoFifthStep ? 'info' : 'success')}>
+                        {validationError?._infoFifthStep ?? 'All looks good. Take a look at summary!🎉'}
+                    </span>
+                    <div>
+                        <label>
+                            City <span>*</span>
+                        </label>
+                        <input
+                            value={employerAnnouncement.address.city}
+                            onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'city')}
+                            type="text"
+                            title="Insert city"
+                        />
+                    </div>
+                    <div>
+                        <label>
+                            Full street name <span>*</span>
+                        </label>
+                        <input
+                            value={employerAnnouncement.address.street}
+                            onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'street')}
+                            type="text"
+                            title="Insert street"
+                        />
+                    </div>
+                    <div>
+                        <label>
+                            Building number <span>*</span>
+                        </label>
+                        <input
+                            onFocus={() => setIsFocused(!isFocused)}
+                            value={employerAnnouncement.address.number}
+                            onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'number')}
+                            type="text"
+                            title="Insert building number"
+                        />
+                    </div>
+                    <div>
+                        <label>
+                            ZIP / Postcode <span>*</span>
+                        </label>
+                        <input
+                            value={employerAnnouncement.address.postcode}
+                            onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'postcode')}
+                            type="text"
+                            title="Insert postcode"
+                        />
+                    </div>
+                    <div>
+                        <label>
+                            Country <span>*</span>
+                        </label>
+                        <input
+                            value={employerAnnouncement.address.country}
+                            onChange={(e) => setEmployerAnnouncementFiledGroup(e, 'address', 'country')}
+                            type="text"
+                            title="Insert country"
+                        />
+                    </div>
+                </div>
+            ) : (
+                <ErrorPage path="/employer-panel/step=1" className="employer__error" />
+            )}
+        </>
     );
 };
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import {
     faArrowLeft,
@@ -11,48 +11,20 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useParams } from 'react-router-dom';
 
+import { JobListContextProvider, JobListObject } from '../@types/JobListTypes';
 import MapComponent from '../components/MapComponent';
-import jobs from '../utils/data.json';
+import { JobListContext } from '../Context/JobsListContext';
 
 import './JobDetails.css';
 
-type JobDescription = {
-    title: string;
-    text: string;
-    subtitle: string;
-    subtext: string;
-};
-
-type AddressObject = {
-    postcode: string;
-    city: string;
-    country: string;
-    street: string;
-    number: number;
-};
-
-interface JobList {
-    company: string;
-    contract: string;
-    languages: string[];
-    logo: string;
-    level: string;
-    location: string;
-    position: string;
-    postedAt: string;
-    tools: string[];
-    image: string;
-    description: JobDescription;
-    address?: AddressObject;
-}
-
 const JobDetails = () => {
+    const { currentJobsLists } = useContext(JobListContext) as JobListContextProvider;
     const [isClipboard, setIsClipboard] = useState(false);
     const { id } = useParams();
 
     const pageId = id ?? 0;
 
-    const fakeApiResponse = jobs.filter((job) => job.id === +pageId);
+    const fakeApiResponse = currentJobsLists.filter((job) => job.id === +pageId);
     const {
         company,
         contract,
@@ -66,7 +38,7 @@ const JobDetails = () => {
         image,
         description,
         address,
-    }: JobList = fakeApiResponse[0];
+    }: JobListObject = fakeApiResponse[0];
 
     const copyClipboard = (): void => {
         navigator.clipboard.writeText(window.location.href);
@@ -82,47 +54,47 @@ const JobDetails = () => {
     }, [isClipboard]);
 
     return (
-        <section className="details-section">
-            {isClipboard && <span className="clipboard-popup">Link został skopiowany do schowka</span>}
-            <div className="details-nav">
-                <Link className="back-button" to={'/#'}>
+        <section className="details__section">
+            {isClipboard && <span className="clipboard__popup">Link został skopiowany do schowka</span>}
+            <div className="details__nav">
+                <Link className="back__button" to={'/#'}>
                     <FontAwesomeIcon icon={faArrowLeft} />
                 </Link>
-                <button onClick={copyClipboard} className="share-button">
+                <button onClick={copyClipboard} className="share__button">
                     <FontAwesomeIcon icon={faShareNodes} />
                 </button>
             </div>
-            <div className="details-header" style={{ backgroundImage: `url("${image}")` }}>
+            <div className="details__header" style={{ backgroundImage: `url("${image}")` }}>
                 <div>
-                    <img alt={`${company} logo`} src={logo}></img>
+                    <img className="header__image" alt={`${company} logo`} src={logo} />
                 </div>
                 <div>
                     <h1>{company}</h1>
                     <span>{position}</span>
                 </div>
             </div>
-            <ul className="details-job">
+            <ul className="details__job">
                 <li title="Lokalizacja">
-                    <FontAwesomeIcon className="details-icons" icon={faLocationPin} />
+                    <FontAwesomeIcon className="details__icons" icon={faLocationPin} />
                     {location}
                 </li>
                 <li title="Typ kontraktu">
-                    <FontAwesomeIcon className="details-icons" icon={faStopwatch} />
+                    <FontAwesomeIcon className="details__icons" icon={faStopwatch} />
                     {contract}
                 </li>
                 <li title="Poziom zaawansowania">
-                    <FontAwesomeIcon className="details-icons" icon={faFlask} />
+                    <FontAwesomeIcon className="details__icons" icon={faFlask} />
                     {level}
                 </li>
                 <li title="Kiedy opublikowano">
-                    <FontAwesomeIcon className="details-icons" icon={faBusinessTime} />
+                    <FontAwesomeIcon className="details__icons" icon={faBusinessTime} />
                     {postedAt}
                 </li>
             </ul>
             <div>
-                <h2 className="details-tech-title">Technologie</h2>
+                <h2 className="details__tech-title">Technologie</h2>
                 {(languages || tools) && (
-                    <ul className="details-tech">
+                    <ul className="details__tech">
                         {languages?.map((lang, idx) => (
                             <li key={`${lang}${idx}`}>{lang}</li>
                         ))}
@@ -132,10 +104,10 @@ const JobDetails = () => {
                     </ul>
                 )}
             </div>
-            <div className="details-content">
+            <div className="details__content">
                 <div>
                     {image && (
-                        <div className="details-img">
+                        <div className="details__img">
                             <div style={{ backgroundImage: `url("${image}")` }} />
                         </div>
                     )}

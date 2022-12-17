@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export interface JobListObject {
     id: number;
     company: string;
@@ -28,9 +29,10 @@ export interface JobListObject {
     };
 }
 
-export type ContextType = {
-    jobLists: JobListObject[];
+export type JobListContextProvider = {
+    currentJobsLists: JobListObject[];
     filtersArray: string[];
     setFiltersArray: Dispatch<React.SetStateAction<string[]>>;
     displayFilteredJobs: () => JobListObject[];
+    updateJobs: (newOffers: JobListObject) => void;
 };

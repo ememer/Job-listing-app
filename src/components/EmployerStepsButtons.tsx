@@ -4,7 +4,9 @@ import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
 import { FormContextProvider } from '../@types/FormContext';
+import { JobListContextProvider } from '../@types/JobListTypes';
 import { FormContext } from '../Context/FormContext';
+import { JobListContext } from '../Context/JobsListContext';
 import { useEmployerForm } from '../hook/useEmployerForm';
 
 import './FormButtons.css';
@@ -14,8 +16,10 @@ type Props = {
 };
 
 const EmployerStepsButtons = ({ step }: Props) => {
-    const { validationError } = useEmployerForm();
-    const { stepNumber } = useContext(FormContext) as FormContextProvider;
+    const { unlockedSteps } = useEmployerForm();
+    const { unlockSteps, employerAnnouncement, setEmployerAnnouncement, DEFAULT_FORM_VALUE, setIsOfferSucceed } =
+        useContext(FormContext) as FormContextProvider;
+    const { updateJobs } = useContext(JobListContext) as JobListContextProvider;
 
     return (
         <div
@@ -26,27 +30,31 @@ const EmployerStepsButtons = ({ step }: Props) => {
             )}
         >
             {step === 1 && (
-                <Link className={clsx('btn', validationError?._infoStepOne ? 'disable' : 'active')} to={'step=2'}>
-                    Next step
-                </Link>
+                <button
+                    disabled={unlockedSteps?.isDisable ?? true}
+                    onClick={() => unlockSteps(unlockedSteps?.enableStep ?? 0)}
+                >
+                    <Link className={clsx('btn', (unlockedSteps?.isActive && 'active') ?? 'disable')} to={'step=2'}>
+                        Next step
+                    </Link>
+                </button>
             )}
             {step > 1 && step < 6 && (
                 <>
                     <Link className="btn active" to={`step=${step - 1}`}>
                         Previous step
                     </Link>
-                    <Link
-                        className={clsx(
-                            'btn',
-                            [stepNumber === 2 && validationError?._infoStepTwo ? 'disable' : 'active'],
-                            [stepNumber === 3 && validationError?._infoStepThree ? 'disable' : 'active'],
-                            [stepNumber === 4 && validationError?._infoStepFour ? 'disable' : 'active'],
-                            [stepNumber === 5 && validationError?._infoFifthStep ? 'disable' : 'active'],
-                        )}
-                        to={`step=${step + 1}`}
+                    <button
+                        disabled={unlockedSteps?.isDisable ?? true}
+                        onClick={() => unlockSteps(unlockedSteps?.enableStep ?? 0)}
                     >
-                        {stepNumber === 5 ? 'Summary' : 'Next step'}
-                    </Link>
+                        <Link
+                            className={clsx('btn', (unlockedSteps?.isActive && 'active') ?? 'disable')}
+                            to={`step=${step + 1}`}
+                        >
+                            {step === 5 ? 'Summary' : 'Next step'}
+                        </Link>
+                    </button>
                 </>
             )}
             {step === 6 && (
@@ -54,7 +62,19 @@ const EmployerStepsButtons = ({ step }: Props) => {
                     <Link className="btn active" to={`step=${step - 1}`}>
                         Previous step
                     </Link>
-                    <button className={clsx('btn', 'active')}>Create Job offer</button>
+                    <button
+                        onClick={() => {
+                            setIsOfferSucceed(true);
+                            setTimeout(() => {
+                                updateJobs(employerAnnouncement);
+                                setEmployerAnnouncement(DEFAULT_FORM_VALUE);
+                                setIsOfferSucceed(false);
+                            }, 9000);
+                        }}
+                        className={clsx('btn', 'active')}
+                    >
+                        Create Job offer
+                    </button>
                 </>
             )}
         </div>

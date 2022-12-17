@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-import { ContextType } from '../@types/JobListTypes';
+import { JobListContextProvider } from '../@types/JobListTypes';
 
-export const JobListContext = createContext<ContextType | []>([]);
+export const JobListContext = createContext<JobListContextProvider | []>([]);

@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 module.exports = {
   semi: true,
   trailingComma: "all",
