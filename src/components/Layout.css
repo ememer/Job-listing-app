@@ -39,9 +39,9 @@ nav {
   font-weight: 800;
   z-index: 5;
   width: 10rem;
-  border-radius: 0 0 100% 100%;
-  background: var(--secondary__background__color);
-  box-shadow: inset 9px 5px 66px -41px rgba(66, 68, 90, 0.2);
+  border-radius: 0% 0% 73% 70% / 59% 59% 100% 100% ;
+  background-image: var(--main__background__light);
+  box-shadow: inset 9px 5px 66px -41px rgba(66, 68, 90, 0.4);
 }
 
 .header__title > span:first-child {

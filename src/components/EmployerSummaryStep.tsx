@@ -17,7 +17,6 @@ const EmployerSummaryStep = () => {
         FormContext,
     ) as FormContextProvider;
     const { languages, tools, image, description, address } = employerAnnouncement;
-
     return (
         <>
             {unlockedStepNumbers.includes(6) ? (

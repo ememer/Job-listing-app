@@ -5,6 +5,8 @@
   --main__background__color: #FFFFFF;
   --secondary__background__color: #f3f8fa;
   --main__accents__color: #8D9EFF;
+  --main__background__light: #c2cbff;
+  --main__background__dark: #495464;
   --inactive: #acc9ff;
   --text__light: #FFF;
   --text__dark: #495464;
@@ -20,7 +22,7 @@ body {
   background-color: var(--main__background__color);
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  color: #495464;
+  color: var(--text__dark);
 }
 
 /* SCROLLBAR STYLES */

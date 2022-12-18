@@ -47,7 +47,7 @@
 .job__new,
 .job__featured {
   font-size: 0.8rem;
-  color: white;
+  color: var(--text__light);
   margin: 0 1rem 0 1rem;
   padding: 5px 10px;
   border-radius: 25px;
@@ -59,14 +59,15 @@
   background-color: var(--main__accents__color);
 }
 .job__featured{
-  background-color: var(--graphite-dark);
+  background-color: var(--main__background__dark);
 }
 
 .job__context {
   display: flex;
   flex-direction: column;
   text-align: left;
-  border-bottom: 1px solid var(--graphite-dark);
+  border-bottom: 1px solid var(--main__background__dark);
+  color: var(--text__dark);
 }
 
 .job__position {
