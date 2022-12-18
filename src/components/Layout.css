@@ -24,6 +24,7 @@ nav {
 }
 
 .nav_link{
+  text-align: center;
   color: var(--text__light);
   background-color: var(--main__accents__color);
   font-weight: 800;

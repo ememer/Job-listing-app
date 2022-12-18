@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
 
+import AppSettings from './AppSettings';
 import ThemeToggle from './ThemeToggle';
 
 // import { Link } from 'react-router-dom';
@@ -21,6 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
         <>
             <header>
                 <div className="container">
+                    <AppSettings />
                     <div className="header__nav">
                         <Link to="/">
                             <div className="header__title">
