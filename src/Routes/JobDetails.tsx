@@ -49,13 +49,13 @@ const JobDetails = () => {
         if (isClipboard) {
             setTimeout(() => {
                 setIsClipboard(!isClipboard);
-            }, 1500);
+            }, 2500);
         }
     }, [isClipboard]);
 
     return (
         <section className="details__section">
-            {isClipboard && <span className="clipboard__popup">Link został skopiowany do schowka</span>}
+            {isClipboard && <span className="clipboard__popup">Link saved in clipboard</span>}
             <div className="details__nav">
                 <Link className="back__button" to={'/#'}>
                     <FontAwesomeIcon icon={faArrowLeft} />
@@ -92,7 +92,7 @@ const JobDetails = () => {
                 </li>
             </ul>
             <div>
-                <h2 className="details__tech-title">Technologie</h2>
+                <h2 className="details__tech-title">Technologises</h2>
                 {(languages || tools) && (
                     <ul className="details__tech">
                         {languages?.map((lang, idx) => (
@@ -119,7 +119,7 @@ const JobDetails = () => {
                         <p>{description.subtext}</p>
                     </div>
                 </div>
-                <MapComponent height="100%" address={address} />
+                <MapComponent className="map__layer" address={address} />
             </div>
         </section>
     );

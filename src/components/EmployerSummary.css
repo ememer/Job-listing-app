@@ -1,7 +1,7 @@
 .summary__section {
     display: flex;
     flex-direction: column;
-    color: var(--main-accents);
+    color: var(--main__accents__color);
     text-align: center;
 }
 

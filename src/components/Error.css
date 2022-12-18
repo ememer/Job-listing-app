@@ -5,12 +5,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #F5EDDC;
+  background-color: #f3f8fa;
 }
 
 .error__icon {
   font-size: 15rem;
-  color: var(--error);
+  color: #EB1D36;
 }
 
 .error__message {

@@ -13,18 +13,18 @@
     align-items: center;
     width: 100%;
     padding: 20px ;
-    color: white;
+    color: var(--text__light);
     font-size: 1rem;
     transition-duration: .5s;
 }
 
 .active {
-    background-color: var(--main-accents);
+    background-color: var(--main__accents__color);
     cursor: pointer;
 }
 
 
 .disable {
     pointer-events: none;
-    background-color: var(--graphite-dark);
+    background-color: var(--inactive);
 }

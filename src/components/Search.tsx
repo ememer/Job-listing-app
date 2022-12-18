@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faSliders, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 
@@ -53,6 +53,11 @@ const SearchComponent = () => {
                     )}
                     id="search_content"
                 >
+                    {filtersArray.length === 0 && (
+                        <span id="search_content">
+                            <FontAwesomeIcon id="search_content" icon={faSliders} /> Enable filters
+                        </span>
+                    )}
                     <ul id="search_content">
                         {filtersArray.map((element: string) => (
                             <li key={element}>
@@ -72,9 +77,11 @@ const SearchComponent = () => {
                             </li>
                         ))}
                     </ul>
-                    <button onClick={() => setFiltersArray([])} id="clear_button">
-                        Wyczyść
-                    </button>
+                    {filtersArray.length > 0 && (
+                        <button onClick={() => setFiltersArray([])} id="clear_button">
+                            Wipe
+                        </button>
+                    )}
                     {isSearchOpen && (
                         <button onClick={() => setIsSearchOpen(false)}>
                             <FontAwesomeIcon icon={faXmark} />

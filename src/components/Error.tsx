@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
-import './errorPage.css';
+import './../index.css';
+import './Error.css';
 
 interface Props {
     className?: string;
