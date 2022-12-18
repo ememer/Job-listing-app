@@ -1,0 +1,31 @@
+.toggle__theme{
+    display: inline-block;
+    position: relative;
+    margin: 10px 0px;
+    background: var(--main__accents__color);
+    padding: 10px;
+    border-radius: 25px;
+    width: 5rem;
+    height: 2.5rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.toggle__theme > span {
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--text__dark);
+    top: calc(10px - 0%);
+    transition-duration: 600ms;
+    transition-timing-function: ease-in-out;
+}
+
+.turn__OFF {
+    left: calc(10px - 0%);
+}
+.turn__ON {
+    left: calc(10px - -50%);
+}

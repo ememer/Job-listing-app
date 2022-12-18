@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,700&display=swap');
 
+
+
 :root {
   font-size: 16px;  
   --main__background__color: #FFFFFF;
@@ -17,12 +19,24 @@
   --graphite-dark: #2c3a3a;
 }
 
+.dark {
+  --main__background__color: #624f82;
+  --secondary__background__color: #3f3b6c;
+  --text__dark: #fff;
+}
+
+.light {
+  --main__background__color: #ffffff;
+  --secondary__background__color: #f3f8fa;
+  --text__dark: #495464;
+}
+
 body {
-  box-sizing: border-box;
   background-color: var(--main__background__color);
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
   color: var(--text__dark);
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
 }
 
 /* SCROLLBAR STYLES */
