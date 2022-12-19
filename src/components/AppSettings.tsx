@@ -16,7 +16,7 @@ const DEFAULT_SETTING: DefaultSetting = {
 
 const AppSettings = () => {
     const [userSettings, setUserSettings] = useState<DefaultSetting>(
-        JSON.parse(localStorage.getItem('UserSettings')!) ?? DEFAULT_SETTING,
+        JSON.parse(localStorage.getItem('UserSettings') as string) ?? DEFAULT_SETTING,
     );
 
     useEffect(() => {
