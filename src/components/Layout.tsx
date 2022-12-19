@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { faSliders } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useLocation } from 'react-router-dom';
 
 import AppSettings from './AppSettings';
@@ -9,7 +11,7 @@ import './Layout.css';
 type LayoutProps = { children: React.ReactNode };
 
 const Layout = ({ children }: LayoutProps) => {
-    const [isSettingsOpen, setIsSettingsOpen] = useState(true);
+    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
     const location = useLocation();
 
     const path =
@@ -30,6 +32,9 @@ const Layout = ({ children }: LayoutProps) => {
                             </div>
                         </Link>
                         <nav>
+                            <button onClick={() => setIsSettingsOpen(true)}>
+                                <FontAwesomeIcon icon={faSliders} />
+                            </button>
                             <Link className="nav_link" to={path.path}>
                                 {path.text}
                             </Link>

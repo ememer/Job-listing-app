@@ -21,6 +21,19 @@ nav {
     flex-direction: column;
     margin-right: 20px;
 }
+nav > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 10px auto;
+    font-size: 1.2rem;
+    color: var(--text__light);
+    background-color: var(--main__accents__color);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+}
 
 .nav_link {
     text-align: center;

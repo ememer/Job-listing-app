@@ -18,7 +18,6 @@ const DEFAULT_SETTING: DefaultSetting = {
 
 interface Props {
     onClose: React.Dispatch<SetStateAction<boolean>>;
-    // onClose: React.MouseEventHandler;
 }
 
 const AppSettings = ({ onClose }: Props) => {
@@ -54,7 +53,15 @@ const AppSettings = ({ onClose }: Props) => {
     }, [userSettings.switchTheme, userSettings.enableSystemTheme]);
 
     return (
-        <div onClick={() => onClose(false)} className="settings">
+        <div
+            onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                if ((e.target as HTMLDivElement).id === 'close__settings') {
+                    onClose(false);
+                }
+            }}
+            id="close__settings"
+            className="settings"
+        >
             <div className="settings__container">
                 <button onClick={() => onClose(false)} className="settings__close">
                     <FontAwesomeIcon className="settings__close__icon" icon={faCircleXmark} />
@@ -63,7 +70,6 @@ const AppSettings = ({ onClose }: Props) => {
                     <div>
                         <div>
                             <span>Switch theme Light / Dark</span>
-
                             <button
                                 onClick={() => {
                                     if (!userSettings.enableSystemTheme) {
