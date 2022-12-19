@@ -1,65 +1,84 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { faEye, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
-import { Link } from 'react-router-dom';
-
-import { useSettings } from '../hook/useSettings';
 
 import './AppSettings.css';
 
-interface USER_SETTINGS {
-    enableSystemTheme: true | false;
-    closeOnStart: true | false;
+interface DefaultSetting {
+    enableSystemTheme: boolean;
+    switchTheme: 'light' | 'dark';
 }
 
+const DEFAULT_SETTING: DefaultSetting = {
+    enableSystemTheme: false,
+    switchTheme: 'light',
+};
+
 const AppSettings = () => {
-    const { userSettings, setUserSettings } = useSettings();
+    const [userSettings, setUserSettings] = useState(DEFAULT_SETTING);
+
+    console.log(userSettings);
+
+    useEffect(() => {
+        const systemMedia = window.matchMedia('(prefers-color-scheme : dark)');
+        const systemThemePreference = (theme: { matches: boolean }) => {
+            setUserSettings((pS) => ({
+                ...pS,
+                switchTheme: theme.matches ? 'dark' : 'light',
+            }));
+        };
+
+        if (!userSettings.enableSystemTheme) {
+            systemMedia.addEventListener('change', () => systemThemePreference(systemMedia));
+            systemThemePreference(systemMedia);
+        }
+
+        const pageDocument = document.querySelector('html');
+        if (userSettings.switchTheme === 'light') {
+            pageDocument?.classList.remove('dark');
+            pageDocument?.classList.add('light');
+        }
+        if (userSettings.switchTheme === 'dark') {
+            pageDocument?.classList.remove('light');
+            pageDocument?.classList.add('dark');
+        }
+        return removeEventListener('change', () => systemThemePreference);
+    }, [userSettings.switchTheme, userSettings.enableSystemTheme]);
+
     return (
         <div className="settings">
             <div className="settings__container">
-                <div className="setting__links">
-                    <div>
-                        <Link to="/">
-                            <FontAwesomeIcon icon={faEye} />
-                        </Link>
-                        <span>Show offers</span>
-                    </div>
-                    <div>
-                        <Link to="/employer-panel/step=1">
-                            <FontAwesomeIcon icon={faFileCirclePlus} />
-                        </Link>
-                        <span>Create offer</span>
-                    </div>
-                </div>
                 <div className="settings__switches">
                     <div>
+                        <div>
+                            <span>Switch theme Light / Dark</span>
+
+                            <button
+                                onClick={() => {
+                                    if (!userSettings.enableSystemTheme) {
+                                        setUserSettings((pS) => ({
+                                            ...pS,
+                                            switchTheme: pS.switchTheme === 'light' ? 'dark' : 'light',
+                                        }));
+                                    }
+                                }}
+                            >
+                                <span
+                                    className={clsx(userSettings.switchTheme === 'dark' ? 'turn__ON' : 'turn__OFF')}
+                                />
+                            </button>
+                        </div>
                         <div>
                             <span>Use system theme settings</span>
                             <button
                                 onClick={() =>
-                                    setUserSettings((pS: USER_SETTINGS) => ({
+                                    setUserSettings((pS) => ({
                                         ...pS,
-                                        enableSystemTheme: !pS.enableSystemTheme,
+                                        enableSystemTheme: !userSettings.enableSystemTheme,
                                     }))
                                 }
                             >
                                 <span className={clsx(userSettings.enableSystemTheme ? 'turn__ON' : 'turn__OFF')} />
-                            </button>
-                        </div>
-                        <div>
-                            <span>Disable settings window on start</span>
-
-                            <button
-                                onClick={() =>
-                                    setUserSettings((pS: USER_SETTINGS) => ({
-                                        ...pS,
-                                        closeOnStart: !pS.closeOnStart,
-                                    }))
-                                }
-                            >
-                                <span className={clsx(userSettings.closeOnStart ? 'turn__ON' : 'turn__OFF')} />
                             </button>
                         </div>
                     </div>

@@ -3,9 +3,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import AppSettings from './AppSettings';
-import ThemeToggle from './ThemeToggle';
 
-// import { Link } from 'react-router-dom';
 import './Layout.css';
 
 type LayoutProps = { children: React.ReactNode };
@@ -31,7 +29,6 @@ const Layout = ({ children }: LayoutProps) => {
                             </div>
                         </Link>
                         <nav>
-                            <ThemeToggle />
                             <Link className="nav_link" to={path.path}>
                                 {path.text}
                             </Link>
