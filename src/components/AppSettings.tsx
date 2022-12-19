@@ -15,9 +15,9 @@ const DEFAULT_SETTING: DefaultSetting = {
 };
 
 const AppSettings = () => {
-    const [userSettings, setUserSettings] = useState(DEFAULT_SETTING);
-
-    console.log(userSettings);
+    const [userSettings, setUserSettings] = useState<DefaultSetting>(
+        JSON.parse(localStorage.getItem('UserSettings')!) ?? DEFAULT_SETTING,
+    );
 
     useEffect(() => {
         const systemMedia = window.matchMedia('(prefers-color-scheme : dark)');
@@ -28,7 +28,7 @@ const AppSettings = () => {
             }));
         };
 
-        if (!userSettings.enableSystemTheme) {
+        if (userSettings.enableSystemTheme) {
             systemMedia.addEventListener('change', () => systemThemePreference(systemMedia));
             systemThemePreference(systemMedia);
         }
@@ -42,6 +42,7 @@ const AppSettings = () => {
             pageDocument?.classList.remove('light');
             pageDocument?.classList.add('dark');
         }
+        localStorage.setItem('UserSettings', JSON.stringify(userSettings));
         return removeEventListener('change', () => systemThemePreference);
     }, [userSettings.switchTheme, userSettings.enableSystemTheme]);
 
