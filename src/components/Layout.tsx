@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
 
@@ -9,6 +9,7 @@ import './Layout.css';
 type LayoutProps = { children: React.ReactNode };
 
 const Layout = ({ children }: LayoutProps) => {
+    const [isSettingsOpen, setIsSettingsOpen] = useState(true);
     const location = useLocation();
 
     const path =
@@ -20,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
         <>
             <header>
                 <div className="container">
-                    <AppSettings />
+                    {isSettingsOpen && <AppSettings onClose={setIsSettingsOpen} />}
                     <div className="header__nav">
                         <Link to="/">
                             <div className="header__title">

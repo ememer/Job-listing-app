@@ -13,11 +13,12 @@
 .settings__container {
     display: flex;
     flex-direction: column;
+    position: relative;
     background-color: var(--main__background__color);
     width: 90%;
     border-radius: 15px;
     box-shadow: 1px 9px 37px -25px rgba(66, 68, 90, 1);
-    padding: 10px;
+    padding: 20px 10px;
 }
 
 .setting__links > div {
@@ -62,6 +63,19 @@
 .turn__ON {
     left: calc(75% - 15px)
     
+}
+
+.settings__close,
+.settings__close__icon {
+    font-size: 2.5rem;
+    position: absolute;
+    color: var(--main__accents__color);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+    top: calc(40px - 50%);
+    right: calc(50% - 20px)
 }
 
 

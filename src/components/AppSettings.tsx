@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { SetStateAction, useEffect, useState } from 'react';
 
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 
 import './AppSettings.css';
@@ -14,7 +16,12 @@ const DEFAULT_SETTING: DefaultSetting = {
     switchTheme: 'light',
 };
 
-const AppSettings = () => {
+interface Props {
+    onClose: React.Dispatch<SetStateAction<boolean>>;
+    // onClose: React.MouseEventHandler;
+}
+
+const AppSettings = ({ onClose }: Props) => {
     const [userSettings, setUserSettings] = useState<DefaultSetting>(
         JSON.parse(localStorage.getItem('UserSettings') as string) ?? DEFAULT_SETTING,
     );
@@ -47,8 +54,11 @@ const AppSettings = () => {
     }, [userSettings.switchTheme, userSettings.enableSystemTheme]);
 
     return (
-        <div className="settings">
+        <div onClick={() => onClose(false)} className="settings">
             <div className="settings__container">
+                <button onClick={() => onClose(false)} className="settings__close">
+                    <FontAwesomeIcon className="settings__close__icon" icon={faCircleXmark} />
+                </button>
                 <div className="settings__switches">
                     <div>
                         <div>
