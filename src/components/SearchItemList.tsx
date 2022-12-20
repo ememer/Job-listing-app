@@ -20,7 +20,15 @@ const SearchItemList = ({ title, data, targetKey, filtersArray, onClick }: Props
             <h2>{title}</h2>
             <ul>
                 {getUniqueElements(data, targetKey).map((element) => (
-                    <li className={clsx(filtersArray.includes(element) ? 'selected' : 'unselected')} key={element}>
+                    <li
+                        title={
+                            targetKey === 'languages'
+                                ? `Required language filter ${element}`
+                                : `Required Technologies filter ${element}`
+                        }
+                        className={clsx(filtersArray.includes(element) ? 'selected' : 'unselected')}
+                        key={element}
+                    >
                         <button onClick={(e) => onClick(e)} id={element}>
                             {element}
                         </button>

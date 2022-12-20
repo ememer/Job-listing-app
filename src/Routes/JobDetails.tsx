@@ -59,10 +59,10 @@ const JobDetails = () => {
         <section className="details__section">
             {isClipboard && <span className="clipboard__popup">Link saved in clipboard</span>}
             <div className="details__nav">
-                <Link className="back__button" to={'/#'}>
+                <Link title="Go back to home page" className="back__button" to={'/#'}>
                     <FontAwesomeIcon icon={faArrowLeft} />
                 </Link>
-                <button onClick={copyClipboard} className="share__button">
+                <button title="Save URL in clipboard" onClick={copyClipboard} className="share__button">
                     <FontAwesomeIcon icon={faShareNodes} />
                 </button>
             </div>
@@ -98,10 +98,14 @@ const JobDetails = () => {
                 {(languages || tools) && (
                     <ul className="details__tech">
                         {languages?.map((lang, idx) => (
-                            <li key={`${lang}${idx}`}>{lang}</li>
+                            <li title={`Required language ${lang}`} key={`${lang}${idx}`}>
+                                {lang}
+                            </li>
                         ))}
                         {tools?.map((tool, idx) => (
-                            <li key={`${tool}${idx}`}>{tool}</li>
+                            <li title={`Required tool ${tool}`} key={`${tool}${idx}`}>
+                                {tool}
+                            </li>
                         ))}
                     </ul>
                 )}

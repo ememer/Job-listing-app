@@ -53,10 +53,10 @@ const Layout = ({ children }: LayoutProps) => {
                             </div>
                         </Link>
                         <nav>
-                            <button onClick={() => setIsSettingsOpen(true)}>
+                            <button title="Page settings" onClick={() => setIsSettingsOpen(true)}>
                                 <FontAwesomeIcon icon={faSliders} />
                             </button>
-                            <Link className="nav_link" to={path.path}>
+                            <Link title={`Link page to: ${path.text}`} className="nav_link" to={path.path}>
                                 {path.text}
                             </Link>
                         </nav>

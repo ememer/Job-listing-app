@@ -60,9 +60,10 @@ const SearchComponent = () => {
                     )}
                     <ul id="search_content">
                         {filtersArray.map((element: string) => (
-                            <li key={element}>
+                            <li title={`Enabled filter ${element}`} key={element}>
                                 <span>{element}</span>
                                 <button
+                                    title={`Remove filter ${element}`}
                                     onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                                         setFiltersArray(
                                             (filtersArray as string[]).filter(
@@ -78,12 +79,12 @@ const SearchComponent = () => {
                         ))}
                     </ul>
                     {filtersArray.length > 0 && (
-                        <button onClick={() => setFiltersArray([])} id="clear_button">
+                        <button title="Clear all filters" onClick={() => setFiltersArray([])} id="clear_button">
                             Wipe
                         </button>
                     )}
                     {isSearchOpen && (
-                        <button onClick={() => setIsSearchOpen(false)}>
+                        <button title="Close filters menu" onClick={() => setIsSearchOpen(false)}>
                             <FontAwesomeIcon icon={faXmark} />
                         </button>
                     )}
