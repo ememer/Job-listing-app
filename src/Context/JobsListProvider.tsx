@@ -26,7 +26,7 @@ const JobListProvider = ({ children }: Props) => {
 
     const updateJobs = (newOffers: JobListObject) => {
         const length = currentJobsLists.length;
-        setCurrentJobsLists((pS) => [...pS, { ...newOffers, id: length + 1, postedAt: new Date().toDateString() }]);
+        setCurrentJobsLists((pS) => [...pS, { ...newOffers, id: length + 1, postedAt: new Date().toISOString() }]);
     };
 
     useEffect(() => {

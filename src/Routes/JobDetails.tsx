@@ -15,6 +15,8 @@ import { JobListContextProvider, JobListObject } from '../@types/JobListTypes';
 import MapComponent from '../components/MapComponent';
 import { JobListContext } from '../Context/JobsListContext';
 
+import { getTimeDifference } from './../utils/displayDate';
+
 import './JobDetails.css';
 
 const JobDetails = () => {
@@ -57,10 +59,10 @@ const JobDetails = () => {
         <section className="details__section">
             {isClipboard && <span className="clipboard__popup">Link saved in clipboard</span>}
             <div className="details__nav">
-                <Link className="back__button" to={'/#'}>
+                <Link title="Go back to home page" className="back__button" to={'/#'}>
                     <FontAwesomeIcon icon={faArrowLeft} />
                 </Link>
-                <button onClick={copyClipboard} className="share__button">
+                <button title="Save URL in clipboard" onClick={copyClipboard} className="share__button">
                     <FontAwesomeIcon icon={faShareNodes} />
                 </button>
             </div>
@@ -74,21 +76,21 @@ const JobDetails = () => {
                 </div>
             </div>
             <ul className="details__job">
-                <li title="Lokalizacja">
+                <li title="Company location">
                     <FontAwesomeIcon className="details__icons" icon={faLocationPin} />
                     {location}
                 </li>
-                <li title="Typ kontraktu">
+                <li title="Contract type">
                     <FontAwesomeIcon className="details__icons" icon={faStopwatch} />
                     {contract}
                 </li>
-                <li title="Poziom zaawansowania">
+                <li title="Level of experience">
                     <FontAwesomeIcon className="details__icons" icon={faFlask} />
                     {level}
                 </li>
-                <li title="Kiedy opublikowano">
+                <li title="Posted at date">
                     <FontAwesomeIcon className="details__icons" icon={faBusinessTime} />
-                    {postedAt}
+                    {getTimeDifference(postedAt).string}
                 </li>
             </ul>
             <div>
@@ -96,10 +98,14 @@ const JobDetails = () => {
                 {(languages || tools) && (
                     <ul className="details__tech">
                         {languages?.map((lang, idx) => (
-                            <li key={`${lang}${idx}`}>{lang}</li>
+                            <li title={`Required language ${lang}`} key={`${lang}${idx}`}>
+                                {lang}
+                            </li>
                         ))}
                         {tools?.map((tool, idx) => (
-                            <li key={`${tool}${idx}`}>{tool}</li>
+                            <li title={`Required tool ${tool}`} key={`${tool}${idx}`}>
+                                {tool}
+                            </li>
                         ))}
                     </ul>
                 )}

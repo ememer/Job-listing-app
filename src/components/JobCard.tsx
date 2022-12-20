@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { getTimeDifference } from './../utils/displayDate';
 import CreateDivImage from './CreateDivImage';
 
 import './JobCard.css';
@@ -46,13 +47,15 @@ const JobCard = ({
             <div>
                 <div className="job__section">
                     <h1 className="job__company">{company}</h1>
-                    {newest && <span className="job__new">NEW!</span>}
-                    {featured && <span className="job__featured">FEATURED!</span>}
+                    {getTimeDifference(postedAt).different <= 7 && newest && <span className="job__new">NEW!</span>}
+                    {getTimeDifference(postedAt).different <= 3 && featured && (
+                        <span className="job__featured">FEATURED!</span>
+                    )}
                 </div>
                 <div className="job__context">
                     <h2 className="job__position">{position}</h2>
                     <ul className="job__details">
-                        <li>{postedAt}</li>
+                        <li>{getTimeDifference(postedAt).string}</li>
                         <li className="job__contract">{contract}</li>
                         <li className="job__location">{location}</li>
                     </ul>
