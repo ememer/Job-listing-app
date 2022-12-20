@@ -76,19 +76,19 @@ const JobDetails = () => {
                 </div>
             </div>
             <ul className="details__job">
-                <li title="Lokalizacja">
+                <li title="Company location">
                     <FontAwesomeIcon className="details__icons" icon={faLocationPin} />
                     {location}
                 </li>
-                <li title="Typ kontraktu">
+                <li title="Contract type">
                     <FontAwesomeIcon className="details__icons" icon={faStopwatch} />
                     {contract}
                 </li>
-                <li title="Poziom zaawansowania">
+                <li title="Level of experience">
                     <FontAwesomeIcon className="details__icons" icon={faFlask} />
                     {level}
                 </li>
-                <li title="Kiedy opublikowano">
+                <li title="Posted at date">
                     <FontAwesomeIcon className="details__icons" icon={faBusinessTime} />
                     {getTimeDifference(postedAt).string}
                 </li>
