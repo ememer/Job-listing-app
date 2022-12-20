@@ -15,6 +15,8 @@ import { JobListContextProvider, JobListObject } from '../@types/JobListTypes';
 import MapComponent from '../components/MapComponent';
 import { JobListContext } from '../Context/JobsListContext';
 
+import { getTimeDifference } from './../utils/displayDate';
+
 import './JobDetails.css';
 
 const JobDetails = () => {
@@ -88,7 +90,7 @@ const JobDetails = () => {
                 </li>
                 <li title="Kiedy opublikowano">
                     <FontAwesomeIcon className="details__icons" icon={faBusinessTime} />
-                    {postedAt}
+                    {getTimeDifference(postedAt).string}
                 </li>
             </ul>
             <div>
