@@ -80,7 +80,7 @@ Start the server
 ```
 
 
-## Redesigne - Screenshots
+## Redesigned - Screenshots
 
 Redesigned UI
 
@@ -88,7 +88,7 @@ LightMode:
 
 ![image](https://user-images.githubusercontent.com/46853050/208695445-4f60599d-3acd-483e-b336-d65c59d3b0fe.png)
 
-DarkModeL
+DarkMode:
 
 ![image](https://user-images.githubusercontent.com/46853050/208695586-ca6400e5-dd71-466e-85ab-c757c5419c9f.png)
 
