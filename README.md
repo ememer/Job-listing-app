@@ -48,7 +48,7 @@ Posibility to check offer by detailet page.
 
 Temporary hosted at Netlify:
 
-https://stately-sprite-032d9e.netlify.app/job/8
+https://stately-sprite-032d9e.netlify.app/
 
 also feel free and please look at my portfolio:
 
