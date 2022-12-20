@@ -1,292 +1,292 @@
 [
-  {
-    "id": 1,
-    "company": "Photosnap",
-    "logo": "./../images/photosnap.svg",
-    "new": true,
-    "featured": true,
-    "position": "Senior Frontend Developer",
-    "role": "Frontend",
-    "level": "Senior",
-    "postedAt": "1d ago",
-    "contract": "Full Time",
-    "location": "USA Only",
-    "languages": ["HTML", "CSS", "JavaScript"],
-    "tools": [],
-    "image": "https://images.unsplash.com/photo-1612296727716-d6c69d2a2cbb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80",
-    "description": {
-      "title": "Lorem ipsum dolor sit amet",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "subtitle": "Cupcake ipsum dolor sit amet",
-      "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    {
+        "id": 1,
+        "company": "Photosnap",
+        "logo": "./../images/photosnap.svg",
+        "new": true,
+        "featured": true,
+        "position": "Senior Frontend Developer",
+        "role": "Frontend",
+        "level": "Senior",
+        "postedAt": "2022-12-10T19:59:38Z",
+        "contract": "Full Time",
+        "location": "USA Only",
+        "languages": ["HTML", "CSS", "JavaScript"],
+        "tools": [],
+        "image": "https://images.unsplash.com/photo-1612296727716-d6c69d2a2cbb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80",
+        "description": {
+            "title": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subtitle": "Cupcake ipsum dolor sit amet",
+            "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+        },
+        "address": {
+            "postcode": "NY 10022",
+            "city": "New York",
+            "country": "United States",
+            "street": "Park Ave",
+            "number": 301
+        }
     },
-    "address": {
-      "postcode": "NY 10022",
-      "city": "New York",
-      "country": "United States",
-      "street": "Park Ave",
-      "number": 301
-    }
-  },
-  {
-    "id": 2,
-    "company": "Manage",
-    "logo": "./../images/manage.svg",
-    "new": true,
-    "featured": true,
-    "position": "Fullstack Developer",
-    "role": "Fullstack",
-    "level": "Midweight",
-    "postedAt": "1d ago",
-    "contract": "Part Time",
-    "location": "Remote",
-    "languages": ["Python"],
-    "tools": ["React"],
-    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    "description": {
-      "title": "Lorem ipsum dolor sit amet",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "subtitle": "Cupcake ipsum dolor sit amet",
-      "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    {
+        "id": 2,
+        "company": "Manage",
+        "logo": "./../images/manage.svg",
+        "new": true,
+        "featured": true,
+        "position": "Fullstack Developer",
+        "role": "Fullstack",
+        "level": "Midweight",
+        "postedAt": "2022-11-17T19:59:38Z",
+        "contract": "Part Time",
+        "location": "Remote",
+        "languages": ["Python"],
+        "tools": ["React"],
+        "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "description": {
+            "title": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subtitle": "Cupcake ipsum dolor sit amet",
+            "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+        },
+        "address": {
+            "postcode": "159-161 Sussex Gardens",
+            "city": " London W2 2RY",
+            "country": "England",
+            "street": "Tyburnia",
+            "number": 54
+        }
     },
-    "address": {
-      "postcode": "159-161 Sussex Gardens",
-      "city": " London W2 2RY",
-      "country": "England",
-      "street": "Tyburnia",
-      "number": 54
-    }
-  },
-  {
-    "id": 3,
-    "company": "Account",
-    "logo": "./../images/account.svg",
-    "new": true,
-    "featured": false,
-    "position": "Junior Frontend Developer",
-    "role": "Frontend",
-    "level": "Junior",
-    "postedAt": "2d ago",
-    "contract": "Part Time",
-    "location": "Paris",
-    "languages": ["JavaScript"],
-    "tools": ["React", "Sass"],
-    "image": "https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    "description": {
-      "title": "Lorem ipsum dolor sit amet",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "subtitle": "Cupcake ipsum dolor sit amet",
-      "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    {
+        "id": 3,
+        "company": "Account",
+        "logo": "./../images/account.svg",
+        "new": true,
+        "featured": false,
+        "position": "Junior Frontend Developer",
+        "role": "Frontend",
+        "level": "Junior",
+        "postedAt": "2022-12-14T19:59:38Z",
+        "contract": "Part Time",
+        "location": "Paris",
+        "languages": ["JavaScript"],
+        "tools": ["React", "Sass"],
+        "image": "https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "description": {
+            "title": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subtitle": "Cupcake ipsum dolor sit amet",
+            "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+        },
+        "address": {
+            "postcode": "75001",
+            "city": " Paris",
+            "country": "France",
+            "street": "Pl. Vendôme",
+            "number": 15
+        }
     },
-    "address": {
-      "postcode": "75001",
-      "city": " Paris",
-      "country": "France",
-      "street": "Pl. Vendôme",
-      "number": 15
-    }
-  },
-  {
-    "id": 4,
-    "company": "MyHome",
-    "logo": "./../images/myhome.svg",
-    "new": false,
-    "featured": false,
-    "position": "Junior Frontend Developer",
-    "role": "Frontend",
-    "level": "Junior",
-    "postedAt": "5d ago",
-    "contract": "Contract",
-    "location": "Asia",
-    "languages": ["CSS", "JavaScript"],
-    "tools": [],
-    "image": "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    "description": {
-      "title": "Lorem ipsum dolor sit amet",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "subtitle": "Cupcake ipsum dolor sit amet",
-      "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    {
+        "id": 4,
+        "company": "MyHome",
+        "logo": "./../images/myhome.svg",
+        "new": false,
+        "featured": false,
+        "position": "Junior Frontend Developer",
+        "role": "Frontend",
+        "level": "Junior",
+        "postedAt": "2022-12-12T19:59:38Z",
+        "contract": "Contract",
+        "location": "Asia",
+        "languages": ["CSS", "JavaScript"],
+        "tools": [],
+        "image": "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "description": {
+            "title": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subtitle": "Cupcake ipsum dolor sit amet",
+            "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+        },
+        "address": {
+            "postcode": "189673",
+            "city": "Singapore",
+            "country": "Asia",
+            "street": "Beach Rd",
+            "number": 1
+        }
     },
-    "address": {
-      "postcode": "189673",
-      "city": "Singapore",
-      "country": "Asia",
-      "street": "Beach Rd",
-      "number": 1
-    }
-  },
-  {
-    "id": 5,
-    "company": "Loop Studios",
-    "logo": "./../images/loop-studios.svg",
-    "new": false,
-    "featured": false,
-    "position": "Software Engineer",
-    "role": "Fullstack",
-    "level": "Midweight",
-    "postedAt": "1w ago",
-    "contract": "Full Time",
-    "location": "Worldwide",
-    "languages": ["JavaScript"],
-    "tools": ["Ruby", "Sass"],
-    "image": "https://images.unsplash.com/photo-1587620931276-d97f425f62b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80",
-    "description": {
-      "title": "Lorem ipsum dolor sit amet",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "subtitle": "Cupcake ipsum dolor sit amet",
-      "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    {
+        "id": 5,
+        "company": "Loop Studios",
+        "logo": "./../images/loop-studios.svg",
+        "new": false,
+        "featured": false,
+        "position": "Software Engineer",
+        "role": "Fullstack",
+        "level": "Midweight",
+        "postedAt": "2022-12-12T19:59:38Z",
+        "contract": "Full Time",
+        "location": "Worldwide",
+        "languages": ["JavaScript"],
+        "tools": ["Ruby", "Sass"],
+        "image": "https://images.unsplash.com/photo-1587620931276-d97f425f62b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80",
+        "description": {
+            "title": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subtitle": "Cupcake ipsum dolor sit amet",
+            "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+        },
+        "address": {
+            "postcode": "Maharashtra",
+            "city": "Mumbai",
+            "country": "India",
+            "street": "Apollo Bandar",
+            "number": 400001
+        }
     },
-    "address": {
-      "postcode": "Maharashtra",
-      "city": "Mumbai",
-      "country": "India",
-      "street": "Apollo Bandar",
-      "number": 400001
-    }
-  },
-  {
-    "id": 6,
-    "company": "FaceIt",
-    "logo": "./../images/faceit.svg",
-    "new": false,
-    "featured": false,
-    "position": "Junior Backend Developer",
-    "role": "Backend",
-    "level": "Junior",
-    "postedAt": "2w ago",
-    "contract": "Full Time",
-    "location": "Remote",
-    "languages": ["Ruby"],
-    "tools": ["RoR"],
-    "image": "https://images.unsplash.com/photo-1580894896813-652ff5aa8146?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    "description": {
-      "title": "Lorem ipsum dolor sit amet",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "subtitle": "Cupcake ipsum dolor sit amet",
-      "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    {
+        "id": 6,
+        "company": "FaceIt",
+        "logo": "./../images/faceit.svg",
+        "new": false,
+        "featured": false,
+        "position": "Junior Backend Developer",
+        "role": "Backend",
+        "level": "Junior",
+        "postedAt": "2022-10-06T19:59:38Z",
+        "contract": "Full Time",
+        "location": "Remote",
+        "languages": ["Ruby"],
+        "tools": ["RoR"],
+        "image": "https://images.unsplash.com/photo-1580894896813-652ff5aa8146?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "description": {
+            "title": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subtitle": "Cupcake ipsum dolor sit amet",
+            "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+        },
+        "address": {
+            "postcode": "40-121",
+            "city": " Katowice",
+            "country": "Polska",
+            "street": "Korfantego",
+            "number": 13
+        }
     },
-    "address": {
-      "postcode": "40-121",
-      "city": " Katowice",
-      "country": "Polska",
-      "street": "Korfantego",
-      "number": 13
-    }
-  },
-  {
-    "id": 7,
-    "company": "Shortly",
-    "logo": "./../images/shortly.svg",
-    "new": false,
-    "featured": false,
-    "position": "Junior Developer",
-    "role": "Frontend",
-    "level": "Junior",
-    "postedAt": "2w ago",
-    "contract": "Full Time",
-    "location": "Worldwide",
-    "languages": ["HTML", "JavaScript"],
-    "tools": ["Sass"],
-    "image": "https://images.unsplash.com/photo-1595617795501-9661aafda72a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    "description": {
-      "title": "Lorem ipsum dolor sit amet",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "subtitle": "Cupcake ipsum dolor sit amet",
-      "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    {
+        "id": 7,
+        "company": "Shortly",
+        "logo": "./../images/shortly.svg",
+        "new": false,
+        "featured": false,
+        "position": "Junior Developer",
+        "role": "Frontend",
+        "level": "Junior",
+        "postedAt": "2022-10-06T19:59:38Z",
+        "contract": "Full Time",
+        "location": "Worldwide",
+        "languages": ["HTML", "JavaScript"],
+        "tools": ["Sass"],
+        "image": "https://images.unsplash.com/photo-1595617795501-9661aafda72a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "description": {
+            "title": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subtitle": "Cupcake ipsum dolor sit amet",
+            "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+        },
+        "address": {
+            "postcode": "01-202",
+            "city": " Warszawa",
+            "country": "Polska",
+            "street": "Jaktorowska",
+            "number": 5
+        }
     },
-    "address": {
-      "postcode": "01-202",
-      "city": " Warszawa",
-      "country": "Polska",
-      "street": "Jaktorowska",
-      "number": 5
-    }
-  },
-  {
-    "id": 8,
-    "company": "Insure",
-    "logo": "./../images/insure.svg",
-    "new": false,
-    "featured": false,
-    "position": "Junior Frontend Developer",
-    "role": "Frontend",
-    "level": "Junior",
-    "postedAt": "2w ago",
-    "contract": "Full Time",
-    "location": "USA Only",
-    "languages": ["JavaScript"],
-    "tools": ["Vue", "Sass"],
-    "image": "https://images.unsplash.com/photo-1553632168-eb4237620881?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
-    "description": {
-      "title": "Lorem ipsum dolor sit amet",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "subtitle": "Cupcake ipsum dolor sit amet",
-      "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    {
+        "id": 8,
+        "company": "Insure",
+        "logo": "./../images/insure.svg",
+        "new": false,
+        "featured": false,
+        "position": "Junior Frontend Developer",
+        "role": "Frontend",
+        "level": "Junior",
+        "postedAt": "2022-10-14T19:59:38Z",
+        "contract": "Full Time",
+        "location": "USA Only",
+        "languages": ["JavaScript"],
+        "tools": ["Vue", "Sass"],
+        "image": "https://images.unsplash.com/photo-1553632168-eb4237620881?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
+        "description": {
+            "title": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subtitle": "Cupcake ipsum dolor sit amet",
+            "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+        },
+        "address": {
+            "postcode": "CA 90210",
+            "city": " Beverly Hills",
+            "country": "Unaited States",
+            "street": "Sunset Blvd",
+            "number": 9641
+        }
     },
-    "address": {
-      "postcode": "CA 90210",
-      "city": " Beverly Hills",
-      "country": "Unaited States",
-      "street": "Sunset Blvd",
-      "number": 9641
-    }
-  },
-  {
-    "id": 9,
-    "company": "Eyecam Co.",
-    "logo": "./../images/eyecam-co.svg",
-    "new": false,
-    "featured": false,
-    "position": "Full Stack Engineer",
-    "role": "Fullstack",
-    "level": "Midweight",
-    "postedAt": "3w ago",
-    "contract": "Full Time",
-    "location": "Worldwide",
-    "languages": ["JavaScript", "Python"],
-    "tools": ["Django"],
-    "image": "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
-    "description": {
-      "title": "Lorem ipsum dolor sit amet",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "subtitle": "Cupcake ipsum dolor sit amet",
-      "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+    {
+        "id": 9,
+        "company": "Eyecam Co.",
+        "logo": "./../images/eyecam-co.svg",
+        "new": false,
+        "featured": false,
+        "position": "Full Stack Engineer",
+        "role": "Fullstack",
+        "level": "Midweight",
+        "postedAt": "2022-08-14T19:59:38Z",
+        "contract": "Full Time",
+        "location": "Worldwide",
+        "languages": ["JavaScript", "Python"],
+        "tools": ["Django"],
+        "image": "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+        "description": {
+            "title": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subtitle": "Cupcake ipsum dolor sit amet",
+            "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+        },
+        "address": {
+            "postcode": "53-332",
+            "city": "Wrocław",
+            "country": "Poland",
+            "street": "Powstańców Śląskich",
+            "number": 95
+        }
     },
-    "address": {
-      "postcode": "53-332",
-      "city": "Wrocław",
-      "country": "Poland",
-      "street": "Powstańców Śląskich",
-      "number": 95
+    {
+        "id": 10,
+        "company": "The Air Filter Company",
+        "logo": "./../images/the-air-filter-company.svg",
+        "new": false,
+        "featured": false,
+        "position": "Front-end Dev",
+        "role": "Frontend",
+        "level": "Junior",
+        "postedAt": "2022-09-14T19:59:38Z",
+        "contract": "Part Time",
+        "location": "Worldwide",
+        "languages": ["JavaScript"],
+        "tools": ["React", "Sass"],
+        "image": "https://images.unsplash.com/photo-1623870606070-c41ac6c46a4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+        "description": {
+            "title": "Lorem ipsum dolor sit amet",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "subtitle": "Cupcake ipsum dolor sit amet",
+            "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
+        },
+        "address": {
+            "postcode": "31-123",
+            "city": "Kraków",
+            "country": "England",
+            "street": "Józefa Szujskiego",
+            "number": 5
+        }
     }
-  },
-  {
-    "id": 10,
-    "company": "The Air Filter Company",
-    "logo": "./../images/the-air-filter-company.svg",
-    "new": false,
-    "featured": false,
-    "position": "Front-end Dev",
-    "role": "Frontend",
-    "level": "Junior",
-    "postedAt": "1mo ago",
-    "contract": "Part Time",
-    "location": "Worldwide",
-    "languages": ["JavaScript"],
-    "tools": ["React", "Sass"],
-    "image": "https://images.unsplash.com/photo-1623870606070-c41ac6c46a4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    "description": {
-      "title": "Lorem ipsum dolor sit amet",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "subtitle": "Cupcake ipsum dolor sit amet",
-      "subtext": "Cupcake ipsum dolor sit amet soufflé wafer sugar plum. Cookie topping topping chocolate icing jelly-o cupcake sesame snaps cookie. Chupa chups halvah muffin wafer lollipop chocolate bar. Wafer chocolate bar danish shortbread sesame snaps muffin carrot cake sweet roll jelly."
-    },
-    "address": {
-      "postcode": "31-123",
-      "city": "Kraków",
-      "country": "England",
-      "street": "Józefa Szujskiego",
-      "number": 5
-    }
-  }
 ]
