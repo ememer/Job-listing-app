@@ -86,11 +86,11 @@ Redesigned UI
 
 LightMode:
 
-![image](https://user-images.githubusercontent.com/46853050/208695445-4f60599d-3acd-483e-b336-d65c59d3b0fe.png)
+![image](https://user-images.githubusercontent.com/46853050/208879658-95892b37-73bd-4bf9-b9ae-0e414ba3e55d.png)
 
 DarkMode:
 
-![image](https://user-images.githubusercontent.com/46853050/208695586-ca6400e5-dd71-466e-85ab-c757c5419c9f.png)
+![image](https://user-images.githubusercontent.com/46853050/208879718-df51992f-a403-4b88-aad5-888692c203a8.png)
 
 
 Initial application style
