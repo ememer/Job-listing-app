@@ -50,6 +50,10 @@ Temporary hosted at Netlify:
 
 https://stately-sprite-032d9e.netlify.app/
 
+`TRY ON MOBILE - SKAN QR CODE`
+
+![image](https://user-images.githubusercontent.com/46853050/211395757-8c152ccf-ee39-402d-b067-46a93c788691.png)
+
 also feel free and please look at my portfolio:
 
 https://chillycube.pl
